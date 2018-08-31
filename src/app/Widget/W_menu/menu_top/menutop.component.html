@@ -1,0 +1,10 @@
+<div id="top-nav" class="hidden-xs">
+    <div class="container">
+        <ul class="clearfix">
+            <li *ngFor="let menu of ds_menu" >
+                <a [routerLink] = "menu.url_menu" id="{{menu.id_menu}}"><i class="fa fa-bus" aria-hidden="true"></i>&ensp;{{menu.name_menu}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+

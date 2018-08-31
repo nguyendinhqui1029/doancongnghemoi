@@ -1,0 +1,53 @@
+<img src="assets/Content/img/private/button-19006067-03.png" class="hotlinebutton-fixed" alt="hotline futabus" />
+<div id="br-cover-content">
+    <m_modalcontent></m_modalcontent>
+    <div>
+        <div id="sb-site">
+            <div class="br-header">
+            </div>
+            <div id="page">
+                <section id="body-content">
+                    <div class="container" id="login-page">
+                        <div id="body-login" class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                                <div id="login-form-left" class="border clearfix">
+                                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-ms-12 col-lg-offset-2 col-md-offset-2">
+                                        <h3 class="text-uppercase text-center">Tôi đã đăng ký tài khoản</h3>
+                                        <form action="https://api.futabus.vn/api/auth/credentials?Continue=https://id.futabus.vn/" method="post" class="form-horizontal">
+                                            <div class="form-group">
+                                                <label for="">Tên đăng nhập*</label>
+                                                <input class="form-control" data-val="true" data-val-required="Vui lòng điền email hoặc sđt" id="UserName" name="UserName"
+                                                    placeholder="Điền email" type="email" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Mật khẩu*</label>
+                                                <input class="form-control" data-val="true" data-val-required="Vui lòng nhập mật khẩu" id="Password" name="Password" placeholder="Điền mật khẩu"
+                                                    type="password" />
+                                            </div>
+                                            <div class="form-group">
+                                                <button class="btn btn-primary pull-right" type="submit">
+                                                    Đăng nhập
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                                <div id="login-form-right" class="border clearfix">
+                                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-ms-12 col-lg-offset-2 col-md-offset-2">
+                                        <h3 class="text-uppercase text-center">Bạn là khách hàng mới?</h3>
+                                        <p class="text-center">
+                                            <a [routerLink]="'/dangky'" class="btn btn-success">Đăng ký</a>
+                                        </p>
+                                        <p class="text-muted text-center">
+                                            Chỉ với 1 tài khoản FUTABUS ID, tham gia được tất cả các chương trình của FUTA Bus Lines
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <Footer></Footer>

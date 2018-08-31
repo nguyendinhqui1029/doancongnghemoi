@@ -1,0 +1,54 @@
+<div class="section-list" id="Star-ninh-hoa" *ngFor="let td of danhsachtuyenduong" >
+    <h3 class="text-uppercase text-success">
+        <span class="sprite ico-drive"></span> {{td.tentuyenduong}} <i class="fa fa-exchange"></i>
+    </h3>
+    <div class="table-responsive">
+        <table class="table " >
+            <thead>
+                <tr class="text-white bg-light-green">
+                    <th>STT</th>
+                    <th data-toggle="true">Bến đi</th>
+                    <th>Bến đến</th>
+                    <th data-hide="phone">Loại xe</th>
+                    <th data-hide="phone">Quãng đường</th>
+                    <th data-hide="phone">Thời gian</th>
+                    <th data-hide="phone">Số chuyến</th>
+                    <th data-hide="phone">Giá vé</th>
+                    <th data-hide="phone">Giờ chạy</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="route-row1240"  *ngFor="let dstd of td.thongtin;let i=index;">
+                    <td>{{i+1}}</td>
+                    <td>{{dstd.bendi}}</td>
+                    <td>{{dstd.benden}}</td>
+                    <td>{{dstd.loaixe}}</td>
+                    <td>{{dstd.quangduong}}</td>
+                    <td>
+                        {{dstd.thoigian}}
+                    </td>
+                    <td>{{dstd.sochuyen}}</td>
+                    <td>
+                        <p>
+                            <strong class="text-primary">
+                                {{dstd.giave}}<sup>đ/vé</sup>
+                            </strong>
+                        </p>
+                    </td>
+                    <td>
+                        <a class="br-btn-flat br-watch-schedule" [routerLink]="'/chitietlichtrinh'">
+                            <i class="fa fa-clock-o icon-flat text-success"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="../mua-ve-xe-ninh-hoa-di-tp-ho-chi-minh.html" data-obj="{&quot;id&quot;:&quot;25-08-2018-All-Ninh Hoa ⇒ BX Mien Dong&quot;,&quot;name&quot;:&quot;All-Ninh Hoa ⇒ BX Mien Dong&quot;,&quot;list&quot;:&quot;Ninh H&#242;a - TP.Hồ Ch&#237; Minh&quot;,&quot;brand&quot;:&quot;Phương Trang&quot;,&quot;category&quot;:&quot;Ninh Hoa ⇒ BX Mien Dong&quot;,&quot;variant&quot;:&quot;Giường&quot;,&quot;position&quot;:1,&quot;price&quot;:225000}"
+                            class="btn br-btn-default btn-flat futa-book-ticket">
+                            <i class="fa fa-ticket icon-flat text-primary icon-bg-default"></i>Mua vé
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
