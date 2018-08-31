@@ -11,9 +11,8 @@ export class CHITIETLICHTRINH implements OnInit {
 
     batsukienclick(event:any)
     {
-        let ID =event.target.attributes.id;
+        let ID =event.target.attributes.id.value;
         let cl=".ct"+ID;
-        alert(cl);
        if($(cl).hasClass("hidden"))
        {
         event.target.innerText="Đóng >>";
