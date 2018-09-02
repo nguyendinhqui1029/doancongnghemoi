@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ds_tuyenduong } from '../../model/mock_tuyenduong';
 
 declare var $:any;
 @Component({
@@ -6,8 +7,14 @@ declare var $:any;
     templateUrl: './p_chitietlichtrinh.component.html'
 })
 export class CHITIETLICHTRINH implements OnInit {
-
-    constructor() { }
+    danhsachtuyen:any[] = ds_tuyenduong; //ds_ tuyen bua lay dau quen roi m
+    danhsachtheotuyen:any[]=[];
+    constructor() { 
+        for(var i=0; i<this.danhsachtuyen.length;i++)
+        { 
+            this.danhsachtheotuyen = this.layDSchitiettheoTuyenDuong(this.danhsachtuyen[i].name_tuyenduong);
+        }
+    }
 
     batsukienclick(event:any)
     {
@@ -24,6 +31,19 @@ export class CHITIETLICHTRINH implements OnInit {
        }
         
 
+   
+    }
+    layDSchitiettheoTuyenDuong(name: string)
+    {
+        let dschitiet:any[]=[];
+        for(var i =0; i< this.danhsachtuyen.length; i++)
+        {
+            if(this.danhsachtuyen[i].name_tuyenduong === name)
+            {
+                dschitiet.push(this.danhsachtuyen[i]);
+            }
+        }
+        return dschitiet;
     }
    
     ngOnInit() { 
