@@ -37,7 +37,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12">
                 <div class="section-list">
                     <div class="table-responsive">
-                        <table class="table " *ngFor="let chitiet of danhsachtheotuyen;let i=index;" >
+                        <table class="table " *ngFor="let chitiet of danhsachtuyen;let i=index;" >
                             <thead>
                                 <tr class="text-white bg-light-green">
                                     <th>STT</th>
@@ -80,50 +80,53 @@
 
 
                                 <tr class="viewmorerouteinfo hidden ct2" >
-                                    <td colspan="10">
-                                        <table border="0" align="center">
-                                            <thead>
+                                    <td colspan="10" >
+                                        <table border="0" align="center" >
+                                            <thead >
                                                 <tr >
-                                                    <th colspan="5">
+                                                    <th colspan="5" >
                                                         <h3>Thông tin chuyến đi xuất phát từ <span class="from">{{chitiet.bendi}}</span>
                                                             đến <span class="to">{{chitiet.benden}}</span></h3>
                                                     </th>
                                                 </tr>
                                                 <tr> 
-                                                    <th>Thời gian đi</th>
-                                                    <th>Điểm đi</th>
-                                                    <th></th>
-                                                    <th>Thời gian đến</th>
-                                                    <th>Điểm dừng (đến)</th>
+                                                        <th>Thời gian đi</th>
+                                                        <th>Điểm đi</th>
+                                                        <th></th>
+                                                        <th>Thời gian đến</th>
+                                                        <th>Điểm dừng (đến)</th>
+                                                    
                                                 </tr>
-                                            </thead>
-                                            <tbody >
-                                                <tr *ngFor="let ct of chitiet.chitiet" >
+                                                
+                                            </thead >
+                                            <tbody *ngFor="let ct of chitiet.chitiet">
+                                
+                                                <tr  >
                                                     <td>{{ct.thoigiandi}}<br><br><span class="frompoint">Điểm đi</span></td>
                                                     <td>
-                                                        <h3>Sóc Trăng</h3>
-                                                        <p>VP Sóc Trăng, 38 Lê Duẩn , P.3 , TP.Sóc Trăng</p>
-                                                        <p class="hotline">HotLine: 0299 3. 868.868</p> <a href="/">(Xem bản đồ)</a> </td>
-                                                    <td><img src="/Content/img/private/icmuiten-08.png"></td>
+                                                        <h3>{{ct.diemdi}}</h3>
+                                                        <p>{{ct.diachidi}}</p>
+                                                        <p class="hotline">HotLine: {{ct.hotlinedi}}</p> <a href="/">(Xem bản đồ)</a> </td>
+                                                    <td><img src="assets/Content/img/private/icmuiten-08.png"></td>
                                                     <td>{{ct.thoigianden}}<br><br></td>
                                                     <td>
-                                                        <h3>Bạc Liêu</h3>
-                                                        <p>VP Bến Xe Bạc Liêu , Đường Trần Phú , Khóm 2 , P.7 , TP.Bạc Liêu</p>
-                                                        <p class="hotline">HotLine: 02913.932.345</p> <a href="/">(Xem bản đồ)</a> </td>
+                                                        <h3>{{ct.diemden}}</h3>
+                                                        <p>{{ct.diachiden}}</p>
+                                                        <p class="hotline">HotLine:{{ct.hotlineden}}</p> <a href="/">(Xem bản đồ)</a> </td>
                                                 </tr>
-                                                <tr>
+                                                <!-- <tr  >
                                                     <td>{{ct.thoigianden}}<br><br></td>
                                                     <td>
                                                         <h3>Bạc Liêu</h3>
                                                         <p>VP Bến Xe Bạc Liêu , Đường Trần Phú , Khóm 2 , P.7 , TP.Bạc Liêu</p>
                                                         <p class="hotline">HotLine: 02913.932.345</p> <a href="/">(Xem bản đồ)</a> </td>
-                                                    <td><img src="/Content/img/private/icmuiten-08.png"></td>
+                                                    <td><img src="assets/Content/img/private/icmuiten-08.png"></td>
                                                     <td>{{ct.thoigianden}}<br><br><span class="topoint">Điểm đến</span></td>
                                                     <td>
                                                         <h3>Sa Tra - Trạm dừng</h3>
                                                         <p>VP Sa Tra: Ấp Hòa Phúc, Xá Hòa Khánh, H. Cái Bè , Tiền Giang</p>
                                                         <p class="hotline">HotLine: (02733)756241</p> <a href="/">(Xem bản đồ)</a> </td>
-                                                </tr>
+                                                </tr> -->
                                             </tbody>
                                         </table>
                                     </td>

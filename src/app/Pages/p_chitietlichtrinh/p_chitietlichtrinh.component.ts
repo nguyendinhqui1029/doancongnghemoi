@@ -7,7 +7,7 @@ declare var $:any;
     templateUrl: './p_chitietlichtrinh.component.html'
 })
 export class CHITIETLICHTRINH implements OnInit {
-    danhsachtuyen:any[] = ds_tuyenduong; //ds_ tuyen bua lay dau quen roi m
+    danhsachtuyen:any[] = ds_tuyenduong; 
     danhsachtheotuyen:any[]=[];
     constructor() { 
         for(var i=0; i<this.danhsachtuyen.length;i++)
