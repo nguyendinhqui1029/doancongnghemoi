@@ -20,7 +20,7 @@ export class CHINHANH implements OnInit {
     tongsoMN:number;
     constructor(private service_chi_nhanh: ChiNhanhService){
         this.getListChiNhanh();
-        this.getListUser();
+
     }
     
     getListChiNhanh()
@@ -41,13 +41,7 @@ export class CHINHANH implements OnInit {
     {
         this.dsuser=a;
     }
-    getListUser()
-    {
-        return  this.service_chi_nhanh.getListUser()
-        .subscribe((reponse:any[])=>{this.dsuser=reponse;
-        });
-        
-    }
+
 
    
     layDSTheoMien(mien:string){

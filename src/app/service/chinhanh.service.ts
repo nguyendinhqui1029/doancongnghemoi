@@ -15,10 +15,5 @@ export class ChiNhanhService {
        .map((response: Response) => response.json());
     }
 
-    getListUser():Observable<user[]> 
-    {
-       return  this.http.get("http://localhost:8081/user")
-       .map((response: Response) => response.json());
-    }
         
 }

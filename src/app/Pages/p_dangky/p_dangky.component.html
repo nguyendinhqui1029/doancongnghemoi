@@ -28,7 +28,7 @@
                             </div>
                             <div id="login-top-bar-right" class="text-center col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
                                 <p class="text-uppercase">Hãy tải app để chúng tôi phục vụ bạn tốt hơn <span class="sprite ico-app hidden-xs"></span>
-                                    </p>
+                                </p>
                             </div>
                         </div>
                         <div id="body-register" class="row">
@@ -37,32 +37,37 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
                                 <div id="register-form-wrapper" class="border padding10 clearfix">
-                                    <form action="/User/Register" method="post"><input name="__RequestVerificationToken"
-                                            type="hidden" value="CqmsYo50POKxTZwSE9sfldJS3f9YiQAFkHtj-O5ERhgg1gRgsrsi9bfveyQKdEKCdvEqLVnZAZNghwd555mJwfexhf81"
-                                        /> <h3 class="text-uppercase">Đăng ký</h3>
+                                    <form  (ngSubmit)="onSubmit()">
+                                        <input name="__RequestVerificationToken"
+                                            type="hidden" value="CqmsYo50POKxTZwSE9sfldJS3f9YiQAFkHtj-O5ERhgg1gRgsrsi9bfveyQKdEKCdvEqLVnZAZNghwd555mJwfexhf81" />
+                                        <h3 class="text-uppercase">Đăng ký</h3>
                                         <p class="text-muted">
                                             <small>
-                                                Lưu ý: Không hỗ trợ hotmail và outlook email<br> Chỉ với 1 tài khoản FUTABUS
+                                                Lưu ý: Không hỗ trợ hotmail và outlook email<br> Chỉ với 1 tài khoản
+                                                FUTABUS
                                                 ID, tham gia được tất cả các chương trình FUTA Bus Lines
                                             </small>
                                         </p>
                                         <div class="form-group">
-                                            <label for="">Họ tên <span class="text-primary">*</span></label>
-                                            <input class="form-control" id="FullName" name="FullName" placeholder="Điền họ tên" type="text" value="" />
+                                            <label for="hoten">Họ tên <span class="text-primary">*</span></label>
+                                            <input class="form-control" id="hoten" name="hoten" placeholder="Điền họ tên" type="text" [(ngModel)]="objectDangKi.hoten" [ngModelOptions]="{standalone: true}"/>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Email <span class="text-primary">*</span></label>
-                                            <input class="form-control" id="Email" name="Email" placeholder="Điền địa chỉ email" type="email" value="" />
+                                            <input class="form-control" id="email" name="email" placeholder="Điền địa chỉ email"
+                                                type="text"  [(ngModel)]="objectDangKi.email" [ngModelOptions]="{standalone: true}"/>
                                         </div>
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">
                                                     <label for="">Mật khẩu <span class="text-primary">*</span></label>
-                                                    <input class="form-control" id="Password" name="Password" placeholder="Điền mật khẩu" type="password" />
+                                                    <input class="form-control" id="matkhau" name="matkhau"
+                                                        placeholder="Điền mật khẩu" type="text" [(ngModel)]="objectDangKi.matkhau" [ngModelOptions]="{standalone: true}"/>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">
                                                     <label for="">Nhắc lại mật khẩu <span class="text-primary">*</span></label>
-                                                    <input class="form-control" id="ConfirmPassword" name="ConfirmPassword" placeholder="Nhập lại mật khẩu" type="password" />
+                                                    <input class="form-control" id="matkhaunhaplai" name="matkhaunhaplai"
+                                                        placeholder="Nhập lại mật khẩu" type="text" [(ngModel)]="objectDangKi.matkhaunhaplai" [ngModelOptions]="{standalone: true}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -71,12 +76,13 @@
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
                                                     <label for="">Số di động <span class="text-primary">*</span></label>
-                                                    <input class="form-control" id="Phone" name="Phone" placeholder="Điền số di động" type="text" value="" />
+                                                    <input class="form-control" id="sodienthoai" name="sodienthoai" placeholder="Điền số di động"
+                                                        type="text" value="" [(ngModel)]="objectDangKi.sodienthoai" [ngModelOptions]="{standalone: true}"/>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
                                                     <label for="">Số CMNN <span class="text-primary">*</span></label>
-                                                    <input class="form-control" id="SecurityNumber" name="SecurityNumber" placeholder="Điền số chứng minh thư" type="text" value=""
-                                                    />
+                                                    <input class="form-control" id="chungminhnhandan" name="chungminhnhandan"
+                                                        placeholder="Điền số chứng minh thư" type="text" value="" [(ngModel)]="objectDangKi.chungminhnhandan" [ngModelOptions]="{standalone: true}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -84,36 +90,33 @@
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
                                                     <label for="">Tỉnh/TP<span class="text-primary">*</span></label>
-                                                    <select class="form-control" data-val="true" data-val-number="The field ProvinceId must be a number." data-val-required="The ProvinceId field is required."
-                                                        datavalue="0" id="ProvinceId" name="ProvinceId"><option
-                                                            value="">Chọn tỉnh/tp</option>
-                                                    </select>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                                                        <label for="">Số CMNN <span class="text-primary">*</span></label>
+                                                        <input class="form-control" id="tinh" name="tinh"
+                                                            placeholder="Điền số chứng minh thư" type="text" value="" [(ngModel)]="objectDangKi.tinh" [ngModelOptions]="{standalone: true}"/>
+                                                    </div>
+                                                    <!--<select class="form-control" data-val="true" data-val-number="The field ProvinceId must be a number."
+                                                        data-val-required="The ProvinceId field is required." datavalue="0"
+                                                        id="tinh" name="tinh_input">
+                                                        <option value="" [(ngModel)]="objectDangKi.tinh" [ngModelOptions]="{standalone: true}">Chọn tỉnh/tp</option>
+                                                    </select>-->
                                                 </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
-                                                    <label for="">Quận/Huyện<span class="text-primary">*</span></label>
-                                                    <select class="form-control" data-val="true" data-val-number="The field CityId must be a number." data-val-required="The CityId field is required."
-                                                        datavalue="0" id="CityId" name="CityId"><option
-                                                            value="">Chọn quận/huyện</option>
-                                                    </select>
-                                                </div>
+                                            <!--<select class="form-control" id="job" [(ngModel)]="customer1.job" name="cus1_job" required>
+                <option *ngFor="let job of jobList" [value]="job">{{job}}</option>
+            </select>-->
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
-                                                    <label for="">Địa chỉ</label>
-                                                    <input class="form-control" id="Address" name="Address" placeholder="Điền địa chỉ liên hệ" type="text" value="" />
-                                                </div>
-                                            </div>
-                                        </div>
+
                                         <div class="form-group clearfix">
-                                            <button class="btn btn-primary pull-right">HOÀN TẤT</button>
+                                            <button type="submit" class="btn btn-primary pull-right">HOÀN TẤT</button>
                                         </div>
                                         <p class="clearfix">
-                                            <small class="pull-right"><span class="text-primary">*</span> Mục bắt buộc </small>
+                                            <small class="pull-right"><span class="text-primary">*</span> Mục bắt buộc
+                                            </small>
                                         </p>
                                         <p class="text-center">
-                                            Nếu bạn đã có FUTABUS ID. CLick <a [routerLink]="'/dangnhap'">đây</a> để đăng
+                                            Nếu bạn đã có FUTABUS ID. CLick <a [routerLink]="'/dangnhap'">đây</a> để
+                                            đăng
                                             nhập
                                         </p>
                                     </form>

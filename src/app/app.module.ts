@@ -29,7 +29,8 @@ import { GIOITHIEUNEWS } from './Modules/m_gioithieunews/m_gioithieunews.compone
 import { CHITIETLICHTRINH } from './Pages/p_chitietlichtrinh/p_chitietlichtrinh.component';
 import { ChiNhanhService } from './service/chinhanh.service';
 import { HttpModule } from '@angular/http';
-
+import { FormsModule } from '@angular/forms';
+import { USERService } from './service/user.service';
 
 @NgModule({
   declarations: [
@@ -47,9 +48,9 @@ import { HttpModule } from '@angular/http';
   ],
   imports: [
     BrowserModule,
-    RouterModule,routing,HttpModule
+    RouterModule,routing,HttpModule,FormsModule
   ],
-  providers: [ChiNhanhService],
+  providers: [ChiNhanhService,USERService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
