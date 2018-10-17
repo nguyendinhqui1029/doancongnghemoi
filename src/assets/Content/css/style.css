@@ -1,0 +1,18 @@
+input.ng-invalid{
+    border: 1px solid #ff0000!important;
+    border-left: 3px solid #ff0000!important;
+}
+
+input.ng-valid{
+    border: 1px solid #00ff00!important;
+    border-left: 3px solid #00ff00!important;
+}
+
+input.ng-pristine{
+    border: 1px solid #ccc!important;
+}
+
+.thong_bao_loi{
+    color: #ff0000;
+    font-weight: bold;
+}

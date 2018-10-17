@@ -1,6 +1,6 @@
 import { Component,OnInit } from "@angular/core";
 import { ds_diadiemkhoihanh } from "../../model/mock_diadiemkhoihanh";
-
+declare var $:any;
 @Component({
     selector:'m_datve',
     templateUrl:'./m_datve.html'
@@ -72,6 +72,13 @@ export class DATVE implements OnInit{
        return ds;
     }
     ngOnInit(){
+        
+        $( function() {
+          $( "#ngay" ).datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: true
+          });
+        } );
 
     }
 

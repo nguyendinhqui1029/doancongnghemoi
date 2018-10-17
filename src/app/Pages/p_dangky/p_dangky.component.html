@@ -1,3 +1,4 @@
+<menu></menu>
 <img src="assets/Content/img/private/button-19006067-03.png" class="hotlinebutton-fixed" alt="hotline futabus" />
 <div id="br-cover-content">
     <m_modalcontent></m_modalcontent>
@@ -62,12 +63,12 @@
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">
                                                     <label for="">Mật khẩu <span class="text-primary">*</span></label>
                                                     <input class="form-control" id="matkhau" name="matkhau"
-                                                        placeholder="Điền mật khẩu" type="text" [(ngModel)]="objectDangKi.matkhau" [ngModelOptions]="{standalone: true}"/>
+                                                        placeholder="Điền mật khẩu" type="password" [(ngModel)]="objectDangKi.matkhau" [ngModelOptions]="{standalone: true}"/>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">
                                                     <label for="">Nhắc lại mật khẩu <span class="text-primary">*</span></label>
                                                     <input class="form-control" id="matkhaunhaplai" name="matkhaunhaplai"
-                                                        placeholder="Nhập lại mật khẩu" type="text" [(ngModel)]="objectDangKi.matkhaunhaplai" [ngModelOptions]="{standalone: true}"/>
+                                                        placeholder="Nhập lại mật khẩu" type="password" [(ngModel)]="objectDangKi.matkhaunhaplai" [ngModelOptions]="{standalone: true}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -80,33 +81,14 @@
                                                         type="text" value="" [(ngModel)]="objectDangKi.sodienthoai" [ngModelOptions]="{standalone: true}"/>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
-                                                    <label for="">Số CMNN <span class="text-primary">*</span></label>
+                                                    <label for="">Số CMND <span class="text-primary">*</span></label>
                                                     <input class="form-control" id="chungminhnhandan" name="chungminhnhandan"
                                                         placeholder="Điền số chứng minh thư" type="text" value="" [(ngModel)]="objectDangKi.chungminhnhandan" [ngModelOptions]="{standalone: true}"/>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
-                                                    <label for="">Tỉnh/TP<span class="text-primary">*</span></label>
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
-                                                        <label for="">Số CMNN <span class="text-primary">*</span></label>
-                                                        <input class="form-control" id="tinh" name="tinh"
-                                                            placeholder="Điền số chứng minh thư" type="text" value="" [(ngModel)]="objectDangKi.tinh" [ngModelOptions]="{standalone: true}"/>
-                                                    </div>
-                                                    <!--<select class="form-control" data-val="true" data-val-number="The field ProvinceId must be a number."
-                                                        data-val-required="The ProvinceId field is required." datavalue="0"
-                                                        id="tinh" name="tinh_input">
-                                                        <option value="" [(ngModel)]="objectDangKi.tinh" [ngModelOptions]="{standalone: true}">Chọn tỉnh/tp</option>
-                                                    </select>-->
-                                                </div>
-                                            <!--<select class="form-control" id="job" [(ngModel)]="customer1.job" name="cus1_job" required>
-                <option *ngFor="let job of jobList" [value]="job">{{job}}</option>
-            </select>-->
-                                            </div>
-                                        </div>
-
+                                        
+                                        <div class="form-group"><h3 style="color: red;">{{thongbao}}</h3></div>
                                         <div class="form-group clearfix">
                                             <button type="submit" class="btn btn-primary pull-right">HOÀN TẤT</button>
                                         </div>

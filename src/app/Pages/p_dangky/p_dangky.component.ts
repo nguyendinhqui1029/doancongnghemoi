@@ -8,19 +8,19 @@ import { USERService } from '../../service/user.service';
 })
 export class DANGKY implements OnInit  {
   objectDangKi:OBJECTDANGKI;
-
+  thongbao:string="";
   constructor(private service_user:USERService)
   {
-
+    this.objectDangKi=new OBJECTDANGKI('','','','','','');
     
   }
     ngOnInit() {
-      this.objectDangKi= new OBJECTDANGKI("","","","","","","");
       }
+
      onSubmit()
       {
         this.addBook();
-        
+
       }
        
       addBook(): void {
@@ -28,11 +28,11 @@ export class DANGKY implements OnInit  {
         this.service_user.addObjectDangKiWithObservable(this.objectDangKi)
           .subscribe( 
             data => {
-              console.log("a");
+              this.thongbao="Đăng kí thành công.";
             },
             // Errors will call this callback instead:
             err => {
-              console.log('Something went wrong!');
+              this.thongbao="Đăng kí không thành công.";
             }					   
            )
       }
