@@ -1,3 +1,4 @@
+<menu></menu>
 <img src="assets/Content/img/private/button-19006067-03.png" class="hotlinebutton-fixed" alt="hotline futabus" />
 <div id="br-cover-content">
     <m_modalcontent></m_modalcontent>
@@ -13,16 +14,24 @@
                                 <div id="login-form-left" class="border clearfix">
                                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-ms-12 col-lg-offset-2 col-md-offset-2">
                                         <h3 class="text-uppercase text-center">Tôi đã đăng ký tài khoản</h3>
-                                        <form action="https://api.futabus.vn/api/auth/credentials?Continue=https://id.futabus.vn/" method="post" class="form-horizontal">
+                                        <form (ngSubmit)="onDangNhap()" class="form-horizontal">
+
                                             <div class="form-group">
                                                 <label for="">Tên đăng nhập*</label>
-                                                <input class="form-control" data-val="true" data-val-required="Vui lòng điền email hoặc sđt" id="UserName" name="UserName"
-                                                    placeholder="Điền email" type="email" value="" />
+                                                <input class="form-control" data-val="true"  id="taikhoan" name="taikhoan"
+                                                    placeholder="Điền email" type="email" value="" [(ngModel)]="taikhoan" [ngModelOptions]="{standalone: true}"/>
                                             </div>
+
+                                            
                                             <div class="form-group">
                                                 <label for="">Mật khẩu*</label>
-                                                <input class="form-control" data-val="true" data-val-required="Vui lòng nhập mật khẩu" id="Password" name="Password" placeholder="Điền mật khẩu"
-                                                    type="password" />
+                                                <input class="form-control" data-val="true" name="matkhau" id="matkhau" placeholder="Điền mật khẩu"
+                                                [(ngModel)]="matkhau" [ngModelOptions]="{standalone: true}"  type="password" />
+                                            </div>
+
+
+                                            <div class="form-group">
+                                               <h3 style="color: red">{{thongbao}}</h3>
                                             </div>
                                             <div class="form-group">
                                                 <button class="btn btn-primary pull-right" type="submit">

@@ -27,7 +27,10 @@ import { DATVE } from './Modules/m_datve/m_datve';
 import { GIOITHIEU } from './Pages/p_gioithieu/p_gioithieu.component';
 import { GIOITHIEUNEWS } from './Modules/m_gioithieunews/m_gioithieunews.component';
 import { CHITIETLICHTRINH } from './Pages/p_chitietlichtrinh/p_chitietlichtrinh.component';
-
+import { ChiNhanhService } from './service/chinhanh.service';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { USERService } from './service/user.service';
 
 @NgModule({
   declarations: [
@@ -45,9 +48,9 @@ import { CHITIETLICHTRINH } from './Pages/p_chitietlichtrinh/p_chitietlichtrinh.
   ],
   imports: [
     BrowserModule,
-    RouterModule,routing
+    RouterModule,routing,HttpModule,FormsModule
   ],
-  providers: [],
+  providers: [ChiNhanhService,USERService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
