@@ -41,10 +41,11 @@
                             <i class="fa fa-clock-o icon-flat text-success"></i>
                         </a>
                     </td>
-                    <td>
-                        <a href="../mua-ve-xe-ninh-hoa-di-tp-ho-chi-minh.html" data-obj="{&quot;id&quot;:&quot;25-08-2018-All-Ninh Hoa ⇒ BX Mien Dong&quot;,&quot;name&quot;:&quot;All-Ninh Hoa ⇒ BX Mien Dong&quot;,&quot;list&quot;:&quot;Ninh H&#242;a - TP.Hồ Ch&#237; Minh&quot;,&quot;brand&quot;:&quot;Phương Trang&quot;,&quot;category&quot;:&quot;Ninh Hoa ⇒ BX Mien Dong&quot;,&quot;variant&quot;:&quot;Giường&quot;,&quot;position&quot;:1,&quot;price&quot;:225000}"
+                    <td >
+                        <a href="#DatveModal" data-toggle="modal" data-obj="{&quot;id&quot;:&quot;25-08-2018-All-Ninh Hoa ⇒ BX Mien Dong&quot;,&quot;name&quot;:&quot;All-Ninh Hoa ⇒ BX Mien Dong&quot;,&quot;list&quot;:&quot;Ninh H&#242;a - TP.Hồ Ch&#237; Minh&quot;,&quot;brand&quot;:&quot;Phương Trang&quot;,&quot;category&quot;:&quot;Ninh Hoa ⇒ BX Mien Dong&quot;,&quot;variant&quot;:&quot;Giường&quot;,&quot;position&quot;:1,&quot;price&quot;:225000}"
                             class="btn br-btn-default btn-flat futa-book-ticket">
-                            <i class="fa fa-ticket icon-flat text-primary icon-bg-default"></i>Mua vé
+                            <i class="fa fa-ticket icon-flat text-primary icon-bg-default" ></i>Mua vé
+
                         </a>
                     </td>
                 </tr>
@@ -52,3 +53,121 @@
         </table>
     </div>
 </div>
+<!-- Form Đặt Vé -->
+<div class="modal fade in" id="DatveModal" role="dialog">
+        <div class="modal-dialog ">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" type="button">×</button>
+                    <h1 class="modal-title">Thông Tin Đặt Vé</h1>
+                </div>
+                <div class="container" >
+                        <div class="col-sm-4 col-xs-12 col-ms-12" style="width: 590px">
+                                <div class="panel">
+                                    <p class="text-center text-primary text-uppercase">Châu Đốc - Cần Thơ ngày <span ng-bind-html="step1Info.departureDate|svcDate">29-09-2018</span></p>
+                                    <form id="form-steps" name="form" ng-submit="form.$valid ? next(form.$valid): showError(form.$error)" novalidate="" class="ng-pristine ng-invalid ng-invalid-min ng-valid-max ng-valid-required">
+                                        <fieldset>
+                                            <div class="row hidden">
+                                                <input type="number" ng-model="selectSeatNum" name="selectSeatNum" value="0" min="1" max="10" required="" class="ng-pristine ng-untouched ng-invalid ng-invalid-min ng-valid-max ng-valid-required">
+                                            </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <label for="">Chọn tuyến xe</label>
+                                                            <!-- ngRepeat: schedule in schedules --><!-- ngIf: schedules.length > 0 --><div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'" ng-if="schedules.length > 0" style="">
+                                                                <i class="fa fa-bus text-primary"></i>
+                                                                <p class="form-control" ng-class="form.$dirty ? (form.selectRoute.$valid ? 'valid': 'invalid'): ''">
+                                                                    <span class="f-left">Chau Doc ⇒ Can Tho</span>
+                                                                    <span class="f-right">
+                                                                        <span ng-bind-html="info.price|svcMoney">100.000<sup>₫</sup></span>&nbsp;
+                                                                        <input type="radio" ng-model="info.selectRoute" name="selectRoute" ng-value="schedule" required="" class="ng-pristine ng-untouched ng-valid ng-valid-required" value="[object Object]">
+                                                                    </span>
+                                                                </p>
+                                                                <!-- ngIf: info.price == 0 && getPriceComplete === true -->
+                                                            </div><!-- end ngIf: schedules.length > 0 --><!-- end ngRepeat: schedule in schedules -->
+                                                            <!-- ngIf: schedules.length == 0 && getScheduleComplete === true -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                        
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <label for="">Chọn giờ khởi hành</label>
+                                                            <!-- ngIf: timeTables.length > 0 --><div class="controls" ng-if="timeTables.length > 0" style="">
+                                                                <i class="fa fa-clock-o text-primary"></i>
+                                                                <select class="form-control ng-pristine ng-valid ng-valid-required ng-touched" ng-class="form.$dirty ? (form.departureTime.$valid ? 'valid': 'invalid'): ''" name="departureTime" ng-model="info.departureTime" ng-options="option.DisplayText for option in timeTables track by option.Id" required="" style=""><option value="2481256" label="05:00 (Ghế)" selected="selected">05:00 (Ghế)</option><option value="2481271" label="06:30 (Ghế)">06:30 (Ghế)</option><option value="2481286" label="08:00 (Ghế)">08:00 (Ghế)</option><option value="2481301" label="10:00 (Ghế)">10:00 (Ghế)</option><option value="2481316" label="11:30 (Ghế)">11:30 (Ghế)</option><option value="2481331" label="13:00 (Ghế)">13:00 (Ghế)</option><option value="2481346" label="14:30 (Ghế)">14:30 (Ghế)</option><option value="2481361" label="15:30 (Ghế)">15:30 (Ghế)</option><option value="2481376" label="17:00 (Ghế)">17:00 (Ghế)</option><option value="2481391" label="19:00 (Ghế)">19:00 (Ghế)</option></select>
+                                                               
+                                                            </div><!-- end ngIf: timeTables.length > 0 -->
+                                                            <!-- ngIf: timeTables.length == 0 && getTimeTableComplete === true -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                        
+    
+                                                <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group">
+                                                                <label for="">Chọn số ghế</label>
+                                                                <!-- ngIf: timeTables.length > 0 --><div class="controls" ng-if="timeTables.length > 0" style="">
+                                                                    <i class="fa fa-clock-o text-primary"></i>
+                                                                    <select class="form-control ng-pristine ng-valid ng-valid-required ng-touched" ng-class="form.$dirty ? (form.departureTime.$valid ? 'valid': 'invalid'): ''" name="departureTime" ng-model="info.departureTime" ng-options="option.DisplayText for option in timeTables track by option.Id" required="" style="">
+                                                                        <option value="2481256" label="A1" selected="selected">A1</option>
+                                                                        <option value="2481271" label="A2">A2</option>
+                                                                        <option value="2481286" label="A3">A3</option>
+                                                                        <option value="2481301" label="A4">A4</option>
+                                                                        <option value="2481316" label="A5">A5</option>
+                                                                        <option value="2481331" label="A6">A6</option>
+                                                                        <option value="2481346" label="A7">A7</option>
+                                                                        <option value="2481361" label="A8">A8</option>
+                                                                        <option value="2481376" label="A9">A9</option>
+                                                                        <option value="2481391" label="A10">A10</option>
+                                                                    </select>
+                                                                   
+                                                                </div><!-- end ngIf: timeTables.length > 0 -->
+                                                                <!-- ngIf: timeTables.length == 0 && getTimeTableComplete === true -->
+                                                            </div>
+                                                        </div>
+                                                    </div>   
+    
+    
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <label for="">Chọn điểm lên xe</label>
+                                                            <!-- ngIf: pickUpPoints.length > 0 --><div class="controls" ng-if="pickUpPoints.length > 0" style="">
+                                                                <i class="fa fa-map-marker text-primary"></i>
+                                                                <select class="form-control ng-pristine ng-untouched ng-valid ng-valid-required" ng-class="form.$dirty ? (form.pickUpPoint.$valid ? 'valid': 'invalid'): ''" name="pickUpPoint" ng-model="info.pickUpPoint" ng-options="option.Address for option in pickUpPoints track by option.Id" required=""><option value="543165" label="VP Long Xuyên: 392 Phạm Cự Lượng, Khóm Tân Phú, Phường Mỹ Quý, Tp Long Xuyên">VP Long Xuyên: 392 Phạm Cự Lượng, Khóm Tân Phú, Phường Mỹ Quý, Tp Long Xuyên</option><option value="543409" label="VP Lộ Tẻ: Ấp Bình Phú 1, Xã Bình Hòa, Châu Thành An Giang">VP Lộ Tẻ: Ấp Bình Phú 1, Xã Bình Hòa, Châu Thành An Giang</option><option value="543520" label="Vinh Tre - Chau Doc">Vinh Tre - Chau Doc</option><option value="543522" label="Cai Dau - Chau Doc">Cai Dau - Chau Doc</option><option value="543638" label="VP Mỹ Thới: 26/32 Quốc Lộ 91, khóm Trung An, phường Mỹ Thới, Tp Long Xuyên">VP Mỹ Thới: 26/32 Quốc Lộ 91, khóm Trung An, phường Mỹ Thới, Tp Long Xuyên</option><option value="543175" label="VP Châu Đốc: 69 Phan Văn Vàng, P.Châu Phú A , TP.Châu Đốc (TERMINAL BUS STATION)" selected="selected">VP Châu Đốc: 69 Phan Văn Vàng, P.Châu Phú A , TP.Châu Đốc (TERMINAL BUS STATION)</option></select>
+                                                            </div><!-- end ngIf: pickUpPoints.length > 0 -->
+                                                            <!-- ngIf: pickUpPoints.length == 0 && getPickUpPointComplete === true -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                                 
+    
+                                                <div class="form-section">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12">
+                                                        <button type="submit" class="btn btn-success btn-flat"><i class="fa fa-arrow-right icon-flat bg-success"></i>Đặt Vé</button>
+                                                    </div>
+                                                </div>
+                                    </fieldset>
+                                    <p>
+                                        <strong>Miễn phí</strong>
+                                        <span>
+                                            <span class="water sprite" title="Nước uống"></span>
+                                            <span class="khan sprite" title="Khăn lạnh"></span>
+                                            <span class="wifi sprite" title="Wifi"></span>
+                                            <span class="tivi sprite" title="Tivi"></span>
+                                        </span>
+                                    </p>
+                                    </form>
+                                </div>
+                                
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" type="button">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>

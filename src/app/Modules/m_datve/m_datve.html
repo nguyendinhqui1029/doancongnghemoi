@@ -53,7 +53,11 @@
             </div>
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 col-ms-12">
-                    <button type="button" class="btn btn-primary btn-block btn-flat btn-booking"><i class="fa fa-ticket icon-flat bg-btn-actived"></i>Mua vé</button>
+                    
+                    <a href="#DatveModal" data-toggle="modal">
+                        <button type="button"  class="btn btn-primary btn-block btn-flat btn-booking">
+                            <i class="fa fa-ticket icon-flat bg-btn-actived "></i>Mua vé</button></a>
+
                 </div>
                 
                 
@@ -64,4 +68,135 @@
 
     </div>
 
+</div>
+<!-- Form Đặt Vé -->
+<div class="modal fade in" id="DatveModal" role="dialog">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">×</button>
+                <h1 class="modal-title">Thông Tin Đặt Vé</h1>
+            </div>
+            <div class="container" >
+                    <div class="col-sm-4 col-xs-12 col-ms-12" style="width: 590px">
+                            <div class="panel">
+                                <p class="text-center text-primary text-uppercase">Châu Đốc - Cần Thơ ngày <span ng-bind-html="step1Info.departureDate|svcDate">29-09-2018</span></p>
+                                <form id="form-steps" name="form" ng-submit="form.$valid ? next(form.$valid): showError(form.$error)" novalidate="" class="ng-pristine ng-invalid ng-invalid-min ng-valid-max ng-valid-required">
+                                    <fieldset>
+                                        <div class="row hidden">
+                                            <input type="number" ng-model="selectSeatNum" name="selectSeatNum" value="0" min="1" max="10" required="" class="ng-pristine ng-untouched ng-invalid ng-invalid-min ng-valid-max ng-valid-required">
+                                        </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label for="">Chọn tuyến xe</label>
+                                                        <!-- ngRepeat: schedule in schedules --><!-- ngIf: schedules.length > 0 --><div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'" ng-if="schedules.length > 0" style="">
+                                                            <i class="fa fa-bus text-primary"></i>
+                                                            <p class="form-control" ng-class="form.$dirty ? (form.selectRoute.$valid ? 'valid': 'invalid'): ''">
+                                                                <span class="f-left">Chau Doc ⇒ Can Tho</span>
+                                                                <span class="f-right">
+                                                                    <span ng-bind-html="info.price|svcMoney">100.000<sup>₫</sup></span>&nbsp;
+                                                                    <input type="radio" ng-model="info.selectRoute" name="selectRoute" ng-value="schedule" required="" class="ng-pristine ng-untouched ng-valid ng-valid-required" value="[object Object]">
+                                                                </span>
+                                                            </p>
+                                                            <!-- ngIf: info.price == 0 && getPriceComplete === true -->
+                                                        </div><!-- end ngIf: schedules.length > 0 --><!-- end ngRepeat: schedule in schedules -->
+                                                        <!-- ngIf: schedules.length == 0 && getScheduleComplete === true -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label for="">Chọn giờ khởi hành</label>
+                                                        <!-- ngIf: timeTables.length > 0 --><div class="controls" ng-if="timeTables.length > 0" style="">
+                                                            <i class="fa fa-clock-o text-primary"></i>
+                                                            <select class="form-control ng-pristine ng-valid ng-valid-required ng-touched" ng-class="form.$dirty ? (form.departureTime.$valid ? 'valid': 'invalid'): ''" name="departureTime" ng-model="info.departureTime" ng-options="option.DisplayText for option in timeTables track by option.Id" required="" style="">
+                                                                <option value="2481256" label="05:00 (Ghế)" selected="selected">05:00 (Ghế)</option>
+                                                                <option value="2481271" label="06:30 (Ghế)">06:30 (Ghế)</option>
+                                                                <option value="2481286" label="08:00 (Ghế)">08:00 (Ghế)</option>
+                                                                <option value="2481301" label="10:00 (Ghế)">10:00 (Ghế)</option>
+                                                                <option value="2481316" label="11:30 (Ghế)">11:30 (Ghế)</option>
+                                                                <option value="2481331" label="13:00 (Ghế)">13:00 (Ghế)</option>
+                                                                <option value="2481346" label="14:30 (Ghế)">14:30 (Ghế)</option>
+                                                                <option value="2481361" label="15:30 (Ghế)">15:30 (Ghế)</option>
+                                                                <option value="2481376" label="17:00 (Ghế)">17:00 (Ghế)</option>
+                                                                <option value="2481391" label="19:00 (Ghế)">19:00 (Ghế)</option>
+                                                                <option value="2481222" label="06:30 (Giường)">06:30 (Giường)</option>
+                                                                <option value="2481223" label="08:00 (Giường)">08:00 (Giường)</option>
+                                                                <option value="2481325" label="10:00 (Giường)">10:00 (Giường)</option>
+                                                                <option value="2481327" label="11:30 (Giường)">11:30 (Giường)</option>
+                                                                <option value="2481320" label="13:00 (Giường)">13:00 (Giường)</option>
+                                                                <option value="2481389" label="14:30 (Giường)">14:30 (Giường)</option>
+                                                                <option value="2481344" label="15:30 (Giường)">15:30 (Giường)</option>
+                                                                <option value="2481387" label="17:00 (Giường)">17:00 (Giường)</option>
+                                                                <option value="2481313" label="19:00 (Giường)">19:00 (Giường)</option>
+                                                            </select>
+                                                           
+                                                        </div><!-- end ngIf: timeTables.length > 0 -->
+                                                        <!-- ngIf: timeTables.length == 0 && getTimeTableComplete === true -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+
+                                            <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <label for="">Chọn số ghế</label>
+                                                            <!-- ngIf: timeTables.length > 0 --><div class="controls" ng-if="timeTables.length > 0" style="">
+                                                                <i class="fa fa-clock-o text-primary"></i>
+                                                                <select class="form-control ng-pristine ng-valid ng-valid-required ng-touched" ng-class="form.$dirty ? (form.departureTime.$valid ? 'valid': 'invalid'): ''" name="departureTime" ng-model="info.departureTime" ng-options="option.DisplayText for option in timeTables track by option.Id" required="" style="">
+                                                                    <option value="2481256" label="A1" selected="selected">A1</option>
+                                                                    <option value="2481271" label="A2">A2</option>
+                                                                    <option value="2481286" label="A3">A3</option>
+                                                                    <option value="2481301" label="A4">A4</option>
+                                                                    <option value="2481316" label="A5">A5</option>
+                                                                    <option value="2481331" label="A6">A6</option>
+                                                                    <option value="2481346" label="A7">A7</option>
+                                                                    <option value="2481361" label="A8">A8</option>
+                                                                    <option value="2481376" label="A9">A9</option>
+                                                                    <option value="2481391" label="A10">A10</option>
+                                                                    <option value="2481271" label="A2">A11</option>
+                                                                    <option value="2481286" label="A3">A12</option>
+                                                                    <option value="2481301" label="A4">A13</option>
+                                                                    <option value="2481316" label="A5">A14</option>
+                                                                    <option value="2481331" label="A6">A15</option>
+                                                                    <option value="2481346" label="A7">A16</option>
+                                                                    <option value="2481361" label="A8">A17</option>
+                                                                    <option value="2481376" label="A9">A18</option>
+                                                                    <option value="2481391" label="A10">A19</option>
+                                                                    <option value="2481391" label="A10">A19</option>
+                                                                </select>
+                                                               
+                                                            </div><!-- end ngIf: timeTables.length > 0 -->
+                                                            <!-- ngIf: timeTables.length == 0 && getTimeTableComplete === true -->
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                            <div class="form-section">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12">
+                                                    <button type="submit" class="btn btn-success btn-flat"><i class="fa fa-arrow-right icon-flat bg-success"></i>Đặt Vé</button>
+                                                </div>
+                                            </div>
+                                    </fieldset>
+                                    <p>
+                                        <strong>Miễn phí</strong>
+                                        <span>
+                                            <span class="water sprite" title="Nước uống"></span>
+                                            <span class="khan sprite" title="Khăn lạnh"></span>
+                                            <span class="wifi sprite" title="Wifi"></span>
+                                            <span class="tivi sprite" title="Tivi"></span>
+                                        </span>
+                                    </p>
+                                </form>
+                            </div>
+                            
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal" type="button">Đóng</button>
+            </div>
+        </div>
+    </div>
 </div>
