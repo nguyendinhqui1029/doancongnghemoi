@@ -44,6 +44,7 @@
                                     <th></th>
                                 </tr>
                             </thead>
+
                             <tbody>
                                 <tr>
                                     <td>{{i+1}}</td>
@@ -68,13 +69,13 @@
                                             <i class="fa fa-ticket icon-flat text-primary icon-bg-default"></i>Mua vé
                                         </a>
                                         <br><br>
-                                        <a href="javascript:;" class="viewmorerouteinfo-btn" (click)="batsukienclick($event)" id="2">Xem
+                                        <a href="javascript:;" class="viewmorerouteinfo-btn" (click)="batsukienclick($event)" id="ct{{i}}">Xem
                                             chi tiết &gt;&gt;</a>
                                     </td>
                                 </tr>
 
 
-                                <tr class="viewmorerouteinfo hidden ct2" >
+                                <tr class="viewmorerouteinfo hidden ct{{i}}" >
                                     <td colspan="10" >
                                         <table border="0" align="center" >
                                             <thead >
@@ -109,19 +110,7 @@
                                                         <p>{{ct.diachiden}}</p>
                                                         <p class="hotline">HotLine:{{ct.hotlineden}}</p> <a href="/">(Xem bản đồ)</a> </td>
                                                 </tr>
-                                                <!-- <tr  >
-                                                    <td>{{ct.thoigianden}}<br><br></td>
-                                                    <td>
-                                                        <h3>Bạc Liêu</h3>
-                                                        <p>VP Bến Xe Bạc Liêu , Đường Trần Phú , Khóm 2 , P.7 , TP.Bạc Liêu</p>
-                                                        <p class="hotline">HotLine: 02913.932.345</p> <a href="/">(Xem bản đồ)</a> </td>
-                                                    <td><img src="assets/Content/img/private/icmuiten-08.png"></td>
-                                                    <td>{{ct.thoigianden}}<br><br><span class="topoint">Điểm đến</span></td>
-                                                    <td>
-                                                        <h3>Sa Tra - Trạm dừng</h3>
-                                                        <p>VP Sa Tra: Ấp Hòa Phúc, Xá Hòa Khánh, H. Cái Bè , Tiền Giang</p>
-                                                        <p class="hotline">HotLine: (02733)756241</p> <a href="/">(Xem bản đồ)</a> </td>
-                                                </tr> -->
+                        
                                             </tbody>
                                         </table>
                                     </td>
