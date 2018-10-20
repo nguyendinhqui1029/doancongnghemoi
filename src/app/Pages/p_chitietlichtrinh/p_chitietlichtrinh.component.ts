@@ -19,7 +19,22 @@ export class CHITIETLICHTRINH implements OnInit {
     batsukienclick(event:any)
     {
         let ID =event.target.attributes.id.value;
-        let cl=".ct"+ID;
+        let cl="."+ID;
+        if(event.target.innerText!="Đóng >>")
+        {
+            for(let i=0;i<this.danhsachtuyen.length;i++)
+            {
+                let ct=".ct"+i;
+                let id="#ct"+i;
+                if(!$(ct).hasClass("hidden"))
+               {
+                $(id)[0].innerText="Xem chi tiết >>";
+                $(ct).addClass('hidden');
+               }
+            }
+        }
+        
+       
        if($(cl).hasClass("hidden"))
        {
         event.target.innerText="Đóng >>";
