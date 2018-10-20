@@ -31,7 +31,7 @@ export class DANGNHAP implements OnInit  {
           }else{
             if (typeof(Storage) !== 'undefined') {
               //hỗ trợ
-              localStorage.setItem("hoten", reponse.Items[0].hoten);
+              localStorage.setItem("hoten", reponse.Items[0].hoten.S);
               this.router.navigate(['/home']);
             } else {
               alert('Trình duyệt của bạn không hỗ trợ localStorage. Hãy nâng cấp trình duyệt để sử dụng!');

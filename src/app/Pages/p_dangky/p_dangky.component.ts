@@ -7,25 +7,21 @@ import { USERService } from '../../service/user.service';
   templateUrl: './p_dangky.component.html',
 })
 export class DANGKY implements OnInit  {
-  objectDangKi:OBJECTDANGKI;
+  objectDangKi:OBJECTDANGKI=new OBJECTDANGKI('','','','','','');;
   thongbao:string="";
+  submited: boolean = false;
+  nhap_lai_mat_khau: string = "";
   constructor(private service_user:USERService)
   {
-    this.objectDangKi=new OBJECTDANGKI('','','','','','');
     
   }
     ngOnInit() {
       }
 
-     onSubmit()
-      {
-        this.addBook();
-
-      }
-       
-      addBook(): void {
-
-        this.service_user.addObjectDangKiWithObservable(this.objectDangKi)
+      gui_form(form_dang_ky: any){
+        if(form_dang_ky.form.valid){
+            this.submited = true;
+            this.service_user.addObjectDangKiWithObservable(this.objectDangKi)
           .subscribe( 
             data => {
               this.thongbao="Đăng kí thành công.";
@@ -35,5 +31,7 @@ export class DANGKY implements OnInit  {
               this.thongbao="Đăng kí không thành công.";
             }					   
            )
-      }
+        }
+    }
+       
 }
