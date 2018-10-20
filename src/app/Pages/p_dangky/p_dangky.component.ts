@@ -9,7 +9,6 @@ import { USERService } from '../../service/user.service';
 export class DANGKY implements OnInit  {
   objectDangKi:OBJECTDANGKI=new OBJECTDANGKI('','','','','','');;
   thongbao:string="";
-  submited: boolean = false;
   nhap_lai_mat_khau: string = "";
   constructor(private service_user:USERService)
   {
@@ -20,7 +19,6 @@ export class DANGKY implements OnInit  {
 
       gui_form(form_dang_ky: any){
         if(form_dang_ky.form.valid){
-            this.submited = true;
             this.service_user.addObjectDangKiWithObservable(this.objectDangKi)
           .subscribe( 
             data => {
