@@ -129,14 +129,14 @@
 </section>
 <!-- Form Đặt Vé -->
 <div class="modal fade in" id="DatveModal" role="dialog">
-    <div class="modal-dialog ">
+    <div class="modal-dialog " style="width: 490px">
         <div class="modal-content ">
             <div class="modal-header">
                 <button class="close" data-dismiss="modal" type="button">×</button>
                 <h1 class="modal-title">Thông Tin Đặt Vé</h1>
             </div>
             <div class="container" >
-                    <div class="col-sm-4 col-xs-12 col-ms-12" style="width: 590px">
+                    <div class="col-sm-4 col-xs-12 col-ms-12" style="width: 450px">
                             <div class="panel">
                                 <p class="text-center text-primary text-uppercase">Châu Đốc - Cần Thơ ngày <span ng-bind-html="step1Info.departureDate|svcDate">29-09-2018</span></p>
                                 <form id="form-steps" name="form" ng-submit="form.$valid ? next(form.$valid): showError(form.$error)" novalidate="" class="ng-pristine ng-invalid ng-invalid-min ng-valid-max ng-valid-required">
@@ -205,18 +205,7 @@
                                                 </div>   
 
 
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <label for="">Chọn điểm lên xe</label>
-                                                        <!-- ngIf: pickUpPoints.length > 0 --><div class="controls" ng-if="pickUpPoints.length > 0" style="">
-                                                            <i class="fa fa-map-marker text-primary"></i>
-                                                            <select class="form-control ng-pristine ng-untouched ng-valid ng-valid-required" ng-class="form.$dirty ? (form.pickUpPoint.$valid ? 'valid': 'invalid'): ''" name="pickUpPoint" ng-model="info.pickUpPoint" ng-options="option.Address for option in pickUpPoints track by option.Id" required=""><option value="543165" label="VP Long Xuyên: 392 Phạm Cự Lượng, Khóm Tân Phú, Phường Mỹ Quý, Tp Long Xuyên">VP Long Xuyên: 392 Phạm Cự Lượng, Khóm Tân Phú, Phường Mỹ Quý, Tp Long Xuyên</option><option value="543409" label="VP Lộ Tẻ: Ấp Bình Phú 1, Xã Bình Hòa, Châu Thành An Giang">VP Lộ Tẻ: Ấp Bình Phú 1, Xã Bình Hòa, Châu Thành An Giang</option><option value="543520" label="Vinh Tre - Chau Doc">Vinh Tre - Chau Doc</option><option value="543522" label="Cai Dau - Chau Doc">Cai Dau - Chau Doc</option><option value="543638" label="VP Mỹ Thới: 26/32 Quốc Lộ 91, khóm Trung An, phường Mỹ Thới, Tp Long Xuyên">VP Mỹ Thới: 26/32 Quốc Lộ 91, khóm Trung An, phường Mỹ Thới, Tp Long Xuyên</option><option value="543175" label="VP Châu Đốc: 69 Phan Văn Vàng, P.Châu Phú A , TP.Châu Đốc (TERMINAL BUS STATION)" selected="selected">VP Châu Đốc: 69 Phan Văn Vàng, P.Châu Phú A , TP.Châu Đốc (TERMINAL BUS STATION)</option></select>
-                                                        </div><!-- end ngIf: pickUpPoints.length > 0 -->
-                                                        <!-- ngIf: pickUpPoints.length == 0 && getPickUpPointComplete === true -->
-                                                    </div>
-                                                </div>
-                                            </div>
+                            
 
                                              
 
@@ -238,9 +227,6 @@
                                 </form>
                             </div>
                             
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-default" data-dismiss="modal" type="button">Đóng</button>
             </div>
         </div>
     </div>
