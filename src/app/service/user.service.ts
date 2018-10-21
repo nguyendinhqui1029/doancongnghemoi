@@ -17,8 +17,7 @@ export class USERService {
       
             let headers = new Headers({ 'Content-Type': 'application/json' });
             let options = new RequestOptions({ headers: headers });
-            let chuoi="/"+objectdangki.email+"/"+objectdangki.matkhau+"/"+objectdangki.sodienthoai+"/"+objectdangki.hoten+"/"+objectdangki.chungminhnhandan;
-           return  this.http.post(this.url+chuoi,objectdangki, options)
+           return  this.http.post(this.url,objectdangki, options)
                        .map(this.extractData)
                        .catch(this.handleErrorObservable);
         }
