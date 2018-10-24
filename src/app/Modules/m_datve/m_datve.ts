@@ -1,11 +1,13 @@
 import { Component,OnInit } from "@angular/core";
 import { ds_diadiemkhoihanh } from "../../model/mock_diadiemkhoihanh";
+import { OBJECTDANGKI } from "src/app/model/dangki";
 declare var $:any;
 @Component({
     selector:'m_datve',
     templateUrl:'./m_datve.html'
 })
 export class DATVE implements OnInit{
+    objectDangKi:OBJECTDANGKI=new OBJECTDANGKI('','','','','','');;
     ds_khoihanh:any[]=ds_diadiemkhoihanh;
     ds_diadiemkhoihanh:any[]=[];
     ds_diadiemden:any[]=[];

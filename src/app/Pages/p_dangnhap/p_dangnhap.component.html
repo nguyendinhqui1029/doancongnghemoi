@@ -14,28 +14,43 @@
                                 <div id="login-form-left" class="border clearfix">
                                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-ms-12 col-lg-offset-2 col-md-offset-2">
                                         <h3 class="text-uppercase text-center">Tôi đã đăng ký tài khoản</h3>
-                                        <form (ngSubmit)="onDangNhap()" class="form-horizontal">
+                                        <form  class="form-horizontal" #form_dang_nhap="ngForm" role="form">
 
                                             <div class="form-group">
                                                 <label for="">Tên đăng nhập*</label>
-                                                <input class="form-control" data-val="true"  id="taikhoan" name="taikhoan"
-                                                    placeholder="Điền email" type="email" value="" [(ngModel)]="taikhoan" [ngModelOptions]="{standalone: true}"/>
+                                                <input class="form-control" data-val="true" id="taikhoan" name="taikhoan"
+                                                    placeholder="Điền email" type="email" value="" [(ngModel)]="taikhoan"
+                                                
+                
+                                                    #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+.[A-Za-z]{2,4}" required="required"   type="text"  [(ngModel)]="objectDangKi.email"
+                                                    />
+                                                    <div class="thong_bao_loi" *ngIf="email.invalid && !email.pristine"  >
+                                                        <div *ngIf="email.errors.required" >
+                                                            Vui lòng nhập email.
+                                                        </div>
+                                                        <div *ngIf="email.errors.pattern" >
+                                                           Email sai định dạng.
+                                                        </div>
+                                                    </div>
                                             </div>
 
-                                            
+
                                             <div class="form-group">
                                                 <label for="">Mật khẩu*</label>
-                                                <input class="form-control" data-val="true" name="matkhau" id="matkhau" placeholder="Điền mật khẩu"
-                                                [(ngModel)]="matkhau" [ngModelOptions]="{standalone: true}"  type="password" />
+                                                <input class="form-control" data-val="true" name="matkhau" id="matkhau"
+                                                    placeholder="Điền mật khẩu" [(ngModel)]="matkhau" 
+                                                    type="password" 
+                                                    required="required" pattern="" title="" reverse="true"
+                                                    />
                                             </div>
 
 
                                             <div class="form-group">
-                                               <h3 style="color: red">{{thongbao}}</h3>
+                                                <h3 style="color: red">{{thongbao}}</h3>
                                             </div>
                                             <div class="form-group">
-                                                <button class="btn btn-primary pull-right" type="submit">
-                                                    Đăng nhập
+                                                <button class="btn btn-primary pull-right" type="submit" [disabled]="form_dang_nhap.form.invalid" (click)="onDangNhap(form_dang_nhap)">
+                                                    Đăng Nhập
                                                 </button>
                                             </div>
                                         </form>
@@ -50,7 +65,8 @@
                                             <a [routerLink]="'/dangky'" class="btn btn-success">Đăng ký</a>
                                         </p>
                                         <p class="text-muted text-center">
-                                            Chỉ với 1 tài khoản FUTABUS ID, tham gia được tất cả các chương trình của FUTA Bus Lines
+                                            Chỉ với 1 tài khoản FUTABUS ID, tham gia được tất cả các chương trình của
+                                            FUTA Bus Lines
                                         </p>
                                     </div>
                                 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OBJECTDANGKI } from 'src/app/model/dangki';
 
 @Component({
     selector: 'p_formLH',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class FORMLH implements OnInit {
+    objectDangKi:OBJECTDANGKI=new OBJECTDANGKI('','','','','','');;
     constructor(){}
 
     ngOnInit() { }

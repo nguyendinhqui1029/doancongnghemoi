@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {USERService} from '../../service/user.service'
 import { ActivatedRoute, Router } from '@angular/router';
+import { OBJECTDANGKI } from 'src/app/model/dangki';
 @Component({
   selector: 'p_dangnhap',
   templateUrl: './p_dangnhap.component.html',
 })
 export class DANGNHAP implements OnInit  {
+  objectDangKi:OBJECTDANGKI=new OBJECTDANGKI('','','','','','');;
   taikhoan:string="";
   matkhau:string="";
   thongbao:string="";
@@ -17,9 +19,11 @@ export class DANGNHAP implements OnInit  {
   }
     ngOnInit() {
       }
-    onDangNhap()
+    onDangNhap(form_dang_nhap: any)
       {
+        if(form_dang_nhap.form.valid){
         this.DangNhap();
+        }
       }
     DangNhap()
     {
