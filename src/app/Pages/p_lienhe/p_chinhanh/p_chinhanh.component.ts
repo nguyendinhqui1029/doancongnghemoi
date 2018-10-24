@@ -37,7 +37,6 @@ export class CHINHANH implements OnInit {
     }
 
 
-
    
     layDSTheoMien(mien:string){
         let dsMien:any[]=[];

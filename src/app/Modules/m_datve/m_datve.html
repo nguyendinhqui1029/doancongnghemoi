@@ -73,14 +73,14 @@
 </div>
 <!-- Form Đặt Vé -->
 <div class="modal fade in" id="DatveModal" role="dialog">
-    <div class="modal-dialog ">
-        <div class="modal-content ">
-            <div class="modal-header">
+    <div class="modal-dialog" style="width: 490px">
+        <div class="modal-content " >
+            <div class="modal-header" >
                 <button class="close" data-dismiss="modal" type="button">×</button>
                 <h1 class="modal-title">Thông Tin Đặt Vé</h1>
             </div>
-            <div class="container" >
-                    <div class="col-sm-4 col-xs-12 col-ms-12" style="width: 590px">
+            <div class="container">
+                    <div class="col-sm-4 col-xs-12 col-ms-12" style="width: 450px">
                             <div class="panel">
                                 <p class="text-center text-primary text-uppercase">Châu Đốc - Cần Thơ ngày <span ng-bind-html="step1Info.departureDate|svcDate">29-09-2018</span></p>
                                 <form id="form-steps" name="form" ng-submit="form.$valid ? next(form.$valid): showError(form.$error)" novalidate="" class="ng-pristine ng-invalid ng-invalid-min ng-valid-max ng-valid-required">
@@ -195,9 +195,6 @@
                                 </form>
                             </div>
                             
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-default" data-dismiss="modal" type="button">Đóng</button>
             </div>
         </div>
     </div>
