@@ -52,7 +52,7 @@
                                         </p>
                                         <div class="form-group">
                                             <label for="hoten">Họ tên <span class="text-primary">*</span></label>
-                                            <input class="form-control" #hoten="ngModel" pattern="[a-zA-ZáÁ ]+" required="required" 
+                                            <input class="form-control" #hoten="ngModel" pattern="[^0-9~!#$%^&*(){}]+" required="required" 
                                             id="hoten" name="hoten" placeholder="Điền họ tên" type="text" [(ngModel)]="objectDangKi.hoten"/>
                                         
                                             <div class="thong_bao_loi" *ngIf="hoten.invalid && !hoten.pristine"  >

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 //import { ds_chinhanh } from '../../../model/mock_chinhanh';
 import {ChiNhanhService } from '../../../service/chinhanh.service';
 import { ChiNhanh } from '../../../model/chinhanh';
-import {user} from "../../../model/user"
 @Component({
     selector: 'p_chinhanh',
     templateUrl: './p_chinhanh.component.html'
@@ -11,7 +10,6 @@ import {user} from "../../../model/user"
 export class CHINHANH implements OnInit {
     //chinhanhs:any[]=ds_chinhanh;
     chinhanhs:any[]=[];
-    dsuser:user[]=[];
     dsMN:any[]=[];
     dsMT:any[]=[];
     dsMB:any[]=[];
@@ -37,10 +35,7 @@ export class CHINHANH implements OnInit {
         });
         
     }
-    hiendiachiemail(a:any)
-    {
-        this.dsuser=a;
-    }
+
 
 
    

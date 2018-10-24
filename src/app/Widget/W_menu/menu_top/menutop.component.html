@@ -38,15 +38,18 @@
                 <ul >
                    <li style="color: aliceblue; text-transform: uppercase;" (click)="dangXuat()">Đăng xuất</li>
                 </ul>
-                <!--
-                    <select  style="background: #EF5222;;border:none;color: mintcream;">
-                    <option>{{loichao}}</option>
-                    <option>Đăng xuất</option>
-               
-                </select> -->
+                
             </li>
         </ul>
         
     </div>
 </div>
+<div class="sb-slidebar sb-left">
 
+    <ul>
+            <li *ngFor="let menu of ds_menu" >
+            <a [routerLink] = "menu.url_menu" id="{{menu.id_menu}}">
+               {{menu.name_menu}}</a>
+    </ul>
+
+</div>

@@ -3,7 +3,6 @@ import { ChiNhanh } from '../model/chinhanh';
 import { Http,Headers,Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { user } from '../model/user';
 @Injectable()
 export class ChiNhanhService {
     constructor(private http : Http){
