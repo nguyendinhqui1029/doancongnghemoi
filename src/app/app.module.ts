@@ -32,6 +32,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { USERService } from './service/user.service';
 import { EqualValidator } from './validators/retype_pass';
+import { CHITIETDATVE} from './Modules/m_chitietdatve/m_chitietdatve';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { EqualValidator } from './validators/retype_pass';
     HUONGDAN,
     MENUTOP,MENU,MENUBOTTOM,FOOTER,
     TRANGCHU,KHOIHANHTP,
-    DATVE,GIOITHIEU,GIOITHIEUNEWS,EqualValidator
+    DATVE,GIOITHIEU,GIOITHIEUNEWS,EqualValidator,
+    CHITIETDATVE
   ],
   imports: [
     BrowserModule,
