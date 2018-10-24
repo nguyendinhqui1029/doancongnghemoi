@@ -10,7 +10,6 @@ import { ChiNhanh } from '../../../model/chinhanh';
 export class CHINHANH implements OnInit {
     //chinhanhs:any[]=ds_chinhanh;
     chinhanhs:any[]=[];
-    
     dsMN:any[]=[];
     dsMT:any[]=[];
     dsMB:any[]=[];
@@ -34,10 +33,6 @@ export class CHINHANH implements OnInit {
             this.tongsoMT=this.dsMT.length;
 
         });
-        
-    }
-    hiendiachiemail(a:any)
-    {
         
     }
 
