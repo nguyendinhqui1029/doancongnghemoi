@@ -1,10 +1,11 @@
+<!-- <a href="https://mail.google.com/mail/u/0/?tab=wm#inbox?compose=new" target="_blank">aaaa</a> -->
 <form action="https://futabus.vn/vi-VN/ve-xe-phuong-trang-lien-he.html" class="form-horizontal" id="contact-form" method="post" #form_lien_he="ngForm" role="form">
     <div class="form-group">
         <label for="">Tên*</label>
         <input class="form-control" data-val="true" data-val-required="Vui lòng nhập họ tên" 
-        id="hoten" name="hoten" placeholder="Nguyễn Văn A"
-        #hoten="ngModel" pattern="[a-zA-ZáÁ ]+" required="required" 
-        type="text" value="" [(ngModel)]="objectDangKi.hoten"/>
+        id="hoten" name="hoten"  placeholder="Nguyễn Văn A"
+        #hoten="ngModel" pattern="[^0-9~!#$%^&*(){}]+" required="required" 
+        type="text" value="" [(ngModel)]="lienhe.ten"/>
             <div class="thong_bao_loi" *ngIf="hoten.invalid && !hoten.pristine"  >
                 <div *ngIf="hoten.errors.required" >
                     Vui lòng nhập họ tên
@@ -17,7 +18,7 @@
     <div class="form-group">
         <label for="">Điện thoại*</label>
         <input class="form-control" data-val="true" data-val-required="Vui lòng nhập số điện thoại" id="sodienthoai" name="sodienthoai" placeholder="0903123456"
-        #sodienthoai="ngModel" type="text" value="" [(ngModel)]="objectDangKi.sodienthoai" minlength="9" maxlength="13" required="required" pattern="/^[+84]|[0-9]" />
+        #sodienthoai="ngModel" type="text" value="" [(ngModel)]="lienhe.sodienthoai" minlength="9" maxlength="13" required="required" pattern="/^[+84]|[0-9]" />
             <div class="thong_bao_loi" *ngIf="sodienthoai.invalid && !sodienthoai.pristine"  >
                 <div *ngIf="sodienthoai.errors.required" >
                     Vui lòng nhập số điện thoại.
@@ -30,7 +31,7 @@
     <div class="form-group">
         <label for="">Email*</label>
         <input class="form-control" data-val="true" data-val-required="Vui lòng nhập đúng email" id="email" name="email" placeholder="user@gmail.com"
-        #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+.[A-Za-z]{2,4}" required="required"   type="text"  [(ngModel)]="objectDangKi.email" />
+        #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+.[A-Za-z]{2,4}" required="required"   type="text"  [(ngModel)]="lienhe.email" />
         <div class="thong_bao_loi" *ngIf="email.invalid && !email.pristine"  >
                 <div *ngIf="email.errors.required" >
                     Vui lòng nhập email.
@@ -43,13 +44,13 @@
     <div class="form-group">
         <label for="">Tiêu đề*</label>
         <input class="form-control" data-val="true" data-val-required="Vui lòng nhập tiêu đề" id="Title" name="Title" placeholder="Tiêu đề"
-            type="text" value="" />
+            type="text" value="" [(ngModel)]="lienhe.tieude" />
     </div>
     <div class="form-group">
         <label for="">Nội dung*</label>
         <textarea class="form-control" cols="20" data-val="true" data-val-length="Vui lòng nhập nội dung trên 100 kí tự" data-val-length-max="1000"
             data-val-length-min="100" data-val-required="Vui lòng nhập nội dung" id="Content" name="Content" placeholder="Nội dung liên hệ"
-            rows="3">
+            rows="3" [(ngModel)]="lienhe.noidung">
 </textarea>
     </div>
     <div class="form-group">
@@ -61,8 +62,13 @@
     </div>
     <div class="form-group">
         <div class="row">
+            <h3 style="color:red">{{thongbao}}</h3>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">
-                <button type="submit" class="btn btn-block btn-primary btn-flat" [disabled]="form_lien_he.form.invalid"><i class="fa fa-check icon-flat bg-btn-actived"></i>Gửi</button>
+                <button type="button" class="btn btn-block btn-primary btn-flat" [disabled]="form_lien_he.form.invalid" (click)="gui()"><i class="fa fa-check icon-flat bg-btn-actived"></i>Gửi</button>
                 <p></p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">

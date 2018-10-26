@@ -1,0 +1,15 @@
+<div class="modal fade in" id="hienbando" role="dialog" >
+    <div class="modal-dialog" style="width: 600px;">
+        <div class="modal-content " >
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">×</button>
+                <h1 class="modal-title">Bản đồ</h1>
+            </div>
+            
+            <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true"  >
+                    <agm-marker [latitude]="latitude" [longitude]="longitude" ><img src="assets/maps.jpg"></agm-marker>
+              </agm-map>
+            
+        </div>
+    </div>
+</div>

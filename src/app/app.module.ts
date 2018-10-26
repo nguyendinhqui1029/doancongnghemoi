@@ -34,6 +34,9 @@ import { USERService } from './service/user.service';
 import { EqualValidator } from './validators/retype_pass';
 import { CHITIETDATVE} from './Modules/m_chitietdatve/m_chitietdatve';
 import { from } from 'rxjs';
+//google API Maps
+import {AgmCoreModule} from '@agm/core';
+import { M_BANDO } from './Modules/m_bando/m_bando';
 
 @NgModule({
   declarations: [
@@ -48,11 +51,15 @@ import { from } from 'rxjs';
     MENUTOP,MENU,MENUBOTTOM,FOOTER,
     TRANGCHU,KHOIHANHTP,
     DATVE,GIOITHIEU,GIOITHIEUNEWS,EqualValidator,
-    CHITIETDATVE
+    CHITIETDATVE, M_BANDO
   ],
   imports: [
     BrowserModule,
-    RouterModule,routing,HttpModule,FormsModule
+    RouterModule,routing,HttpModule,FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey:"AIzaSyAkQlc7xeWjrNBfF4OOsbBwcjYvC029WMs",
+      libraries:["places"]
+    })
   ],
   providers: [ChiNhanhService,USERService],
   bootstrap: [AppComponent]
