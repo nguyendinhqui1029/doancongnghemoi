@@ -1,0 +1,31 @@
+import { Diadiemthanhpholon} from '../model/diadiemthanhpholon';
+export var ds_diadiemthanhpholon: Diadiemthanhpholon[] =
+[
+    {"id_diadiem":"1", "ten_diadiem":"Sài Gòn","sodienthoai_diadiem":"19006067",
+    "kinhdo":"10.7553411","vido":"106.4150244",
+    "diemden_diadiem":"Châu Đốc, Cần Thơ, Cà Mau, Đà Lạt, Mũi Né, Qui Nhơn, Nha Trang,...","hinh_diadiem":"webfutabusline-01.png"},
+    {"id_diadiem":"2", "ten_diadiem":"Đà Lạt","sodienthoai_diadiem":"02633 58 58 58",
+    "kinhdo":"11.9040702","vido":"108.3806817",
+    "diemden_diadiem":" Nha Trang, Đà Nẵng, Huế, Sài Gòn, Cần Thơ, Quy Nhơn,...","hinh_diadiem":"webfutabusline-02.png"},
+    {"id_diadiem":"3", "ten_diadiem":"Nha Trang","sodienthoai_diadiem":"02583 812 812",
+    "kinhdo":"12.2597701","vido":"109.1064135",
+    "diemden_diadiem":"Sài Gòn, Đà Lạt, Đà Nẵng, Huế, Hà Nội, Cần Thơ,...","hinh_diadiem":"webfutabusline-03.png"},
+    {"id_diadiem":"4", "ten_diadiem":"Cần Thơ","sodienthoai_diadiem":"02923 769 768",
+    "kinhdo":"10.0342696","vido":"105.7225506",
+    "diemden_diadiem":"Sài Gòn, Cà Mau, Rạch Giá, Châu Đốc, Đà Lạt,...","hinh_diadiem":"webfutabusline-04.png"},
+    {"id_diadiem":"5", "ten_diadiem":"Đà Nẵng","sodienthoai_diadiem":"02363 786 786",
+    "kinhdo":"16.0720934","vido":"107.9380381",
+    "diemden_diadiem":"Đà Lạt, Sài Gòn, Nha Trang, Hà Nội, Bảo Lộc,...","hinh_diadiem":"webfutabusline-05.png"},
+    {"id_diadiem":"6", "ten_diadiem":"Hà Nội","sodienthoai_diadiem":"0243 864 19 19",
+    "kinhdo":"20.9740415","vido":"105.0921716",
+    "diemden_diadiem":"Đà Nẵng, Nam Định,...","hinh_diadiem":"webfutabusline-06.png"},
+    {"id_diadiem":"7", "ten_diadiem":"HÀ TIÊN - RẠCH GIÁ","sodienthoai_diadiem":"02973 66 88 66",
+    "kinhdo":"10.0254646","vido":"105.0312464",
+    "diemden_diadiem":"Sài Gòn, Cần Thơ,...","hinh_diadiem":"webfutabusline-07.png"},
+    {"id_diadiem":"8", "ten_diadiem":"CÀ MAU - NĂM CĂN","sodienthoai_diadiem":"02903 651 651",
+    "kinhdo":"9.1755273","vido":"105.1171306",
+    "diemden_diadiem":"Sài Gòn, Cần Thơ,...","hinh_diadiem":"webfutabusline-08.png"},
+    {"id_diadiem":"9", "ten_diadiem":"LONG XUYÊN - CHÂU ĐỐC","sodienthoai_diadiem":"02963 98 9999",
+    "kinhdo":"10.3712865","vido":"105.3562013",
+    "diemden_diadiem":"Sài Gòn, Cần Thơ,...","hinh_diadiem":"webfutabusline-09.png"}
+]

@@ -55,7 +55,7 @@ export class FORMLH implements OnInit {
           Data: this.lienhe.tieude
         }
       },
-      Source: "caphesualv1@gmail.com" // mail gửi
+      Source: "knkinhu@gmail.com" // mail gửi
     };
     
     const sendEmail = ses.sendEmail(params).promise();

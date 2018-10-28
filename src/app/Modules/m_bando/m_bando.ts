@@ -1,35 +1,45 @@
-import { Component,OnInit } from "@angular/core";
-
-
-
+import { Component,OnInit, OnDestroy, Input } from "@angular/core";
+declare var $:any;
 @Component({
     selector:'m_bando',
     styles: [`
     agm-map {
-      height: 500px;
+      height: 400px;
     }
   `],
     templateUrl:'./m_bando.html'
 })
+
+
 export class M_BANDO implements OnInit{
+
+  
     public latitude: number;
     public longitude: number;
-    public latitude1: number;
-    public longitude1: number;
+    
     public zoom: number;
     public placeid: string;
 
+   
     
-
+    //////
+  private _kinhdo : number;
+  @Input()
+  set kinhdo(kinhdo:number){
+    this._kinhdo =kinhdo;
+  }
+  
+  get name():number{
+      return this._kinhdo;
+  }
+    ////////
     constructor(){
        
     }
     ngOnInit(){
-       
-        this.latitude = 10.895497535568808;
-        this.longitude = 106.61983609092067;
-
+     console.log(this._kinhdo);
     }
+
 
     private setCurrentPosition() {
         if ("geolocation" in navigator) {
@@ -40,5 +50,8 @@ export class M_BANDO implements OnInit{
           });
         }
       }
+    
+    
+    
 }
 

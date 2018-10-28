@@ -37,6 +37,7 @@ import { from } from 'rxjs';
 //google API Maps
 import {AgmCoreModule} from '@agm/core';
 import { M_BANDO } from './Modules/m_bando/m_bando';
+import { XemBanDoService } from './service/xembando.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { M_BANDO } from './Modules/m_bando/m_bando';
     BrowserModule,
     RouterModule,routing,HttpModule,FormsModule,
     AgmCoreModule.forRoot({
-      apiKey:"AIzaSyAkQlc7xeWjrNBfF4OOsbBwcjYvC029WMs",
+      //apiKey:"AIzaSyAkQlc7xeWjrNBfF4OOsbBwcjYvC029WMs",
+      apiKey:"AIzaSyAfJTVKnpLl0ULuuwDuix-9ANpyQhP6mfc",
       libraries:["places"]
     })
   ],
