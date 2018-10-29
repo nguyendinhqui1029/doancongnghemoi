@@ -1,4 +1,6 @@
-import { Component,OnInit, OnDestroy, Input } from "@angular/core";
+import { Component,OnInit, Input } from "@angular/core";
+import { Subscription, from } from "rxjs";
+import { Diadiemthanhpholon } from "src/app/model/diadiemthanhpholon";
 declare var $:any;
 @Component({
     selector:'m_bando',
@@ -12,10 +14,13 @@ declare var $:any;
 
 
 export class M_BANDO implements OnInit{
+  
+  @Input() toado: Diadiemthanhpholon;
 
   
-    public latitude: number;
-    public longitude: number;
+    public latitude: any ;
+    
+    public longitude: any ;
     
     public zoom: number;
     public placeid: string;
@@ -23,35 +28,40 @@ export class M_BANDO implements OnInit{
    
     
     //////
-  private _kinhdo : number;
-  @Input()
-  set kinhdo(kinhdo:number){
-    this._kinhdo =kinhdo;
-  }
+  private _kinhdo : any;
+  private _vido : any;
+
+  // @Input()
+  // set toado(toado:any){
+  //   this._kinhdo =toado;
+    
+  // }
   
-  get name():number{
-      return this._kinhdo;
-  }
+  // get name():any{
+  //     return this._kinhdo;
+  // }
     ////////
     constructor(){
-       
+      this.setCurrentPosition();
+     
+
     }
     ngOnInit(){
-     console.log(this._kinhdo);
+      this.latitude=parseFloat(this.toado.kinhdo);
+      this.longitude =parseFloat(this.toado.vido);
+      console.log(this.toado.kinhdo +"---" + this.toado.vido);
     }
 
-
-    private setCurrentPosition() {
+    private  setCurrentPosition() {
         if ("geolocation" in navigator) {
           navigator.geolocation.getCurrentPosition((position) => {
-            this.latitude = position.coords.latitude;
-            this.longitude = position.coords.longitude;
-            
+             this.latitude = position.coords.latitude;
+             this.longitude = position.coords.longitude;
           });
         }
       }
     
     
-    
+   
 }
 

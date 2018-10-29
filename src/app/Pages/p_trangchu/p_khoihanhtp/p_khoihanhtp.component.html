@@ -2,17 +2,22 @@
     <h3 class="heading"><i class="fa fa-file-text" aria-hidden="true"></i> Khởi hành từ các thành phố lớn</h3>
     
         <div  class="row" *ngFor="let diadiem of ds_cacphantu">
-                <div class="col-md-4 startpoint-block" *ngFor="let item of diadiem" >
+                <div class="col-md-4 startpoint-block" *ngFor="let item of diadiem">
                     <img src="assets/Content/img/private/{{item.hinh_diadiem}}" />
                     <div class="startpoint-text" >
-                        <p>Khởi hành từ: <span>{{item.ten_diadiem}}</span><a href="#hienbando" data-toggle="modal" (click)="xembando(item.kinhdo,item.vido)"> (Xem bản đồ)</a></p>
+                        <p>Khởi hành từ: <span>{{item.ten_diadiem}}</span>
+                            <a href="#hienbando" data-toggle="modal"  
+                            (click)="xembando(item)"> (Xem bản đồ)</a></p>
                         <p>Hotline: <span>{{item.sodienthoai_diadiem}}</span></p>
                         <p>Điểm đến: {{item.diemden_diadiem}}</p>
                         <div class="clearfix"></div>
                     </div>
-                    <m_bando [kinhdo]="myName"></m_bando>
+                    
+                    <m_bando [toado] = "selectedItem" *ngIf="selectedItem === item" ></m_bando>
+                    
                 </div>
+                
         </div>
         
-
+        <!-- <m_bando [toado] = "selectedItem" *ngIf="selectedItem"  ></m_bando> -->
 </section>

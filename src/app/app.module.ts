@@ -63,7 +63,7 @@ import { XemBanDoService } from './service/xembando.service';
       libraries:["places"]
     })
   ],
-  providers: [ChiNhanhService,USERService],
+  providers: [ChiNhanhService,USERService,XemBanDoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
