@@ -26,10 +26,10 @@
         <ul class="clearfix">
             <div *ngFor="let menu of ds_menu">
                     <li  *ngIf="loichao!='' && menu.id_menu!=4" >
-                            <a [routerLink] = "menu.url_menu"  id="{{menu.id_menu}}"><i class="{{menu.icon_menu}}"></i>&ensp;{{menu.name_menu}}</a>
+                            <a [routerLink] = "menu.url_menu"  id="{{menu.id_menu}}"><i class="{{menu.icon_menu}}" aria-hidden="true" style="font-size: 20px"></i>&ensp;{{menu.name_menu}}</a>
                     </li>
                     <li  *ngIf="loichao==''" >
-                            <a [routerLink] = "menu.url_menu"  id="{{menu.id_menu}}"><i class="{{menu.icon_menu}}" aria-hidden="true"></i>&ensp;{{menu.name_menu}}</a>
+                            <a [routerLink] = "menu.url_menu"  id="{{menu.id_menu}}"><i class="{{menu.icon_menu}}" aria-hidden="true" style="font-size: 20px"></i>&ensp;{{menu.name_menu}}</a>
                     </li>
             </div>
            
