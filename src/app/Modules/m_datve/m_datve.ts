@@ -30,11 +30,11 @@ export class DATVE implements OnInit{
     laythongtindatve(): void {
         this.flag=true;
         this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","");
-    
-  }
+  
+    }
  
     onChange(deviceValue) {
-        
+        this.flag=false;
         this.ds_diadiemden=this.LayDanhSachDenTheoDiaDiemDi(deviceValue);
       
     }
