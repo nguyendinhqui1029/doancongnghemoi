@@ -109,8 +109,7 @@
                                                         <!-- ngRepeat: schedule in schedules --><!-- ngIf: schedules.length > 0 --><div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'" ng-if="schedules.length > 0" style="">
                                                             <i class="fa fa-ticket text-primary"></i>
                                                             <p class="form-control" ng-class="form.$dirty ? (form.selectRoute.$valid ? 'valid': 'invalid'): ''">
-                                                                <input  id="sodienthoai" name="sodienthoai" placeholder="Điền số di động" type="text" style="width: 280px" #sodienthoai="ngModel" value="" [(ngModel)]="objectDangKi.sodienthoai" minlength="9" maxlength="13" required="required" pattern="/^[+84]|[0-9]">
-                                                                
+                                                                <input  id="sodienthoai" name="sodienthoai" placeholder="Điền số di động" type="text" style="width: 100%; border-radius: 5px 5px" #sodienthoai="ngModel" value="" [(ngModel)]="objectDangKi.sodienthoai" minlength="9" maxlength="13" required="required" pattern="/^[+84]|[0-9]">
                                                             </p>
                                                             <!-- ngIf: info.price == 0 && getPriceComplete === true -->
                                                         </div><!-- end ngIf: schedules.length > 0 --><!-- end ngRepeat: schedule in schedules -->

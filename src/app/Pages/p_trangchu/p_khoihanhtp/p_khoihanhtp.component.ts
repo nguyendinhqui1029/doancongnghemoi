@@ -41,7 +41,7 @@ myName: number;
         
     }
     ngOnInit(){
-
+       
     }
     
     /*
@@ -88,9 +88,10 @@ myName: number;
 
     selectedItem: Diadiemthanhpholon;
     xembando(toado: Diadiemthanhpholon): void {
-      this.selectedItem = toado;
+        this.selectedItem = toado;
       //console.log('selectedItem = ${JSON.stringify(this.selectedItem)}');
       // alert(`selectedMovie = ${JSON.stringify(this.selectedMovie)}`);
   }
+    
     
 }
