@@ -22,14 +22,12 @@ export class M_BANDO implements OnInit{
     
     public longitude: any ;
     
-    public zoom: number;
+    public zoom: number=9;
     public placeid: string;
 
    
     
-    //////
-  private _kinhdo : any;
-  private _vido : any;
+
 
   
     ////////

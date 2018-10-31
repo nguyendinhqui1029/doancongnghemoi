@@ -11,9 +11,10 @@
                         <p>Hotline: <span>{{item.sodienthoai_diadiem}}</span></p>
                         <p>Điểm đến: {{item.diemden_diadiem}}</p>
                         <div class="clearfix"></div>
-                    </div>
-                    <!-- <m_bando [toado] = "selectedItem" *ngIf="selectedItem === item" ></m_bando> -->
+                    </div>                    
                 </div>
+               
+ 
         </div>
         <div *ngFor="let diadiem of ds_diadiemthanhpholon" >
                     <m_bando [toado] = "selectedItem" *ngIf="selectedItem === diadiem"  ></m_bando>    

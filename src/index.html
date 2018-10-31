@@ -79,7 +79,7 @@
         
 </head>
 <body style="background: #fff;">
-   
+ 
 
     <app-root>Loading....</app-root>
     <script> (function ($) {
@@ -93,7 +93,7 @@
             });
         })(jQuery);</script>
   
-
+ 
     
 
 </body>
@@ -101,3 +101,23 @@
 <!-- Mirrored from futabus.vn/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Aug 2018 04:06:36 GMT -->
 </html>
 
+<script>
+        var s1 = 0;
+        s2();
+        
+        function s2() {
+            var i;
+            var slides = document.getElementsByClassName('s3');
+        
+          
+            for (i = 0; i < slides.length; i++) {
+               slides[i].style.display = "none";  
+            }
+            s1++;
+            if (s1 > slides.length) {s1 = 1}    
+            
+            slides[s1-1].style.display = "block";  
+         
+            setTimeout(s2, 2000); // Change image every 2 seconds
+        }
+        </script>
