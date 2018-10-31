@@ -1,6 +1,7 @@
 import { Component,OnInit } from "@angular/core";
 import { ds_diadiemkhoihanh } from "../../model/mock_diadiemkhoihanh";
 import { OBJECTDANGKI } from "src/app/model/dangki";
+import {CHITIETDATVEXE} from '../../model/chitietdatve';
 declare var $:any;
 @Component({
     selector:'m_datve',
@@ -11,16 +12,31 @@ export class DATVE implements OnInit{
     ds_khoihanh:any[]=ds_diadiemkhoihanh;
     ds_diadiemkhoihanh:any[]=[];
     ds_diadiemden:any[]=[];
+    thongtindatve:CHITIETDATVEXE={"idchuyenxe":"","diemdi":"","diemden":"",
+    "ngaydi":"","soluong":"","giodi":"","soghe":"","sodienthoai":""
+};
+    ngayhientai:any="";
+    flag:boolean=false;
     constructor()
     {
+        let date=new Date();
+        this.ngayhientai=(date.getMonth()+1)+"/"+date.getDate()+"/"+date.getFullYear();
         this.ds_diadiemkhoihanh=this.LayDanhSachKhoiHanh();
         this.ds_diadiemden=this.LayDanhSachDenTheoDiaDiemDi( this.ds_diadiemkhoihanh[0].v);
-    }
+   }
     
-   
+    
+  data: CHITIETDATVEXE;
+    laythongtindatve(): void {
+        this.flag=true;
+        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","");
+    
+  }
+ 
     onChange(deviceValue) {
         
-        this.ds_diadiemden=this.LayDanhSachDenTheoDiaDiemDi(deviceValue.target.value);
+        this.ds_diadiemden=this.LayDanhSachDenTheoDiaDiemDi(deviceValue);
+      
     }
 
     LayDanhSachKhoiHanh()

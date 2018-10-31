@@ -17,9 +17,6 @@ export class KHOIHANHTP implements OnInit{
     
     ///
 
-/////
-myName: number;
-/////
 
     ds_diadiemthanhpholon : Diadiemthanhpholon[] =  ds_diadiemthanhpholon;
     sodong: number=Math.round(this.ds_diadiemthanhpholon.length/3)+1;
@@ -44,40 +41,6 @@ myName: number;
 
     }
     
-    /*
-    xembando(kinhdo,vido)
-    {
-       // this.toado={kinhdo:kinhdo,vido:vido};
-       // this.myName=this.toado;
-       this.m_bando.LayToaDo(kinhdo,vido);
-        //console.log(this.myName);
-       
-    this.guiToadoquabando();
-    this.guiToadoquabando2();
-    }
-    
-    
-    
-
-    
-    
-    public guiToadoquabando() 
-    {
-        var laytoado: number ;
-        laytoado = this.toado.kinhdo;
-        console.log(laytoado);
-        return laytoado;
-        
-    }
-    public guiToadoquabando2() 
-    { 
-        var laytoado2: number ;
-        laytoado2 = this.toado.vido;
-        console.log(laytoado2);
-        return laytoado2;
-        
-    }
-    */
     toado: Diadiemthanhpholon = {
         "id_diadiem":"1", "ten_diadiem":"Sài Gòn","sodienthoai_diadiem":"19006067",
         "kinhdo":"10.7553411","vido":"106.4150244",
@@ -89,8 +52,6 @@ myName: number;
     selectedItem: Diadiemthanhpholon;
     xembando(toado: Diadiemthanhpholon): void {
       this.selectedItem = toado;
-      //console.log('selectedItem = ${JSON.stringify(this.selectedItem)}');
-      // alert(`selectedMovie = ${JSON.stringify(this.selectedMovie)}`);
   }
     
 }

@@ -8,7 +8,7 @@
             <div class="container">
                     <div class="col-sm-4 col-xs-12 col-ms-12" style="width: 450px">
                             <div class="panel">
-                                <p class="text-center text-primary text-uppercase">Châu Đốc - Cần Thơ ngày <span ng-bind-html="step1Info.departureDate|svcDate">29-09-2018</span></p>
+                                <p class="text-center text-primary text-uppercase">{{chitietdatve.diemdi}} - {{chitietdatve.diemden}} ngày <span ng-bind-html="step1Info.departureDate|svcDate">{{chitietdatve.ngaydi}}</span></p>
                                 <form id="form-steps" name="form" #form_dat_ve="ngForm" role="form">
                                     <fieldset>
         
@@ -19,7 +19,7 @@
                                                         <!-- ngRepeat: schedule in schedules --><!-- ngIf: schedules.length > 0 --><div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'" ng-if="schedules.length > 0" style="">
                                                             <i class="fa fa-bus text-primary"></i>
                                                             <p class="form-control" ng-class="form.$dirty ? (form.selectRoute.$valid ? 'valid': 'invalid'): ''">
-                                                                <span class="f-left">Chau Doc ⇒ Can Tho</span>
+                                                                <span class="f-left">{{chitietdatve.diemdi}} ⇒ {{chitietdatve.diemden}}</span>
                                                                 <span class="f-right">
                                                                     <span ng-bind-html="info.price|svcMoney">100.000<sup>₫</sup></span>&nbsp;
                                                                     <input type="radio" ng-model="info.selectRoute" name="selectRoute" ng-value="schedule" required="" class="ng-pristine ng-untouched ng-valid ng-valid-required" value="[object Object]">
