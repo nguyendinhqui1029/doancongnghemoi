@@ -4,10 +4,11 @@ export class CHITIETDATVE
     diemdi:any;
     diemden:any;
     ngaydi:any;
+    soluong:any;
     giodi:any;
     soghe:any;
     constructor()
     {
-        
+
     }
 }
