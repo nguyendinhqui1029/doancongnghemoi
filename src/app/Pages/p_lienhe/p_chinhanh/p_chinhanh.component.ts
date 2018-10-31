@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-//import { ds_chinhanh } from '../../../model/mock_chinhanh';
+import { ds_chinhanh } from '../../../model/mock_chinhanh';
 import {ChiNhanhService } from '../../../service/chinhanh.service';
 import { ChiNhanh } from '../../../model/chinhanh';
+
 @Component({
     selector: 'p_chinhanh',
     templateUrl: './p_chinhanh.component.html'
 })
 
 export class CHINHANH implements OnInit {
-    //chinhanhs:any[]=ds_chinhanh;
-    chinhanhs:any[]=[];
+    chinhanhs:any[]=ds_chinhanh;
+    //chinhanhs:any[]=[];
     dsMN:any[]=[];
     dsMT:any[]=[];
     dsMB:any[]=[];
@@ -17,8 +18,13 @@ export class CHINHANH implements OnInit {
     tongsoMT:number;
     tongsoMN:number;
     constructor(private service_chi_nhanh: ChiNhanhService){
-        this.getListChiNhanh();
-
+      //  this.getListChiNhanh();
+      this.dsMN=this.layDSTheoMien("MN");
+      this.dsMT=this.layDSTheoMien("MT");
+      this.dsMB=this.layDSTheoMien("MB");
+      this.tongsoMB=this.dsMB.length;
+      this.tongsoMN=this.dsMN.length;
+      this.tongsoMT=this.dsMT.length;
     }
     
     getListChiNhanh()

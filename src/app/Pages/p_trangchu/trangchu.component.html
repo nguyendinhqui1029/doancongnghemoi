@@ -6,10 +6,10 @@
         <div id="sb-site">
             <div class="br-header">
             </div>
-            <section id="body-top">
+            <section id="body-top"> 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-ms-12">
+                    <div class="row"  >
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-ms-12" style="float:left">
                             <div>
                                 <!-- Nav tabs -->
                                 <ul class="v-tabs clearfix" role="tablist">
@@ -18,13 +18,38 @@
                                     <li><a [routerLink]="'/huongdan'" class="text-default">Hướng dẫn đặt vé</a></li>
                                 </ul>
                                 <!-- Tab panes -->
+                                <div style="float:left">
                                 <m_datve></m_datve>
-                                
                             </div>
+                            </div>
+                            
                         </div>
+                        <!--Slider image-->
+                        <!--<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-ms-12 " style="float:right; margin-right:100px;">
+                                <img src="assets/Content/img/trangchu.jpg"/>
+                        </div>-->
+                       
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-ms-12 " style="float:right; margin-right:100px;">
+<div class="s3">
+        <img src="assets/Content/img/trangchu.jpg" style="width:600px; height:300px" />
+</div>
+      
+      <div class="s3">
+        <img src="assets/Content/img/xe2.jpg" style="width:600px; height:300px"/>
+      </div>
+      
+      <div class="s3">
+        <img src="assets/Content/img/xe1.png" style="width:600px; height:300px"/>
+      </div>
+    </div>
+                        <!--////Slider image-->
                     </div>
+                    
                 </div>
+                
             </section>
+            
+            <div style="clear:both"></div>
             <!--Khoi hanh tu cac thanh pho-->
             <p_khoihanhtp></p_khoihanhtp>
             <!--Thong tin can biet-->
@@ -56,7 +81,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 thongtin-block">
-                        <img src="assets/Content/img/private/imgtongtinhanhly-19.png" />
+                        <img src="assets/Content/img/trangchu.jpg" />
                         <div class="thongtin-text">
                             <h3>Thông tin hành lý</h3>
                             <p>
@@ -73,6 +98,10 @@
             <!--gioi thieu news-->
             <!--<m_gioithieunews></m_gioithieunews>-->
         </div>
+        
         <Footer></Footer>
     </div>
 </div>
+
+
+
