@@ -31,15 +31,7 @@ export class M_BANDO implements OnInit{
   private _kinhdo : any;
   private _vido : any;
 
-  // @Input()
-  // set toado(toado:any){
-  //   this._kinhdo =toado;
-    
-  // }
   
-  // get name():any{
-  //     return this._kinhdo;
-  // }
     ////////
     constructor(){
       this.setCurrentPosition();
@@ -49,7 +41,6 @@ export class M_BANDO implements OnInit{
     ngOnInit(){
       this.latitude=parseFloat(this.toado.kinhdo);
       this.longitude =parseFloat(this.toado.vido);
-      console.log(this.toado.kinhdo +"---" + this.toado.vido);
     }
 
     private  setCurrentPosition() {
