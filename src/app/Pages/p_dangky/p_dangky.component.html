@@ -36,112 +36,114 @@
                             <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
                                 <img src="assets/Content/res/banner-dangky.jpg" />
                             </div>-->
-                            <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12" style="margin:100px 300px 100px 300px;">
-                                <div id="register-form-wrapper" class="border padding10 clearfix" style="border:2px">
+                            
+                                <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12" style="margin:100px 300px 100px 300px; background-color: rgb(133, 142, 161);opacity:0.8;">
+                                    <div id="register-form-wrapper" class="border padding10 clearfix" style="border:2px">
 
-                                    <form   #form_dang_ky="ngForm" role="form">
-                                        <input name="__RequestVerificationToken"
-                                            type="hidden" value="CqmsYo50POKxTZwSE9sfldJS3f9YiQAFkHtj-O5ERhgg1gRgsrsi9bfveyQKdEKCdvEqLVnZAZNghwd555mJwfexhf81" />
-                                        <h3 class="text-uppercase">Đăng ký</h3>
-                                        <p class="text-muted">
+                                        <form   #form_dang_ky="ngForm" role="form">
+                                            <input name="__RequestVerificationToken"
+                                                type="hidden" value="CqmsYo50POKxTZwSE9sfldJS3f9YiQAFkHtj-O5ERhgg1gRgsrsi9bfveyQKdEKCdvEqLVnZAZNghwd555mJwfexhf81" />
+                                            <h3 class="text-uppercase">Đăng ký</h3>
+                                            <p class="text-muted">
+                    
+                                            </p>
+                                            <div class="form-group">
+                                                <label for="hoten">Họ tên <span class="text-primary">*</span></label>
+                                                <input class="form-control" #hoten="ngModel" pattern="[^0-9~!#$%^&*(){}]+" required="required" 
+                                                id="hoten" name="hoten" placeholder="Điền họ tên" type="text" [(ngModel)]="objectDangKi.hoten"/>
+                                            
+                                                <div class="thong_bao_loi" *ngIf="hoten.invalid && !hoten.pristine"  >
+                                                        <div *ngIf="hoten.errors.required" >
+                                                            Vui lòng nhập họ tên
+                                                        </div>
+                                                        <div *ngIf="hoten.errors.pattern" >
+                                                            Họ tên không hợp lệ. Có ký tự đặc biệt
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Email <span class="text-primary">*</span></label>
+                                                <input class="form-control" id="email" name="email" placeholder="Điền địa chỉ email"
+                                                #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+.[A-Za-z]{2,4}" required="required"   type="text"  [(ngModel)]="objectDangKi.email" />
+
+                                                    <div class="thong_bao_loi" *ngIf="email.invalid && !email.pristine"  >
+                                                            <div *ngIf="email.errors.required" >
+                                                                Vui lòng nhập email.
+                                                            </div>
+                                                            <div *ngIf="email.errors.pattern" >
+                                                            Email sai định dạng.
+                                                            </div>
+                                                    </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">
+                                                        <label for="">Mật khẩu <span class="text-primary">*</span></label>
+                                                        <input class="form-control" id="matkhau" name="matkhau"  placeholder="Điền mật khẩu" type="password" [(ngModel)]="objectDangKi.matkhau" required="required" pattern="" title="" reverse="true">
                 
-                                        </p>
-                                        <div class="form-group">
-                                            <label for="hoten">Họ tên <span class="text-primary">*</span></label>
-                                            <input class="form-control" #hoten="ngModel" pattern="[^0-9~!#$%^&*(){}]+" required="required" 
-                                            id="hoten" name="hoten" placeholder="Điền họ tên" type="text" [(ngModel)]="objectDangKi.hoten"/>
-                                        
-                                            <div class="thong_bao_loi" *ngIf="hoten.invalid && !hoten.pristine"  >
-                                                    <div *ngIf="hoten.errors.required" >
-                                                        Vui lòng nhập họ tên
                                                     </div>
-                                                    <div *ngIf="hoten.errors.pattern" >
-                                                        Họ tên không hợp lệ. Có ký tự đặc biệt
-                                                    </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Email <span class="text-primary">*</span></label>
-                                            <input class="form-control" id="email" name="email" placeholder="Điền địa chỉ email"
-                                            #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+.[A-Za-z]{2,4}" required="required"   type="text"  [(ngModel)]="objectDangKi.email" />
-
-                                                <div class="thong_bao_loi" *ngIf="email.invalid && !email.pristine"  >
-                                                        <div *ngIf="email.errors.required" >
-                                                            Vui lòng nhập email.
-                                                        </div>
-                                                        <div *ngIf="email.errors.pattern" >
-                                                           Email sai định dạng.
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">
-                                                    <label for="">Mật khẩu <span class="text-primary">*</span></label>
-                                                    <input class="form-control" id="matkhau" name="matkhau"  placeholder="Điền mật khẩu" type="password" [(ngModel)]="objectDangKi.matkhau" required="required" pattern="" title="" reverse="true">
-            
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">
-                                                        <label for="">Nhắc lại mật khẩu <span class="text-primary">*</span></label>
-                                    
-                                                        <input type="password" #nhap_lai_mat_khau_input="ngModel"  [(ngModel)]="nhap_lai_mat_khau" name="nhap_lai_mat_khau" validateEqual="matkhau" class="form-control" value="" required="required" title="" >
-                                                        <div class="thong_bao_loi" *ngIf="nhap_lai_mat_khau_input.invalid && !nhap_lai_mat_khau_input.pristine"  >
-                                                             Mật khẩu không khớp
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3 class="text-uppercase">Thông tin khác</h3>
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
-                                                    <label for="">Số di động <span class="text-primary">*</span></label>
-                                                    <input class="form-control" id="sodienthoai" name="sodienthoai" placeholder="Điền số di động"
-                                                    #sodienthoai="ngModel" type="text" value="" [(ngModel)]="objectDangKi.sodienthoai" minlength="9" maxlength="13" required="required" pattern="/^[+84]|[0-9]"/>
-                                                        
-                                                        <div class="thong_bao_loi" *ngIf="sodienthoai.invalid && !sodienthoai.pristine"  >
-                                                                <div *ngIf="sodienthoai.errors.required" >
-                                                                    Vui lòng nhập số điện thoại.
-                                                                </div>
-                                                                <div *ngIf="sodienthoai.errors.pattern" >
-                                                                   Số điện thoại sai định dạng.
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
-                                                    <label for="">Số CMND <span class="text-primary">*</span></label>
-                                                    <input class="form-control" id="chungminhnhandan" name="chungminhnhandan"  #chungminhnhandan="ngModel"
-                                                        placeholder="Điền số chứng minh thư" type="text" value="" [(ngModel)]="objectDangKi.chungminhnhandan" minlength="9" maxlength="12" required="required" pattern="[0-9]+"/>
-
-                                                        <div class="thong_bao_loi" *ngIf="chungminhnhandan.invalid && !chungminhnhandan.pristine"  >
-                                                                <div *ngIf="chungminhnhandan.errors.required" >
-                                                                    Vui lòng nhập số chứng minh nhân dân.
-                                                                </div>
-                                                                <div *ngIf="chungminhnhandan.errors.pattern" >
-                                                                   Số chứng minh nhân dân sai định dạng.
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">
+                                                            <label for="">Nhắc lại mật khẩu <span class="text-primary">*</span></label>
                                         
-                                        <div class="form-group"><h3 style="color: red;">{{thongbao}}</h3></div>
-                                        <div class="form-group clearfix">
-            
-                                            <button type="submit" class="btn btn-primary pull-right" [disabled]="form_dang_ky.form.invalid" (click)="gui_form(form_dang_ky)">HOÀN TẤT</button>
-                                        </div>
-                                        <p class="clearfix">
-                                            <small class="pull-right"><span class="text-primary">*</span> Mục bắt buộc
-                                            </small>
-                                        </p>
-                                        <p class="text-center">
-                                            Nếu bạn đã có tài khoản. CLick <a [routerLink]="'/dangnhap'">đây</a> để
-                                            đăng
-                                            nhập
-                                        </p>
-                                    </form>
+                                                            <input type="password" #nhap_lai_mat_khau_input="ngModel"  [(ngModel)]="nhap_lai_mat_khau" name="nhap_lai_mat_khau" validateEqual="matkhau" class="form-control" value="" required="required" title="" >
+                                                            <div class="thong_bao_loi" *ngIf="nhap_lai_mat_khau_input.invalid && !nhap_lai_mat_khau_input.pristine"  >
+                                                                Mật khẩu không khớp
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3 class="text-uppercase">Thông tin khác</h3>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                                                        <label for="">Số di động <span class="text-primary">*</span></label>
+                                                        <input class="form-control" id="sodienthoai" name="sodienthoai" placeholder="Điền số di động"
+                                                        #sodienthoai="ngModel" type="text" value="" [(ngModel)]="objectDangKi.sodienthoai" minlength="9" maxlength="13" required="required" pattern="/^[+84]|[0-9]"/>
+                                                            
+                                                            <div class="thong_bao_loi" *ngIf="sodienthoai.invalid && !sodienthoai.pristine"  >
+                                                                    <div *ngIf="sodienthoai.errors.required" >
+                                                                        Vui lòng nhập số điện thoại.
+                                                                    </div>
+                                                                    <div *ngIf="sodienthoai.errors.pattern" >
+                                                                    Số điện thoại sai định dạng.
+                                                                    </div>
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                                                        <label for="">Số CMND <span class="text-primary">*</span></label>
+                                                        <input class="form-control" id="chungminhnhandan" name="chungminhnhandan"  #chungminhnhandan="ngModel"
+                                                            placeholder="Điền số chứng minh thư" type="text" value="" [(ngModel)]="objectDangKi.chungminhnhandan" minlength="9" maxlength="12" required="required" pattern="[0-9]+"/>
+
+                                                            <div class="thong_bao_loi" *ngIf="chungminhnhandan.invalid && !chungminhnhandan.pristine"  >
+                                                                    <div *ngIf="chungminhnhandan.errors.required" >
+                                                                        Vui lòng nhập số chứng minh nhân dân.
+                                                                    </div>
+                                                                    <div *ngIf="chungminhnhandan.errors.pattern" >
+                                                                    Số chứng minh nhân dân sai định dạng.
+                                                                    </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group"><h3 style="color: red;">{{thongbao}}</h3></div>
+                                            <div class="form-group clearfix">
+                
+                                                <button type="submit" class="btn btn-primary pull-right" [disabled]="form_dang_ky.form.invalid" (click)="gui_form(form_dang_ky)">HOÀN TẤT</button>
+                                            </div>
+                                            <p class="clearfix">
+                                                <small class="pull-right"><span class="text-primary">*</span> Mục bắt buộc
+                                                </small>
+                                            </p>
+                                            <p class="text-center">
+                                                Nếu bạn đã có tài khoản. CLick <a [routerLink]="'/dangnhap'">đây</a> để
+                                                đăng
+                                                nhập
+                                            </p>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
+                        
                         </div>
                     </div>
                 </section>

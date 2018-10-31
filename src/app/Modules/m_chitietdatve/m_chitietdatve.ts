@@ -1,4 +1,4 @@
-import { Component,OnInit } from "@angular/core";
+import { Component,OnInit, Input } from "@angular/core";
 import { OBJECTDANGKI } from "src/app/model/dangki";
 declare var $:any;
 @Component({
@@ -7,6 +7,7 @@ declare var $:any;
 })
 export class CHITIETDATVE implements OnInit{
     objectDangKi:OBJECTDANGKI=new OBJECTDANGKI('','','','','','');;
+    //@Input() toado: Diadiemthanhpholon;
     constructor()
     {
         
