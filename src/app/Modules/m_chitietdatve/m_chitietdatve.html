@@ -8,7 +8,7 @@
             <div class="container">
                     <div class="col-sm-4 col-xs-12 col-ms-12" style="width: 450px">
                             <div class="panel">
-                                <p class="text-center text-primary text-uppercase">{{chitietdatve.diemdi}} - {{chitietdatve.diemden}} ngày <span ng-bind-html="step1Info.departureDate|svcDate">{{chitietdatve.ngaydi}}</span></p>
+                                <p class="text-center text-primary text-uppercase">{{tuyenduong.bendi}} - {{tuyenduong.benden}} ngày <span ng-bind-html="step1Info.departureDate|svcDate">{{chitietdatve.ngaydi}}</span></p>
                                 <form id="form-steps" name="form" #form_dat_ve="ngForm" role="form">
                                     <fieldset>
         
@@ -16,13 +16,12 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="">Chọn tuyến xe</label>
-                                                       <div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'" ng-if="schedules.length > 0" style="">
+                                                       <div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'" ng-if="schedules.length > 0">
                                                             <i class="fa fa-bus text-primary"></i>
                                                             <p class="form-control" ng-class="form.$dirty ? (form.selectRoute.$valid ? 'valid': 'invalid'): ''">
-                                                                <span class="f-left">{{chitietdatve.diemdi}} ⇒ {{chitietdatve.diemden}}</span>
+                                                                <span class="f-left">{{tuyenduong.bendi}} ⇒ {{tuyenduong.benden}}</span>
                                                                 <span class="f-right">
-                                                                    <span ng-bind-html="info.price|svcMoney">100.000<sup>₫</sup></span>&nbsp;
-                                                                    <input type="radio" ng-model="info.selectRoute" name="selectRoute" ng-value="schedule" required="" class="ng-pristine ng-untouched ng-valid ng-valid-required" value="[object Object]">
+                                                                    <span ng-bind-html="info.price|svcMoney">Giá vé: {{tuyenduong.giave|number}}<sup>₫</sup></span>&nbsp;
                                                                 </span>
                                                             </p>
                                                            
@@ -36,26 +35,9 @@
                                                         <label for="">Chọn giờ khởi hành</label>
                                                         <!-- ngIf: timeTables.length > 0 --><div class="controls" ng-if="timeTables.length > 0" style="">
                                                             <i class="fa fa-clock-o text-primary"></i>
-                                                            <select class="form-control ng-pristine ng-valid ng-valid-required ng-touched" ng-class="form.$dirty ? (form.departureTime.$valid ? 'valid': 'invalid'): ''" name="departureTime" ng-model="info.departureTime" ng-options="option.DisplayText for option in timeTables track by option.Id" required="" style="">
-                                                                <option value="2481256" label="05:00 (Ghế)" selected="selected">05:00 (Ghế)</option>
-                                                                <option value="2481271" label="06:30 (Ghế)">06:30 (Ghế)</option>
-                                                                <option value="2481286" label="08:00 (Ghế)">08:00 (Ghế)</option>
-                                                                <option value="2481301" label="10:00 (Ghế)">10:00 (Ghế)</option>
-                                                                <option value="2481316" label="11:30 (Ghế)">11:30 (Ghế)</option>
-                                                                <option value="2481331" label="13:00 (Ghế)">13:00 (Ghế)</option>
-                                                                <option value="2481346" label="14:30 (Ghế)">14:30 (Ghế)</option>
-                                                                <option value="2481361" label="15:30 (Ghế)">15:30 (Ghế)</option>
-                                                                <option value="2481376" label="17:00 (Ghế)">17:00 (Ghế)</option>
-                                                                <option value="2481391" label="19:00 (Ghế)">19:00 (Ghế)</option>
-                                                                <option value="2481222" label="06:30 (Giường)">06:30 (Giường)</option>
-                                                                <option value="2481223" label="08:00 (Giường)">08:00 (Giường)</option>
-                                                                <option value="2481325" label="10:00 (Giường)">10:00 (Giường)</option>
-                                                                <option value="2481327" label="11:30 (Giường)">11:30 (Giường)</option>
-                                                                <option value="2481320" label="13:00 (Giường)">13:00 (Giường)</option>
-                                                                <option value="2481389" label="14:30 (Giường)">14:30 (Giường)</option>
-                                                                <option value="2481344" label="15:30 (Giường)">15:30 (Giường)</option>
-                                                                <option value="2481387" label="17:00 (Giường)">17:00 (Giường)</option>
-                                                                <option value="2481313" label="19:00 (Giường)">19:00 (Giường)</option>
+                                                            <select class="form-control">
+                                                                <option *ngFor="let giochay of ds_giokhoihanh"  value="{{giochay}}" label="{{giochay}}">{{giochay}}</option>
+                                                               
                                                             </select>
                                                            
                                                         </div><!-- end ngIf: timeTables.length > 0 -->
@@ -69,16 +51,19 @@
                                                     <div class="col-lg-12">
                                                         <div class="form-group">
                                                             <label for=""  (click)="chonghe()">Nhấn để chọn số ghế 
-                                                                <i class="fa fa-angle-double-up" id="muoiten" style="font-size: 20px;"></i></label>
+                                                                <i class="fa fa-angle-double-up" id="muoiten" style="font-size: 20px;"></i>
+                                                                <span class="thong_bao_loi">&nbsp;*</span>
+                                                                <span class="thong_bao_loi" style="margin-left: 30px;" id="thongbaochonghe"></span>
+                                                            </label>
                                                             <div class="controls" id="danhsachghe" style="display: none;">
                                                               <table style="width:100%; " >
                                                                 <thead style="text-align: center; border: slateblue;">
-                                                                    <td><h3>A Dưới</h3></td>
-                                                                    <td><h3>A Trên</h3></td>
-                                                                    <td><h3>B Dưới</h3></td>
-                                                                    <td><h3>B Trên</h3></td>
-                                                                    <td><h3>C Dưới</h3></td>
-                                                                    <td><h3>C Trên</h3></td>
+                                                                    <td><h3>Tầng Dưới</h3></td>
+                                                                    <td><h3>Tầng Trên</h3></td>
+                                                                    <td><h3>Tầng Dưới</h3></td>
+                                                                    <td><h3>Tầng Trên</h3></td>
+                                                                    <td><h3>Tầng Dưới</h3></td>
+                                                                    <td><h3>Tầng Trên</h3></td>
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr style="margin: 3px; text-align: center;">
@@ -120,7 +105,7 @@
                                                         <label for="">Số điện thoại</label>
                                                         <!-- ngRepeat: schedule in schedules --><!-- ngIf: schedules.length > 0 --><div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'" ng-if="schedules.length > 0" style="">
                                                             <i class="fa fa-ticket text-primary"></i>
-                                                            <p class="form-control" ng-class="form.$dirty ? (form.selectRoute.$valid ? 'valid': 'invalid'): ''">
+                                                            <p class="form-control">
                                                                 <input  id="sodienthoai" name="sodienthoai" placeholder="Điền số di động" type="text" style="width: 100%; border-radius: 5px 5px" #sodienthoai="ngModel" value="" [(ngModel)]="objectDangKi.sodienthoai" minlength="9" maxlength="13" required="required" pattern="/^[+84]|[0-9]">
                                                             </p>
                                                             <!-- ngIf: info.price == 0 && getPriceComplete === true -->
@@ -140,13 +125,15 @@
 
                                             <div class="form-section">
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12">
-                                                   <h2>Tổng số tiền:200000<sup>đ</sup></h2>
+                                                   <h2>Tổng số tiền: {{tongtien|number}}<sup>đ</sup></h2>
                                                 </div>
                                             </div>
 
                                             <div class="form-section">
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12">
-                                                    <button type="submit" class="btn btn-success btn-flat" [disabled]="form_dat_ve.form.invalid"><i class="fa fa-arrow-right icon-flat bg-success"></i>Đặt Vé</button>
+                                                    <button type="submit" (click)="guimuave()" class="btn btn-success btn-flat" [disabled]="form_dat_ve.form.invalid">
+                                                        <i class="fa fa-arrow-right icon-flat bg-success"></i>Mua vé
+                                                    </button>
                                                 </div>
                                             </div>
                                     </fieldset>

@@ -30,7 +30,7 @@ export class DATVE implements OnInit{
         this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","");
   
     }
- 
+    
     onChange(deviceValue) {
         this.flag=false;
         this.ds_diadiemden=this.LayDanhSachDenTheoDiaDiemDi(deviceValue);
@@ -86,6 +86,9 @@ export class DATVE implements OnInit{
        });
 
        return ds;
+    }
+    goi(){
+        this.flag=false;
     }
     ngOnInit(){ 
         let date=new Date();
