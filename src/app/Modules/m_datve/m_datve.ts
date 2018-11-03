@@ -88,7 +88,7 @@ export class DATVE implements OnInit{
        return ds;
     }
     goi(){
-        this.flag=false;
+        this.flag=false;this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","");
     }
     ngOnInit(){ 
         let date=new Date();
@@ -100,5 +100,7 @@ export class DATVE implements OnInit{
           });
         } );
     }
-
+ ngOnDestroy() {
+     
+ }
 }

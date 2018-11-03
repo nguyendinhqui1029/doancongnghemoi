@@ -16,12 +16,12 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="">Chọn tuyến xe</label>
-                                                       <div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'" ng-if="schedules.length > 0">
+                                                       <div class="controls">
                                                             <i class="fa fa-bus text-primary"></i>
-                                                            <p class="form-control" ng-class="form.$dirty ? (form.selectRoute.$valid ? 'valid': 'invalid'): ''">
+                                                            <p class="form-control">
                                                                 <span class="f-left">{{tuyenduong.bendi}} ⇒ {{tuyenduong.benden}}</span>
                                                                 <span class="f-right">
-                                                                    <span ng-bind-html="info.price|svcMoney">Giá vé: {{tuyenduong.giave|number}}<sup>₫</sup></span>&nbsp;
+                                                                    <span >Giá vé: {{tuyenduong.giave|number}}<sup>₫</sup></span>&nbsp;
                                                                 </span>
                                                             </p>
                                                            
@@ -33,15 +33,14 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="">Chọn giờ khởi hành</label>
-                                                        <!-- ngIf: timeTables.length > 0 --><div class="controls" ng-if="timeTables.length > 0" style="">
+                                                      <div class="controls">
                                                             <i class="fa fa-clock-o text-primary"></i>
                                                             <select class="form-control">
                                                                 <option *ngFor="let giochay of ds_giokhoihanh"  value="{{giochay}}" label="{{giochay}}">{{giochay}}</option>
                                                                
                                                             </select>
                                                            
-                                                        </div><!-- end ngIf: timeTables.length > 0 -->
-                                                        <!-- ngIf: timeTables.length == 0 && getTimeTableComplete === true -->
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -66,30 +65,22 @@
                                                                     <td><h3>Tầng Trên</h3></td>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <tr style="margin: 3px; text-align: center;">
-                                                                        <td style="padding: 5px;"><input type="button" value="A1" name="A1" style="width: 90%; height: 25px;" /></td>
-                                                                        <td ><input type="button" value="A1" name="A1" style="width: 90%; height: 25px;"/></td>
-                                                                        <td ><input type="button" value="B1" name="B1" style="width: 90%; height: 25px;"/></td>
-                                                                        <td ><input type="button" value="B1" name="B1" style="width: 90%; height: 25px;"/></td>
-                                                                        <td ><input type="button" value="C1" name="C1" style="width: 90%; height: 25px;"/></td>
-                                                                        <td ><input type="button" value="C1" name="C1" style="width: 90%; height: 25px;"/></td>
+                                                                    <input type="hidden" id="sl" value="{{soluongghe}}"/>
+                                                                    <tr style="margin: 3px; text-align: center;" >
+                                                                        <td style="padding-bottom: 5px;"><button  data-a1=0 class="btnghe" type="button"  name="a1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)">
+                                                                            <i class="fa fa-laptop" style="font-size: 20px">A1</i>
+                                                                            </button>
+                                                                        </td>
+                                                                        <td style="padding-bottom: 5px;"><button data-a2="0" class="btnghe" type="button"  name="a2" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)">
+                                                                            <i class="fa fa-laptop" style="font-size: 20px">A2</i>
+                                                                            </button>
+                                                                        </td>
+                                                                        <td style="padding-bottom: 5px;"><button data-b1=0 class="btnghe" type="button"  name="b1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">B1</i></button></td>
+                                                                        <td style="padding-bottom: 5px;"><button data-b2=0 class="btnghe" type="button"  name="b2" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">B2</i></button></td>
+                                                                        <td style="padding-bottom: 5px;"><button data-c1=0 class="btnghe" type="button"  name="c1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">C1</i></button></td>
+                                                                        <td style="padding-bottom: 5px;"><button data-c2=0 class="btnghe" type="button"  name="c2" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">C2</i></button></td>
                                                                     </tr>
-                                                                    <tr style="margin: 3px; text-align: center;">
-                                                                            <td style="padding: 5px;"><input type="button" value="A1" name="A1" style="width: 90%; height: 25px;" /></td>
-                                                                            <td ><input type="button" value="A1" name="A1" style="width: 90%; height: 25px;"/></td>
-                                                                            <td ><input type="button" value="B1" name="B1" style="width: 90%; height: 25px;"/></td>
-                                                                            <td ><input type="button" value="B1" name="B1" style="width: 90%; height: 25px;"/></td>
-                                                                            <td ><input type="button" value="C1" name="C1" style="width: 90%; height: 25px;"/></td>
-                                                                            <td ><input type="button" value="C1" name="C1" style="width: 90%; height: 25px;"/></td>
-                                                                    </tr>
-                                                                    <tr style="margin: 3px; text-align: center;">
-                                                                        <td style="padding: 5px;"><input type="button" value="A1" name="A1" style="width: 90%; height: 25px;" /></td>
-                                                                        <td ><input type="button" value="A1" name="A1" style="width: 90%; height: 25px;"/></td>
-                                                                        <td ><input type="button" value="B1" name="B1" style="width: 90%; height: 25px;"/></td>
-                                                                        <td ><input type="button" value="B1" name="B1" style="width: 90%; height: 25px;"/></td>
-                                                                        <td ><input type="button" value="C1" name="C1" style="width: 90%; height: 25px;"/></td>
-                                                                        <td ><input type="button" value="C1" name="C1" style="width: 90%; height: 25px;"/></td>
-                                                                    </tr>
+                                                                   
                                                                 </tbody>
                                                               </table>
                                                             </div><!-- end ngIf: timeTables.length > 0 -->
@@ -153,27 +144,3 @@
         </div>
     </div>
 </div>
-
-<!-- <i class="fa fa-clock-o text-primary"></i>
-                                                                <select class="form-control ng-pristine ng-valid ng-valid-required ng-touched" ng-class="form.$dirty ? (form.departureTime.$valid ? 'valid': 'invalid'): ''" name="departureTime" ng-model="info.departureTime" ng-options="option.DisplayText for option in timeTables track by option.Id" required="" style="">
-                                                                    <option value="2481256" label="A1" selected="selected">A1</option>
-                                                                    <option value="2481271" label="A2">A2</option>
-                                                                    <option value="2481286" label="A3">A3</option>
-                                                                    <option value="2481301" label="A4">A4</option>
-                                                                    <option value="2481316" label="A5">A5</option>
-                                                                    <option value="2481331" label="A6">A6</option>
-                                                                    <option value="2481346" label="A7">A7</option>
-                                                                    <option value="2481361" label="A8">A8</option>
-                                                                    <option value="2481376" label="A9">A9</option>
-                                                                    <option value="2481391" label="A10">A10</option>
-                                                                    <option value="2481271" label="A2">A11</option>
-                                                                    <option value="2481286" label="A3">A12</option>
-                                                                    <option value="2481301" label="A4">A13</option>
-                                                                    <option value="2481316" label="A5">A14</option>
-                                                                    <option value="2481331" label="A6">A15</option>
-                                                                    <option value="2481346" label="A7">A16</option>
-                                                                    <option value="2481361" label="A8">A17</option>
-                                                                    <option value="2481376" label="A9">A18</option>
-                                                                    <option value="2481391" label="A10">A19</option>
-                                                                    <option value="2481391" label="A10">A19</option>
-                                                                </select>-->
