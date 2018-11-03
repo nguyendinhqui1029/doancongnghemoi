@@ -16,7 +16,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="">Chọn tuyến xe</label>
-                                                        <!-- ngRepeat: schedule in schedules --><!-- ngIf: schedules.length > 0 --><div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'" ng-if="schedules.length > 0" style="">
+                                                       <div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'" ng-if="schedules.length > 0" style="">
                                                             <i class="fa fa-bus text-primary"></i>
                                                             <p class="form-control" ng-class="form.$dirty ? (form.selectRoute.$valid ? 'valid': 'invalid'): ''">
                                                                 <span class="f-left">{{chitietdatve.diemdi}} ⇒ {{chitietdatve.diemden}}</span>
@@ -25,9 +25,8 @@
                                                                     <input type="radio" ng-model="info.selectRoute" name="selectRoute" ng-value="schedule" required="" class="ng-pristine ng-untouched ng-valid ng-valid-required" value="[object Object]">
                                                                 </span>
                                                             </p>
-                                                            <!-- ngIf: info.price == 0 && getPriceComplete === true -->
-                                                        </div><!-- end ngIf: schedules.length > 0 --><!-- end ngRepeat: schedule in schedules -->
-                                                        <!-- ngIf: schedules.length == 0 && getScheduleComplete === true -->
+                                                           
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -65,36 +64,49 @@
                                                 </div>
                                             </div>
                     
-
+                                           
                                             <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group">
-                                                            <label for="">Chọn số ghế</label>
-                                                            <!-- ngIf: timeTables.length > 0 --><div class="controls" ng-if="timeTables.length > 0" style="">
-                                                                <i class="fa fa-clock-o text-primary"></i>
-                                                                <select class="form-control ng-pristine ng-valid ng-valid-required ng-touched" ng-class="form.$dirty ? (form.departureTime.$valid ? 'valid': 'invalid'): ''" name="departureTime" ng-model="info.departureTime" ng-options="option.DisplayText for option in timeTables track by option.Id" required="" style="">
-                                                                    <option value="2481256" label="A1" selected="selected">A1</option>
-                                                                    <option value="2481271" label="A2">A2</option>
-                                                                    <option value="2481286" label="A3">A3</option>
-                                                                    <option value="2481301" label="A4">A4</option>
-                                                                    <option value="2481316" label="A5">A5</option>
-                                                                    <option value="2481331" label="A6">A6</option>
-                                                                    <option value="2481346" label="A7">A7</option>
-                                                                    <option value="2481361" label="A8">A8</option>
-                                                                    <option value="2481376" label="A9">A9</option>
-                                                                    <option value="2481391" label="A10">A10</option>
-                                                                    <option value="2481271" label="A2">A11</option>
-                                                                    <option value="2481286" label="A3">A12</option>
-                                                                    <option value="2481301" label="A4">A13</option>
-                                                                    <option value="2481316" label="A5">A14</option>
-                                                                    <option value="2481331" label="A6">A15</option>
-                                                                    <option value="2481346" label="A7">A16</option>
-                                                                    <option value="2481361" label="A8">A17</option>
-                                                                    <option value="2481376" label="A9">A18</option>
-                                                                    <option value="2481391" label="A10">A19</option>
-                                                                    <option value="2481391" label="A10">A19</option>
-                                                                </select>
-                                                               
+                                                            <label for=""  (click)="chonghe()">Nhấn để chọn số ghế 
+                                                                <i class="fa fa-angle-double-up" id="muoiten" style="font-size: 20px;"></i></label>
+                                                            <div class="controls" id="danhsachghe" style="display: none;">
+                                                              <table style="width:100%; " >
+                                                                <thead style="text-align: center; border: slateblue;">
+                                                                    <td><h3>A Dưới</h3></td>
+                                                                    <td><h3>A Trên</h3></td>
+                                                                    <td><h3>B Dưới</h3></td>
+                                                                    <td><h3>B Trên</h3></td>
+                                                                    <td><h3>C Dưới</h3></td>
+                                                                    <td><h3>C Trên</h3></td>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr style="margin: 3px; text-align: center;">
+                                                                        <td style="padding: 5px;"><input type="button" value="A1" name="A1" style="width: 90%; height: 25px;" /></td>
+                                                                        <td ><input type="button" value="A1" name="A1" style="width: 90%; height: 25px;"/></td>
+                                                                        <td ><input type="button" value="B1" name="B1" style="width: 90%; height: 25px;"/></td>
+                                                                        <td ><input type="button" value="B1" name="B1" style="width: 90%; height: 25px;"/></td>
+                                                                        <td ><input type="button" value="C1" name="C1" style="width: 90%; height: 25px;"/></td>
+                                                                        <td ><input type="button" value="C1" name="C1" style="width: 90%; height: 25px;"/></td>
+                                                                    </tr>
+                                                                    <tr style="margin: 3px; text-align: center;">
+                                                                            <td style="padding: 5px;"><input type="button" value="A1" name="A1" style="width: 90%; height: 25px;" /></td>
+                                                                            <td ><input type="button" value="A1" name="A1" style="width: 90%; height: 25px;"/></td>
+                                                                            <td ><input type="button" value="B1" name="B1" style="width: 90%; height: 25px;"/></td>
+                                                                            <td ><input type="button" value="B1" name="B1" style="width: 90%; height: 25px;"/></td>
+                                                                            <td ><input type="button" value="C1" name="C1" style="width: 90%; height: 25px;"/></td>
+                                                                            <td ><input type="button" value="C1" name="C1" style="width: 90%; height: 25px;"/></td>
+                                                                    </tr>
+                                                                    <tr style="margin: 3px; text-align: center;">
+                                                                        <td style="padding: 5px;"><input type="button" value="A1" name="A1" style="width: 90%; height: 25px;" /></td>
+                                                                        <td ><input type="button" value="A1" name="A1" style="width: 90%; height: 25px;"/></td>
+                                                                        <td ><input type="button" value="B1" name="B1" style="width: 90%; height: 25px;"/></td>
+                                                                        <td ><input type="button" value="B1" name="B1" style="width: 90%; height: 25px;"/></td>
+                                                                        <td ><input type="button" value="C1" name="C1" style="width: 90%; height: 25px;"/></td>
+                                                                        <td ><input type="button" value="C1" name="C1" style="width: 90%; height: 25px;"/></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                              </table>
                                                             </div><!-- end ngIf: timeTables.length > 0 -->
                                                             <!-- ngIf: timeTables.length == 0 && getTimeTableComplete === true -->
                                                         </div>
@@ -127,7 +139,11 @@
                                                 </div>
                                             </div>
 
-
+                                            <div class="form-section">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12">
+                                                   <h2>Tổng số tiền:200000<sup>đ</sup></h2>
+                                                </div>
+                                            </div>
 
                                             <div class="form-section">
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12">
@@ -151,3 +167,27 @@
         </div>
     </div>
 </div>
+
+<!-- <i class="fa fa-clock-o text-primary"></i>
+                                                                <select class="form-control ng-pristine ng-valid ng-valid-required ng-touched" ng-class="form.$dirty ? (form.departureTime.$valid ? 'valid': 'invalid'): ''" name="departureTime" ng-model="info.departureTime" ng-options="option.DisplayText for option in timeTables track by option.Id" required="" style="">
+                                                                    <option value="2481256" label="A1" selected="selected">A1</option>
+                                                                    <option value="2481271" label="A2">A2</option>
+                                                                    <option value="2481286" label="A3">A3</option>
+                                                                    <option value="2481301" label="A4">A4</option>
+                                                                    <option value="2481316" label="A5">A5</option>
+                                                                    <option value="2481331" label="A6">A6</option>
+                                                                    <option value="2481346" label="A7">A7</option>
+                                                                    <option value="2481361" label="A8">A8</option>
+                                                                    <option value="2481376" label="A9">A9</option>
+                                                                    <option value="2481391" label="A10">A10</option>
+                                                                    <option value="2481271" label="A2">A11</option>
+                                                                    <option value="2481286" label="A3">A12</option>
+                                                                    <option value="2481301" label="A4">A13</option>
+                                                                    <option value="2481316" label="A5">A14</option>
+                                                                    <option value="2481331" label="A6">A15</option>
+                                                                    <option value="2481346" label="A7">A16</option>
+                                                                    <option value="2481361" label="A8">A17</option>
+                                                                    <option value="2481376" label="A9">A18</option>
+                                                                    <option value="2481391" label="A10">A19</option>
+                                                                    <option value="2481391" label="A10">A19</option>
+                                                                </select>-->

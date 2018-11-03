@@ -14,10 +14,27 @@ export class CHITIETDATVE implements OnInit{
     {
         
     }
-    
+    flag:boolean=true;
+    chonghe()
+    {
+        if(this.flag==true)
+        {
+            $("#danhsachghe").slideDown() ;
+            $("#muoiten").addClass("fas fa-angle-double-down");
+            $("#muoiten").removeClass("fas fa-angle-double-up");
+            this.flag=false;
+        }else{
+            $("#danhsachghe").slideUp() ;
+            $("#muoiten").removeClass("fas fa-angle-double-down");
+            $("#muoiten").addClass("fas fa-angle-double-up");
+            this.flag=true;
+        }
+        
+    }
     ngOnInit(){
-        this.chitietdatve=this.chitietdatvexe;
-        console.log(this.chitietdatve);
+        this.chitietdatve=new CHITIETDATVEXE("ww","ww","ww","ww","ww","","","");//this.chitietdatvexe;
+       
+        // console.log(this.chitietdatve);
     }
 
 }

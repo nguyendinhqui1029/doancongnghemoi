@@ -12,27 +12,26 @@ export class DATVE implements OnInit{
     ds_khoihanh:any[]=ds_diadiemkhoihanh;
     ds_diadiemkhoihanh:any[]=[];
     ds_diadiemden:any[]=[];
-    thongtindatve:CHITIETDATVEXE={"idchuyenxe":"","diemdi":"","diemden":"",
-    "ngaydi":"","soluong":"","giodi":"","soghe":"","sodienthoai":""
-};
+    thongtindatve:CHITIETDATVEXE=new CHITIETDATVEXE("","","","","","","","");
     ngayhientai:any="";
     flag:boolean=false;
     constructor()
     {
-        let date=new Date();
-        this.ngayhientai=(date.getMonth()+1)+"/"+date.getDate()+"/"+date.getFullYear();
+       
         this.ds_diadiemkhoihanh=this.LayDanhSachKhoiHanh();
         this.ds_diadiemden=this.LayDanhSachDenTheoDiaDiemDi( this.ds_diadiemkhoihanh[0].v);
    }
     
-    
+    diemden:any;
   data: CHITIETDATVEXE;
-    laythongtindatve(): void {
+    laythongtindatve() {
         this.flag=true;
-        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","");
-    
+        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,this.ngayhientai,$("#soluong")[0].value,"","","");
+       
+      }
+  goi(){
+    this.flag=false;
   }
- 
     onChange(deviceValue) {
         
         this.ds_diadiemden=this.LayDanhSachDenTheoDiaDiemDi(deviceValue);
@@ -89,15 +88,15 @@ export class DATVE implements OnInit{
 
        return ds;
     }
-    ngOnInit(){
-        
+    ngOnInit(){ 
+        let date=new Date();
+        this.ngayhientai=(date.getMonth()+1)+"/"+date.getDate()+"/"+date.getFullYear();
         $( function() {
           $( "#ngay" ).datepicker({
             showOtherMonths: true,
             selectOtherMonths: true
           });
         } );
-
     }
 
 }

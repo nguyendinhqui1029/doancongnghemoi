@@ -7,7 +7,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "id_tuyenduong":1, "name_tuyenduong":"Bạc Liêu", "bendi":"Bạc Liêu" , 
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160.000", "giochay":"",
-        chitiet:[new ChiTietTuyenDuong(
+        "chitiet":[new ChiTietTuyenDuong(
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
@@ -221,121 +221,7 @@ export var ds_tuyenduong: TuyenDuong[] =
                     "02227784" ,"127 Lê Duẩn,TP.Cam ranh,Khánh Hòa", 
                     "23/10 TP.Nha Trang","", "")
                  ]
-    },
-    {
-        "id_tuyenduong":11, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Phan Thiết", "loaixe":"Giường", "quangduong":"203 km", "thoigian":"06:00", 
-        "sochuyen":"3 chuyến/ngày", "giave":"135.000", "giochay":"",
-        chitiet:[new ChiTietTuyenDuong(
-                "Xa Lộ Hà Nội", "Bến xe Miền Đông", "07:15",
-                "07:15", "02.111.441", 
-                "02.2212.214" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "P.26,Q.Bình Thạnh,TP.Hồ Chí Minh","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Bến xe Miền Đông", "BX Phan Thiết", "07:15",
-                    "19:15", "02.2212.214", 
-                    "02.227.784" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                    "P.Phú Trinh,TP.Phan Thiết, T.Bình Thuận","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":12, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Cam Ranh", "loaixe":"Giường", "quangduong":"350 km", "thoigian":"09:00", 
-        "sochuyen":"1 chuyến/ngày", "giave":"200.000", "giochay":"",
-        chitiet:[new ChiTietTuyenDuong(
-                "Xa Lộ Hà Nội", "Bến xe Miền Đông", "07:15",
-                "07:15", "02.111.441", 
-                "02.2212.214" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "P.26,Q.Bình Thạnh,TP.Hồ Chí Minh","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Bến xe Miền Đông", "BX Cam Ranh", "07:15",
-                    "19:15", "02.2212.214", 
-                    "02.227.784" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                    "P.Phú Trinh,TP.Cam Ranh, T.Khánh Hòa","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":13, "name_tuyenduong":"Nha Trang", "bendi":"Nha Trang" , 
-        "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"429 km", "thoigian":"12:00", 
-        "sochuyen":"8 chuyến/ngày", "giave":"225.000", "giochay":"",
-        chitiet:[new ChiTietTuyenDuong(
-                "BX Phía Nam", "Cam Ranh", "08:00",
-                "08:30", "02.111.441", 
-                "02.2212.214" ,"23/10 TP.Nha Trang", 
-                "P.Phú Trinh,TP.Cam Ranh, T.Khánh Hòa","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Cam Ranh", "Suối Linh", "08:30",
-                    "18:00", "02.2212.214", 
-                    "02.227.784" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                    "TP.Biên Hòa,T.Đồng Nai","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Suối Linh", "Xa Lộ Hà Nội", "18:00",
-                    "18:15", "02.227.784", 
-                    "02.227.111" , "TP.Biên Hòa,T.Đồng Nai", 
-                    "P.Hiệp Phú,Q.9,TP.Hồ Chí Minh","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Xa Lộ Hà Nội", "Bến xe Miền Đông", "18:15",
-                    "19:00",  "02.227.111", 
-                    "02.2212.212" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                    "P.26,Q.Bình Thạnh,TP.Hồ Chí Minh","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":14, "name_tuyenduong":"Nha Trang", "bendi":"Nha Trang" , 
-        "benden":"Đà Lạt", "loaixe":"Giường", "quangduong":"138 km", "thoigian":"04:00", 
-        "sochuyen":"6 chuyến/ngày", "giave":"140.000", "giochay":"",
-        chitiet:[new ChiTietTuyenDuong(
-                "7 Hoàng Hoa Thám", "Đà Lạt", "07:00",
-                "08:30", "02.111.441", 
-                "02.2212.214" ,"7Hoàng Hoa Thám, TP.Nha Trang", 
-                "1 Tô Hiến Thành, P.3, TP.Đà Lạt","", "")
-                ,
-               
-                 ]
-    },
-    {
-        "id_tuyenduong":15, "name_tuyenduong":"Nha Trang", "bendi":"Nha Trang" , 
-        "benden":"Đà Nẵng", "loaixe":"Giường", "quangduong":"545 km", "thoigian":"12:00", 
-        "sochuyen":"1 chuyến/ngày", "giave":"235.000", "giochay":"",
-        chitiet:[new ChiTietTuyenDuong(
-                "7 Hoàng Hoa Thám", "Đà Nẵng", "19:00",
-                "19:30", "02.111.441", 
-                "02.2212.214" ,"7Hoàng Hoa Thám, TP.Nha Trang", 
-                "203 Tôn Đức Thắng,Q.Liên Chiểu,TP.Đà Nẵng","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Đà Nẵng", "Ninh Hòa", "19:30",
-                    "22:30", "02.2212.214", 
-                    "02.331.214" ,"203 Tôn Đức Thắng,Q.Liên Chiểu,TP.Đà Nẵng", 
-                    "Ninh Giang,TX Ninh Hòa","", "")
-               
-                 ]
-    },
-    {
-        "id_tuyenduong":16, "name_tuyenduong":"Phan Thiết", "bendi":"Phan Thiết" , 
-        "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"206 km", "thoigian":"06:00", 
-        "sochuyen":"3 chuyến/ngày", "giave":"135.000", "giochay":"",
-        chitiet:[new ChiTietTuyenDuong(
-                "BX Phan Thiết","Xa Lộ Hà Nội",  "07:15",
-                "19:15", "02.2212.214", 
-                "02.227.784" ,"P.Phú Trinh,TP.Phan Thiết, T.Bình Thuận",
-                "P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", "", "")
-                ,
-                new ChiTietTuyenDuong(
-                "Xa Lộ Hà Nội", "Bến xe Miền Đông", "19:15",
-                "21:15", "02.111.441", 
-                "02.2212.214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh",
-                "P.Hiệp Phú,Q.9,TP.Hồ Chí Minh",  "", "")
-                ,
-                
-                 ]
-    },
-    
+    }
     // {"id_tuyenduong":19, "name_tuyenduong":"Cà Mau", "bendi":"Cà Mau" , "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"303 km", "thoigian":"08:00", "sochuyen":"21 chuyến/ngày", "giave":"195.000" , "giochay":""},
     // {"id_tuyenduong":20, "name_tuyenduong":"Cà Mau", "bendi":"Cà Mau" , "benden":"Cần Thơ", "loaixe":"Giường", "quangduong":"143 km", "thoigian":"04:00", "sochuyen":"18 chuyến/ngày", "giave":"125.000" , "giochay":""},
     // {"id_tuyenduong":21, "name_tuyenduong":"Cam Ranh", "bendi":"Cam Ranh" , "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"350 km", "thoigian":"09:00", "sochuyen":"1 chuyến/ngày", "giave":"200.000" , "giochay":""},
