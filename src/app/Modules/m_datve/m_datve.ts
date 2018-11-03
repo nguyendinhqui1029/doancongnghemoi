@@ -1,5 +1,6 @@
 import { Component,OnInit } from "@angular/core";
-import { ds_diadiemkhoihanh } from "../../model/mock_diadiemkhoihanh";
+//import { ds_diadiemkhoihanh } from "../../model/mock_diadiemkhoihanh";
+import {ds_tuyenduong} from'../../model/mock_tuyenduong';
 import { OBJECTDANGKI } from "src/app/model/dangki";
 import {CHITIETDATVEXE} from '../../model/chitietdatve';
 declare var $:any;
@@ -9,7 +10,7 @@ declare var $:any;
 })
 export class DATVE implements OnInit{
     objectDangKi:OBJECTDANGKI=new OBJECTDANGKI('','','','','','');;
-    ds_khoihanh:any[]=ds_diadiemkhoihanh;
+    ds_khoihanh:any[]=ds_tuyenduong//ds_diadiemkhoihanh;
     ds_diadiemkhoihanh:any[]=[];
     ds_diadiemden:any[]=[];
     thongtindatve:CHITIETDATVEXE=new CHITIETDATVEXE("","","","","","","","");
@@ -26,14 +27,12 @@ export class DATVE implements OnInit{
   data: CHITIETDATVEXE;
     laythongtindatve() {
         this.flag=true;
-        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,this.ngayhientai,$("#soluong")[0].value,"","","");
-       
-      }
-  goi(){
-    this.flag=false;
-  }
+        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","");
+  
+    }
+ 
     onChange(deviceValue) {
-        
+        this.flag=false;
         this.ds_diadiemden=this.LayDanhSachDenTheoDiaDiemDi(deviceValue);
       
     }
@@ -45,7 +44,7 @@ export class DATVE implements OnInit{
         for (var i = 0; i <this.ds_khoihanh.length; i++) {
             if(dsCode.indexOf(this.ds_khoihanh[i].OriginCode)===-1)
            {
-            ds.push({v:this.ds_khoihanh[i].OriginCode,t:this.ds_khoihanh[i].OriginName});
+            ds.push({v:this.ds_khoihanh[i].OriginCode,t:this.ds_khoihanh[i].bendi});
             dsCode.push(this.ds_khoihanh[i].OriginCode);
            } 
            
@@ -71,7 +70,7 @@ export class DATVE implements OnInit{
            {
                if(dsDestCode.indexOf(this.ds_khoihanh[i].DestCode)===-1)
                 {
-                    ds.push({v:this.ds_khoihanh[i].DestCode,t:this.ds_khoihanh[i].DestName});
+                    ds.push({v:this.ds_khoihanh[i].DestCode,t:this.ds_khoihanh[i].benden});
                     dsDestCode.push(this.ds_khoihanh[i].DestCode);
                 }
            } 

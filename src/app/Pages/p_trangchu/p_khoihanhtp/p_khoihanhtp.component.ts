@@ -14,7 +14,7 @@ export class KHOIHANHTP implements OnInit{
 
     ////
     //toado: any="";
-    
+
     ///
 
 
@@ -38,7 +38,7 @@ export class KHOIHANHTP implements OnInit{
         
     }
     ngOnInit(){
-
+       
     }
     
     toado: Diadiemthanhpholon = {
@@ -53,5 +53,6 @@ export class KHOIHANHTP implements OnInit{
     xembando(toado: Diadiemthanhpholon): void {
       this.selectedItem = toado;
   }
+    
     
 }
