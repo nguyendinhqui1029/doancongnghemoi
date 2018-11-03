@@ -26,11 +26,6 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160.000", "giochay":"9:00(Giường)",
         "OriginCode":"BACLIEU","DestCode":"TPHCM",
-<<<<<<< HEAD
-      
-=======
-        chuyenxe:[new ChuyenXe("2",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 
@@ -48,12 +43,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "id_tuyenduong":3, "name_tuyenduong":"Bạc Liêu", "bendi":"Bạc Liêu" , 
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160.000", "giochay":"12:00(Giường)",
-        "OriginCode":"BACLIEU","DestCode":"TPHCM",
-<<<<<<< HEAD
-      
-=======
-        chuyenxe:[new ChuyenXe("3",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
+        "OriginCode":"BACLIEU","DestCode":"TPHCM", 
         chitiet:[new ChiTietTuyenDuong(
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 
@@ -71,12 +61,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "id_tuyenduong":4, "name_tuyenduong":"Bạc Liêu", "bendi":"Bạc Liêu" , 
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160.000", "giochay":"15:00(Giường)",
-        "OriginCode":"BACLIEU","DestCode":"TPHCM",
-<<<<<<< HEAD
-      
-=======
-        chuyenxe:[new ChuyenXe("4",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
+        "OriginCode":"BACLIEU","DestCode":"TPHCM", 
         chitiet:[new ChiTietTuyenDuong(
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 
@@ -95,11 +80,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160.000", "giochay":"18:00(Giường)",
         "OriginCode":"BACLIEU","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("5",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 
@@ -118,11 +99,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160.000", "giochay":"21:00(Giường)",
         "OriginCode":"BACLIEU","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("6",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 
@@ -141,11 +118,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160.000", "giochay":"4:00(Giường)",
         "OriginCode":"SOCTRANG","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("7",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
@@ -164,11 +137,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160.000", "giochay":"7:00(Giường)",
         "OriginCode":"SOCTRANG","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("8",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
@@ -187,11 +156,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160.000", "giochay":"11:00(Giường)",
         "OriginCode":"SOCTRANG","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("9",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
@@ -210,11 +175,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160.000", "giochay":"14:00(Giường)",
         "OriginCode":"SOCTRANG","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("10",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
@@ -233,11 +194,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160.000", "giochay":"17:00(Giường)",
         "OriginCode":"SOCTRANG","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("11",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
@@ -256,11 +213,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160.000", "giochay":"20:00(Giường)",
         "OriginCode":"SOCTRANG","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("12",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
@@ -279,11 +232,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Đà Nẵng", "loaixe":"Giường", "quangduong":"756 km", "thoigian":"15:30", 
         "sochuyen":"1 chuyến/ngày", "giave":"315.000", "giochay":"9:30(Giường)",
         "OriginCode":"BAOLOC","DestCode":"DANANG",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("13",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bảo Lộc", "Di Linh", "12:30",
                 "13:30", "023364481", 
@@ -326,11 +275,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Huế", "loaixe":"Giường", "quangduong":"828 km", "thoigian":"19:00", 
         "sochuyen":"1 chuyến/ngày", "giave":"380.000", "giochay":"10:30(Giường)",
         "OriginCode":"BAOLOC","DestCode":"HUE",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("14",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bảo Lộc", "Di Linh", "12:30",
                 "13:30", "023364481", 
@@ -379,11 +324,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Ghế", "quangduong":"75 km", "thoigian":"02:00", 
         "sochuyen":"4 chuyến/ngày", "giave":"70.000", "giochay":"7:00(Ghế)",
         "OriginCode":"BENTRE","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("15",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bến Tre", "Mỹ Tho", "04:00",
                 "04:00", "023364481", 
@@ -402,11 +343,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Ghế", "quangduong":"75 km", "thoigian":"02:00", 
         "sochuyen":"4 chuyến/ngày", "giave":"70.000", "giochay":"10:00(Ghế)",
         "OriginCode":"BENTRE","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("16",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bến Tre", "Mỹ Tho", "04:00",
                 "04:00", "023364481", 
@@ -425,11 +362,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Ghế", "quangduong":"75 km", "thoigian":"02:00", 
         "sochuyen":"4 chuyến/ngày", "giave":"70.000", "giochay":"13:00(Ghế)",
         "OriginCode":"BENTRE","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("17",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bến Tre", "Mỹ Tho", "04:00",
                 "04:00", "023364481", 
@@ -448,11 +381,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Ghế", "quangduong":"75 km", "thoigian":"02:00", 
         "sochuyen":"4 chuyến/ngày", "giave":"70.000", "giochay":"18:00(Ghế)",
         "OriginCode":"BENTRE","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("18",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bến Tre", "Mỹ Tho", "04:00",
                 "04:00", "023364481", 
@@ -471,11 +400,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Ghế", "quangduong":"75 km", "thoigian":"02:00", 
         "sochuyen":"4 chuyến/ngày", "giave":"70.000", "giochay":"22:00(Ghế)",
         "OriginCode":"BENTRE","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("19",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bến Tre", "Mỹ Tho", "04:00",
                 "04:00", "023364481", 
@@ -494,11 +419,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"435 km", "thoigian":"09:00", 
         "sochuyen":"5 chuyến/ngày", "giave":"240.000", "giochay":"5:00(Giường)",
         "OriginCode":"BUONMETHUOT","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("20",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bến xe Miền Đông", "Dak Lak", "12:15",
                 "12:15", "02.111.441", 
@@ -517,11 +438,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"435 km", "thoigian":"09:00", 
         "sochuyen":"5 chuyến/ngày", "giave":"240.000", "giochay":"8:00(Giường)",
         "OriginCode":"BUONMETHUOT","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("21",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bến xe Miền Đông", "Dak Lak", "12:15",
                 "12:15", "02.111.441", 
@@ -540,11 +457,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"435 km", "thoigian":"09:00", 
         "sochuyen":"5 chuyến/ngày", "giave":"240.000", "giochay":"11:00(Giường)",
         "OriginCode":"BUONMETHUOT","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("22",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bến xe Miền Đông", "Dak Lak", "12:15",
                 "12:15", "02.111.441", 
@@ -563,11 +476,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"435 km", "thoigian":"09:00", 
         "sochuyen":"5 chuyến/ngày", "giave":"240.000", "giochay":"14:00(Giường)",
         "OriginCode":"BUONMETHUOT","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("23",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bến xe Miền Đông", "Dak Lak", "12:15",
                 "12:15", "02.111.441", 
@@ -586,11 +495,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"435 km", "thoigian":"09:00", 
         "sochuyen":"5 chuyến/ngày", "giave":"240.000", "giochay":"18:00(Giường)",
         "OriginCode":"BUONMETHUOT","DestCode":"TPHCM",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("24",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bến xe Miền Đông", "Dak Lak", "12:15",
                 "12:15", "02.111.441", 
@@ -609,11 +514,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Nha Trang", "loaixe":"Giường", "quangduong":"300 km", "thoigian":"04:00", 
         "sochuyen":"1 chuyến/ngày", "giave":"140.000", "giochay":"9:30(Giường)",
         "OriginCode":"BUONMETHUOT","DestCode":"NHATRANG",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("25",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Bến xe Miền Đông", "Dak Lak", "12:15",
                 "12:15", "02.111.441", 
@@ -632,11 +533,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Đà Lạt", "loaixe":"Giường", "quangduong":"320 km", "thoigian":"08:00", 
         "sochuyen":"7 chuyến/ngày", "giave":"220.000", "giochay":"5:00(Giường)",
         "OriginCode":"TPHCM","DestCode":"DALAT",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("26",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
@@ -655,11 +552,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Đà Lạt", "loaixe":"Giường", "quangduong":"320 km", "thoigian":"08:00", 
         "sochuyen":"7 chuyến/ngày", "giave":"220.000", "giochay":"8:00(Giường)",
         "OriginCode":"TPHCM","DestCode":"DALAT",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("27",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
@@ -678,11 +571,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Đà Lạt", "loaixe":"Giường", "quangduong":"320 km", "thoigian":"08:00", 
         "sochuyen":"7 chuyến/ngày", "giave":"220.000", "giochay":"11:00(Giường)",
         "OriginCode":"TPHCM","DestCode":"DALAT",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("28",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
@@ -701,11 +590,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Đà Lạt", "loaixe":"Giường", "quangduong":"320 km", "thoigian":"08:00", 
         "sochuyen":"7 chuyến/ngày", "giave":"220.000", "giochay":"14:00(Giường)",
         "OriginCode":"TPHCM","DestCode":"DALAT",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("29",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
@@ -724,11 +609,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Đà Lạt", "loaixe":"Giường", "quangduong":"320 km", "thoigian":"08:00", 
         "sochuyen":"7 chuyến/ngày", "giave":"220.000", "giochay":"16:00(Giường)",
         "OriginCode":"TPHCM","DestCode":"DALAT",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("30",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
@@ -747,11 +628,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Đà Lạt", "loaixe":"Giường", "quangduong":"320 km", "thoigian":"08:00", 
         "sochuyen":"7 chuyến/ngày", "giave":"220.000", "giochay":"20:00(Giường)",
         "OriginCode":"TPHCM","DestCode":"DALAT",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("31",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
@@ -770,11 +647,7 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Đà Lạt", "loaixe":"Giường", "quangduong":"320 km", "thoigian":"08:00", 
         "sochuyen":"7 chuyến/ngày", "giave":"220.000", "giochay":"23:00(Giường)",
         "OriginCode":"TPHCM","DestCode":"DALAT",
-<<<<<<< HEAD
       
-=======
-        chuyenxe:[new ChuyenXe("32",[])],
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
         chitiet:[new ChiTietTuyenDuong(
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
@@ -787,383 +660,5 @@ export var ds_tuyenduong: TuyenDuong[] =
                     "02.41141.11" ,"127 Lê Duẩn,TP.Nha Trang", 
                     "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh","", "")
                  ]
-<<<<<<< HEAD
      }
-=======
-    },
-     {
-        "id_tuyenduong":33, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Buôn Mê Thuột", "loaixe":"Giường", "quangduong":"435 km", "thoigian":"09:00", 
-        "sochuyen":"5 chuyến/ngày", "giave":"240.000", "giochay":"5:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"BUONMETHUOT",
-        chuyenxe:[new ChuyenXe("33",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Bến xe Miền Đông", "Dak Lak", "12:15",
-                "12:15", "02.111.441", 
-                "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak","", "")
-                
-                 ]
-    },
-    {
-        "id_tuyenduong":34, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Buôn Mê Thuột", "loaixe":"Giường", "quangduong":"435 km", "thoigian":"09:00", 
-        "sochuyen":"5 chuyến/ngày", "giave":"240.000", "giochay":"8:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"BUONMETHUOT",
-        chuyenxe:[new ChuyenXe("34",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Bến xe Miền Đông", "Dak Lak", "12:15",
-                "12:15", "02.111.441", 
-                "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak","", "")
-                
-                 ]
-    },
-    {
-        "id_tuyenduong":35, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Buôn Mê Thuột", "loaixe":"Giường", "quangduong":"435 km", "thoigian":"09:00", 
-        "sochuyen":"5 chuyến/ngày", "giave":"240.000", "giochay":"11:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"BUONMETHUOT",
-        chuyenxe:[new ChuyenXe("35",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Bến xe Miền Đông", "Dak Lak", "12:15",
-                "12:15", "02.111.441", 
-                "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak","", "")
-                
-                 ]
-    },
-    {
-        "id_tuyenduong":36, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Buôn Mê Thuột", "loaixe":"Giường", "quangduong":"435 km", "thoigian":"09:00", 
-        "sochuyen":"5 chuyến/ngày", "giave":"240.000", "giochay":"15:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"BUONMETHUOT",
-        chuyenxe:[new ChuyenXe("36",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Bến xe Miền Đông", "Dak Lak", "12:15",
-                "12:15", "02.111.441", 
-                "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak","", "")
-                
-                 ]
-    },
-    {
-        "id_tuyenduong":37, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Buôn Mê Thuột", "loaixe":"Giường", "quangduong":"435 km", "thoigian":"09:00", 
-        "sochuyen":"5 chuyến/ngày", "giave":"240.000", "giochay":"22:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"BUONMETHUOT",
-        chuyenxe:[new ChuyenXe("37",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Bến xe Miền Đông", "Dak Lak", "12:15",
-                "12:15", "02.111.441", 
-                "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak","", "")
-                
-                 ]
-    },
-    {
-        "id_tuyenduong":38, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Nha Trang", "loaixe":"Giường", "quangduong":"427 km", "thoigian":"12:00", 
-        "sochuyen":"7 chuyến/ngày", "giave":"225.000", "giochay":"6:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"NHATRANG",
-        chuyenxe:[new ChuyenXe("38",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Bến xe Miền Đông", "Cam Ranh", "08:00",
-                "17:15", "02.111.441", 
-                "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Cam ranh,Khánh Hòa","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Cam Ranh", "BX Phía Nam", "17:15",
-                    "19:15", "022212214", 
-                    "02227784" ,"127 Lê Duẩn,TP.Cam ranh,Khánh Hòa", 
-                    "23/10 TP.Nha Trang","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":39, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Nha Trang", "loaixe":"Giường", "quangduong":"427 km", "thoigian":"12:00", 
-        "sochuyen":"7 chuyến/ngày", "giave":"225.000", "giochay":"8:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"NHATRANG",
-        chuyenxe:[new ChuyenXe("39",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Bến xe Miền Đông", "Cam Ranh", "08:00",
-                "17:15", "02.111.441", 
-                "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Cam ranh,Khánh Hòa","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Cam Ranh", "BX Phía Nam", "17:15",
-                    "19:15", "022212214", 
-                    "02227784" ,"127 Lê Duẩn,TP.Cam ranh,Khánh Hòa", 
-                    "23/10 TP.Nha Trang","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":40, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Nha Trang", "loaixe":"Giường", "quangduong":"427 km", "thoigian":"12:00", 
-        "sochuyen":"7 chuyến/ngày", "giave":"225.000", "giochay":"10:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"NHATRANG",
-        chuyenxe:[new ChuyenXe("40",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Bến xe Miền Đông", "Cam Ranh", "08:00",
-                "17:15", "02.111.441", 
-                "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Cam ranh,Khánh Hòa","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Cam Ranh", "BX Phía Nam", "17:15",
-                    "19:15", "022212214", 
-                    "02227784" ,"127 Lê Duẩn,TP.Cam ranh,Khánh Hòa", 
-                    "23/10 TP.Nha Trang","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":41, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Nha Trang", "loaixe":"Giường", "quangduong":"427 km", "thoigian":"12:00", 
-        "sochuyen":"7 chuyến/ngày", "giave":"225.000", "giochay":"12:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"NHATRANG",
-        chuyenxe:[new ChuyenXe("41",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Bến xe Miền Đông", "Cam Ranh", "08:00",
-                "17:15", "02.111.441", 
-                "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Cam ranh,Khánh Hòa","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Cam Ranh", "BX Phía Nam", "17:15",
-                    "19:15", "022212214", 
-                    "02227784" ,"127 Lê Duẩn,TP.Cam ranh,Khánh Hòa", 
-                    "23/10 TP.Nha Trang","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":42, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Nha Trang", "loaixe":"Giường", "quangduong":"427 km", "thoigian":"12:00", 
-        "sochuyen":"7 chuyến/ngày", "giave":"225.000", "giochay":"14:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"NHATRANG",
-        chuyenxe:[new ChuyenXe("42",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Bến xe Miền Đông", "Cam Ranh", "08:00",
-                "17:15", "02.111.441", 
-                "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Cam ranh,Khánh Hòa","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Cam Ranh", "BX Phía Nam", "17:15",
-                    "19:15", "022212214", 
-                    "02227784" ,"127 Lê Duẩn,TP.Cam ranh,Khánh Hòa", 
-                    "23/10 TP.Nha Trang","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":43, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Nha Trang", "loaixe":"Giường", "quangduong":"427 km", "thoigian":"12:00", 
-        "sochuyen":"7 chuyến/ngày", "giave":"225.000", "giochay":"18:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"NHATRANG",
-        chuyenxe:[new ChuyenXe("43",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Bến xe Miền Đông", "Cam Ranh", "08:00",
-                "17:15", "02.111.441", 
-                "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Cam ranh,Khánh Hòa","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Cam Ranh", "BX Phía Nam", "17:15",
-                    "19:15", "022212214", 
-                    "02227784" ,"127 Lê Duẩn,TP.Cam ranh,Khánh Hòa", 
-                    "23/10 TP.Nha Trang","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":44, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Nha Trang", "loaixe":"Giường", "quangduong":"427 km", "thoigian":"12:00", 
-        "sochuyen":"7 chuyến/ngày", "giave":"225.000", "giochay":"22:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"NHATRANG",
-        chuyenxe:[new ChuyenXe("44",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Bến xe Miền Đông", "Cam Ranh", "08:00",
-                "17:15", "02.111.441", 
-                "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Cam ranh,Khánh Hòa","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Cam Ranh", "BX Phía Nam", "17:15",
-                    "19:15", "022212214", 
-                    "02227784" ,"127 Lê Duẩn,TP.Cam ranh,Khánh Hòa", 
-                    "23/10 TP.Nha Trang","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":45, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Phan Thiết", "loaixe":"Giường", "quangduong":"203 km", "thoigian":"06:00", 
-        "sochuyen":"3 chuyến/ngày", "giave":"135.000", "giochay":"9:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"PHANTHIET",
-        chuyenxe:[new ChuyenXe("45",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Xa Lộ Hà Nội", "Bến xe Miền Đông", "07:15",
-                "07:15", "02.111.441", 
-                "02.2212.214" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "P.26,Q.Bình Thạnh,TP.Hồ Chí Minh","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Bến xe Miền Đông", "BX Phan Thiết", "07:15",
-                    "19:15", "02.2212.214", 
-                    "02.227.784" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                    "P.Phú Trinh,TP.Phan Thiết, T.Bình Thuận","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":46, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Phan Thiết", "loaixe":"Giường", "quangduong":"203 km", "thoigian":"06:00", 
-        "sochuyen":"3 chuyến/ngày", "giave":"135.000", "giochay":"13:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"PHANTHIET",
-        chuyenxe:[new ChuyenXe("46",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Xa Lộ Hà Nội", "Bến xe Miền Đông", "07:15",
-                "07:15", "02.111.441", 
-                "02.2212.214" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "P.26,Q.Bình Thạnh,TP.Hồ Chí Minh","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Bến xe Miền Đông", "BX Phan Thiết", "07:15",
-                    "19:15", "02.2212.214", 
-                    "02.227.784" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                    "P.Phú Trinh,TP.Phan Thiết, T.Bình Thuận","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":47, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Phan Thiết", "loaixe":"Giường", "quangduong":"203 km", "thoigian":"06:00", 
-        "sochuyen":"3 chuyến/ngày", "giave":"135.000", "giochay":"18:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"PHANTHIET",
-        chuyenxe:[new ChuyenXe("47",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Xa Lộ Hà Nội", "Bến xe Miền Đông", "07:15",
-                "07:15", "02.111.441", 
-                "02.2212.214" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "P.26,Q.Bình Thạnh,TP.Hồ Chí Minh","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Bến xe Miền Đông", "BX Phan Thiết", "07:15",
-                    "19:15", "02.2212.214", 
-                    "02.227.784" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                    "P.Phú Trinh,TP.Phan Thiết, T.Bình Thuận","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":48, "name_tuyenduong":"Sài Gòn", "bendi":"Sài Gòn" , 
-        "benden":"Cam Ranh", "loaixe":"Giường", "quangduong":"350 km", "thoigian":"09:00", 
-        "sochuyen":"1 chuyến/ngày", "giave":"200.000", "giochay":"11:00(Giường)",
-        "OriginCode":"TPHCM","DestCode":"CAMRANH",
-        chuyenxe:[new ChuyenXe("48",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "Xa Lộ Hà Nội", "Bến xe Miền Đông", "07:15",
-                "07:15", "02.111.441", 
-                "02.2212.214" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "P.26,Q.Bình Thạnh,TP.Hồ Chí Minh","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Bến xe Miền Đông", "BX Cam Ranh", "07:15",
-                    "19:15", "02.2212.214", 
-                    "02.227.784" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                    "P.Phú Trinh,TP.Cam Ranh, T.Khánh Hòa","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":49, "name_tuyenduong":"Nha Trang", "bendi":"Nha Trang" , 
-        "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"429 km", "thoigian":"12:00", 
-        "sochuyen":"2 chuyến/ngày", "giave":"225.000", "giochay":"8:00(Giường)",
-        "OriginCode":"NHATRANG","DestCode":"TPHCM",
-        chuyenxe:[new ChuyenXe("49",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "BX Phía Nam", "Cam Ranh", "08:00",
-                "08:30", "02.111.441", 
-                "02.2212.214" ,"23/10 TP.Nha Trang", 
-                "P.Phú Trinh,TP.Cam Ranh, T.Khánh Hòa","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Cam Ranh", "Suối Linh", "08:30",
-                    "18:00", "02.2212.214", 
-                    "02.227.784" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                    "TP.Biên Hòa,T.Đồng Nai","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Suối Linh", "Xa Lộ Hà Nội", "18:00",
-                    "18:15", "02.227.784", 
-                    "02.227.111" , "TP.Biên Hòa,T.Đồng Nai", 
-                    "P.Hiệp Phú,Q.9,TP.Hồ Chí Minh","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Xa Lộ Hà Nội", "Bến xe Miền Đông", "18:15",
-                    "19:00",  "02.227.111", 
-                    "02.2212.212" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                    "P.26,Q.Bình Thạnh,TP.Hồ Chí Minh","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":50, "name_tuyenduong":"Nha Trang", "bendi":"Nha Trang" , 
-        "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"429 km", "thoigian":"12:00", 
-        "sochuyen":"2 chuyến/ngày", "giave":"225.000", "giochay":"15:00(Giường)",
-        "OriginCode":"NHATRANG","DestCode":"TPHCM",
-        chuyenxe:[new ChuyenXe("50",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "BX Phía Nam", "Cam Ranh", "08:00",
-                "08:30", "02.111.441", 
-                "02.2212.214" ,"23/10 TP.Nha Trang", 
-                "P.Phú Trinh,TP.Cam Ranh, T.Khánh Hòa","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Cam Ranh", "Suối Linh", "08:30",
-                    "18:00", "02.2212.214", 
-                    "02.227.784" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                    "TP.Biên Hòa,T.Đồng Nai","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Suối Linh", "Xa Lộ Hà Nội", "18:00",
-                    "18:15", "02.227.784", 
-                    "02.227.111" , "TP.Biên Hòa,T.Đồng Nai", 
-                    "P.Hiệp Phú,Q.9,TP.Hồ Chí Minh","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Xa Lộ Hà Nội", "Bến xe Miền Đông", "18:15",
-                    "19:00",  "02.227.111", 
-                    "02.2212.212" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                    "P.26,Q.Bình Thạnh,TP.Hồ Chí Minh","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":51, "name_tuyenduong":"Nha Trang", "bendi":"Nha Trang" , 
-        "benden":"Đà Lạt", "loaixe":"Giường", "quangduong":"138 km", "thoigian":"04:00", 
-        "sochuyen":"1 chuyến/ngày", "giave":"140.000", "giochay":"5:00(Giường)",
-        "OriginCode":"NHATRANG","DestCode":"DALAT",
-        chuyenxe:[new ChuyenXe("51",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "7 Hoàng Hoa Thám", "Đà Lạt", "07:00",
-                "08:30", "02.111.441", 
-                "02.2212.214" ,"7Hoàng Hoa Thám, TP.Nha Trang", 
-                "1 Tô Hiến Thành, P.3, TP.Đà Lạt","", "")
-                 ]
-    },
-    {
-        "id_tuyenduong":52, "name_tuyenduong":"Nha Trang", "bendi":"Nha Trang" , 
-        "benden":"Đà Nẵng", "loaixe":"Giường", "quangduong":"545 km", "thoigian":"12:00", 
-        "sochuyen":"1 chuyến/ngày", "giave":"235.000", "giochay":"6:00(Giường)",
-        "OriginCode":"NHATRANG","DestCode":"DANANG",
-        chuyenxe:[new ChuyenXe("52",[])],
-        chitiet:[new ChiTietTuyenDuong(
-                "7 Hoàng Hoa Thám", "Đà Nẵng", "19:00",
-                "19:30", "02.111.441", 
-                "02.2212.214" ,"7Hoàng Hoa Thám, TP.Nha Trang", 
-                "203 Tôn Đức Thắng,Q.Liên Chiểu,TP.Đà Nẵng","", "")
-                ,
-                new ChiTietTuyenDuong(
-                    "Đà Nẵng", "Ninh Hòa", "19:30",
-                    "22:30", "02.2212.214", 
-                    "02.331.214" ,"203 Tôn Đức Thắng,Q.Liên Chiểu,TP.Đà Nẵng", 
-                    "Ninh Giang,TX Ninh Hòa","", "")
-               
-                 ]
-    },
->>>>>>> 22a68eb6973733a63620558fa00d204cc8259e0f
 ]
