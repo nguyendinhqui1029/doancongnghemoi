@@ -26,6 +26,8 @@ export class DATVE implements OnInit{
     diemden:any;
   data: CHITIETDATVEXE;
     laythongtindatve() {
+        $("#thongbao").hide();
+        $(".btnghe").removeAttr("disabled");
         this.flag=true;
         this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","");
   

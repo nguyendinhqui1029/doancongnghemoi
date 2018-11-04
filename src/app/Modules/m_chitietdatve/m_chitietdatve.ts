@@ -3,8 +3,8 @@ import { OBJECTDANGKI } from "src/app/model/dangki";
 import { CHITIETDATVEXE } from "src/app/model/chitietdatve";
 import {ds_tuyenduong} from'../../model/mock_tuyenduong';
 import { TuyenDuong } from "src/app/model/tuyenduong";
-import { ChiTietTuyenDuong } from "src/app/model/chitiettuyenduong";
-import { exists } from "fs";
+import { ds_ghe } from "../../model/mock_dsghe";
+import { ds_chitietdatve } from "../../model/mock_chitietdatve";
 declare var $:any;
 @Component({
     selector:'m_chitietdatve',
@@ -19,44 +19,127 @@ export class CHITIETDATVE implements OnInit{
     ds_giokhoihanh:string[]=[];
     tongtien:number;
     soluongghe:number=0;
+    ds_khungghe:any[]=[];
+    ds_ghe:any[]=ds_ghe;
+    ds_chitietdatve:any[]=ds_chitietdatve;
+    trangthaifrom:boolean=true;
+    noidunghienthithongtinchitiet:CHITIETDATVEXE=null;
+    ghedangchon:any="";
     constructor()
     {
+       
     }
-    laygiochaytheodiemdidiemden(diemdi,diemden):string[]
+    //Hủy đặt ghế
+    huyghe(ghedangchon,chitietdatve)
     {
-        let ds_giochay:string[]=[];
-        ds_tuyenduong.forEach(tuyenduong => {
-            if(tuyenduong.OriginCode==diemdi && tuyenduong.DestCode==diemden)
+        let vt=chitietdatve.soghe.indexOf(ghedangchon);
+        if(vt>=0)
+        {
+            chitietdatve.soghe.splice(vt,1);
+            this.ds_ghe.forEach(ghe=>{
+                if(ghe.tenghe==ghedangchon)
+                {
+                    ghe.trangthai=0;
+                }
+            });
+            console.log(chitietdatve.soghe);
+    
+        //xu li luu thông tin xuong database
+
+        }
+    }
+    
+    //Bắt sự kiện nút xác nhận số điện thoại
+    nutxacnhan()
+    {
+        for(let i=0;i< this.ds_chitietdatve.length;i++) {
+            if(this.ds_chitietdatve[i].sodienthoai==$("#sodienthoaixacnhan").val() && this.ds_chitietdatve[i].ngaydi==this.chitietdatve.ngaydi)
             {
-                ds_giochay.push(tuyenduong.giochay);  
+                this.trangthaifrom=false;
+                this.noidunghienthithongtinchitiet=this.ds_chitietdatve[i];
+                i=i+this.ds_chitietdatve.length;
+            }else{
+                $("#thongbaoloidangnhap").html("Số điện thoại không đúng.<br>"); 
+            } 
+        }; 
+    }
+    //Lấy danh sách ghế theo mã tuyến và ngày
+    capnhattrangthaighe(matuyen,ngay){
+        this.ds_khungghe=[];
+        let dstam:any[]=[];
+        let ds_chitietdatve:any[]=this.laydanhsachchitietdatvetheomatuyen(matuyen,ngay);
+        for(let i=1;i<ds_ghe.length+1;i++)
+        {
+            this.ds_ghe[i-1].trangthai=0;
+            ds_chitietdatve.forEach(ctdv=>{
+                let dem=0;
+                if(ctdv.soghe.indexOf(ds_ghe[i-1].tenghe)>=0)
+                {
+                    ds_ghe[i-1].trangthai=1;
+                }else{
+                    dem+=1;
+                }
+            });
+            dstam.push(ds_ghe[i-1]);
+            if(i%6==0)
+            {
+              this.ds_khungghe.push(dstam);
+              dstam=[];
+            }
+        }
+        
+    }
+
+    //Lấy danh sách chi tiết đặt vé theo mã tuyến và ngày 
+    laydanhsachchitietdatvetheomatuyen(matuyen,ngay)
+    {
+        let ds_chituyetdatvetheomatuyen:any[]=[];
+        ds_chitietdatve.forEach(ct=>{
+            if(ct.idchuyenxe==matuyen && ct.ngaydi===ngay)
+            {
+               ds_chituyetdatvetheomatuyen.push(ct);
             }
         });
-        return ds_giochay;
-
+        return ds_chituyetdatvetheomatuyen;
     }
+    
     flagchitiet:boolean=true;
+
+    //bắt sự kiện xổ xuống khi chưa chọn ghế mà nhấn nút mua vé
+    ds_ghedangchon:any[]=[];
     guimuave(){
-        if(this.soluongghe>0)
+        if(this.ds_ghedangchon.length==this.soluongghe)
         {
+            $("#thongbaochonghe").text('');
+            $("#danhsachghe").slideUp() ;
+            $("#muoiten").removeClass("fas fa-angle-double-down");
+            $("#muoiten").addClass("fas fa-angle-double-up");
+            this.flagchitiet=true;
+            this.chitietdatve.soghe=this.ds_ghedangchon;
+            this.chitietdatve.idchuyenxe=this.tuyenduong.id_tuyenduong;
+            alert("Thông tin vé:"+this.chitietdatve.idchuyenxe+"-"+
+            this.chitietdatve.diemdi+"-"+this.chitietdatve.diemden+"-"+
+            this.chitietdatve.giodi+"-"+this.chitietdatve.ngaydi+"-"+
+            this.chitietdatve.sodienthoai+"-"+this.chitietdatve.soghe+"-"+
+            this.chitietdatve.soluong);
+        }else{
             $("#danhsachghe").slideDown() ;
             $("#muoiten").addClass("fas fa-angle-double-down");
             $("#muoiten").removeClass("fas fa-angle-double-up");
             $("#thongbaochonghe").text("Mời bạn chọn ghế");
             this.flagchitiet=false;
-        }else{
-            $("#danhsachghe").slideUp() ;
-            $("#muoiten").removeClass("fas fa-angle-double-down");
-            $("#muoiten").addClass("fas fa-angle-double-up");
-            this.flagchitiet=true;
+            
         }
         
     }
+
+    //Bắt sự kiện click menu xổ xuống
     chonghe()
     {
         
         if(this.flagchitiet==true)
         {
-            alert($("#sl").val())
+            
             $("#danhsachghe").slideDown() ;
             $("#muoiten").addClass("fas fa-angle-double-down");
             $("#muoiten").removeClass("fas fa-angle-double-up");
@@ -69,80 +152,109 @@ export class CHITIETDATVE implements OnInit{
         }
         
     }
-    laytuyenduongtheodiemdidiemden(diemdi,diemden):TuyenDuong
+
+    //Lấy tuyến đường theo điểm đi điểm đến
+    laytuyenduongtheodiemdidiemden(diemdi,diemden,gio):TuyenDuong
     {
+       
         let td:TuyenDuong=null;
         ds_tuyenduong.forEach(tuyenduong => {
-            if(tuyenduong.OriginCode==diemdi && tuyenduong.DestCode==diemden)
+            if(tuyenduong.OriginCode==diemdi && tuyenduong.DestCode==diemden && tuyenduong.giochay==gio)
             {
-                td=tuyenduong;
-                this.ds_giokhoihanh.push(tuyenduong.giochay);  
+                td=tuyenduong; 
             }
         });
+
+        this.chitietdatve.giodi=this.ds_giokhoihanh[0];
         return td;
     }
-    aaa(){
-        $(document).ready(function(){
-            $(this).on("click",".btnghe",function(){ 
-              
-                var slg=$("#sl").val()*1-1;
-            if(slg>=0)
-            {alert("atri"+$(this).attr("data-"+$(this).attr("name")));
-               
-                switch($(this).attr("data-"+$(this).attr("name")))
-                { 
-                    case "0":{
-                           (this as HTMLElement).style.background="red";
-                            $(this).attr("data-"+$(this).attr("name"),1);
-                            alert("a1"+$("#sl").val());
-                            $("#sl").val($("#sl").val()*1-1);
-                    }break;
-                    case "1":{
-                        $(this).attr("data-"+$(this).attr("name"),0);
-                        (this as HTMLElement).style.backgroundImage="linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)";
-                        $("#sl").val($("#sl").val()*1+1);
-                        alert("b");
-                    }break;
-                    default:alert("atri"+$(this).attr("data-"+$(this).attr("name")));
-                }
-            }else{
-                if($(this).data($(this).attr("name"))*1==1)
-                {
-                    $("#thongbaochonghe").text("");
-                    $(this).data($(this).attr("name"),0);
-                    (this as HTMLElement).style.backgroundImage="linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)";
-                    $("#sl").val($("#sl").val()*1+1)
-                    alert("c");
-                    
-                }else{
-                    $("#thongbaochonghe").text("Đủ ghế rồi cha");
-            
-                }
+
+    //Lấy giờ khởi  hành theo điểm đi và điểm đến
+    laygiokhoihanhtheodiemdidiemden(diemdi,diemden)
+    {
+       
+        ds_tuyenduong.forEach(tuyenduong => {
+            if(tuyenduong.OriginCode==diemdi && tuyenduong.DestCode==diemden )
+            {
+               this.ds_giokhoihanh.push(tuyenduong.giochay);
             }
-            });
-            return;
-        });   
+        });
+        this.chitietdatve.giodi=this.ds_giokhoihanh[0];
+        
     }
-    
-    ngOnInit(){
-        this.chitietdatve=this.chitietdatvexe;
-        this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatvexe.diemdi,this.chitietdatvexe.diemden);
-        this.soluongghe=this.chitietdatve.soluong;
-        this.ds_giokhoihanh=this.laygiochaytheodiemdidiemden(this.chitietdatvexe.diemdi,this.chitietdatvexe.diemden);
-        this.tongtien=this.chitietdatve.soluong*this.tuyenduong.giave;
+
+    //bắt sự kiện thay đổi giờ chạy
+    thaydoigio(gio){
+       this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatvexe.diemdi,this.chitietdatvexe.diemden,this.chitietdatvexe.giodi);
+       this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi);
+      // console.log(this.ds_khungghe);
+      // console.log(this.tuyenduong.id_tuyenduong); 
+    }
+
+    //bắt sự kiện click vào ghế
+    gheduocclick(data)
+    {
+       if(data.target.nextSibling.value==1)
+       {
+           this.ghedangchon=data.target.innerText;
+            this.trangthaifrom=true;
+            $("#thongbao").show();
+            $(".btnghe").attr("disabled", "disabled");;
+       }else{
+        if(this.soluongghe >this.ds_ghedangchon.length)
+        {
+                let tenghe=data.target.innerText;
+                if(this.ds_ghedangchon.indexOf(tenghe)>=0)
+                {
+                    //mau xanh
+                    data.path[1].style.backgroundImage="linear-gradient(to right, rgb(0, 154, 205), rgb(0, 191, 255), rgb(0, 154, 205))";
+                    this.ds_ghedangchon.splice(this.ds_ghedangchon.indexOf(tenghe),1);
+                }else{
+                    //mau do
+                   data.path[1].style.backgroundImage="linear-gradient(to right,rgb(231, 35, 35),rgb(238, 128, 128) ,rgb(231, 35, 35))";
+                   this.ds_ghedangchon.push(tenghe);
+                }
+        }else{
+           
+            let tenghe=data.target.innerText;
+            if(this.ds_ghedangchon.indexOf(tenghe)>=0)
+            {
+                //mau xanh
+                $("#thongbaochonghe").text('');
+                data.path[1].style.backgroundImage="linear-gradient(to right, rgb(0, 154, 205), rgb(0, 191, 255), rgb(0, 154, 205))";
+                this.ds_ghedangchon.splice(this.ds_ghedangchon.indexOf(tenghe),1);
+            }else{
+                $("#thongbaochonghe").text('Đã chọn đủ số lượng ghế');
+            }
+           // 
         }
+        
+       
+    }
+           
+        
+    }
+    //kết thúc bắt sự kiện click vào ghế
+
+    ngOnInit(){
+        /*thong bao*/
+        $(document).ready(function() {
+            $("#btndong" ).on( "click",function() {
+            
+             $("#thongbao").hide();
+             $(".btnghe").removeAttr("disabled");
+            });
+           
+          } );
+          /*thong bao*/
+        this.chitietdatve=this.chitietdatvexe;
+        this. laygiokhoihanhtheodiemdidiemden(this.chitietdatvexe.diemdi,this.chitietdatvexe.diemden);
+        this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatvexe.diemdi,this.chitietdatvexe.diemden,this.chitietdatvexe.giodi);
+        this.soluongghe=this.chitietdatve.soluong;
+        this.tongtien=this.chitietdatve.soluong*this.tuyenduong.giave;
+        this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi);
+           
+    }
        
     }
 
-    /*if($(this).data($(this).attr("name"))*1==1)
-    {
-        $("#thongbaochonghe").text("");
-        $(this).data($(this).attr("name"),0);
-        (this as HTMLElement).style.backgroundImage="linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)";
-        $("#sl").val($("#sl").val()*1+1)
-        alert("c");
-        
-    }else{
-        $("#thongbaochonghe").text("Đủ ghế rồi cha");
-
-    }*/
