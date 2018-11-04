@@ -6,7 +6,7 @@ export class CHITIETDATVEXE
     ngaydi:any;
     soluong:any;
     giodi:any;
-    soghe:any;
+    soghe:any[];
     sodienthoai:any;
     constructor(idchuyenxe,diemdi, diemden,ngaydi,soluong,giodi,soghe,sodienthoai)
     {

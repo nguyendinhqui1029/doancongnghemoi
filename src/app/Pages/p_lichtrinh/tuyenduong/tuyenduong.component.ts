@@ -41,7 +41,7 @@ export class TUYENDUONG implements OnInit {
                 dstam.push(this.tuyenduongs[i].name_tuyenduong);
             }
         }
-        console.log(danhsachtuyen);
+    
         return danhsachtuyen;
     }
     ngOnInit() { }
