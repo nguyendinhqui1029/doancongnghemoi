@@ -33,11 +33,13 @@ import { FormsModule } from '@angular/forms';
 import { USERService } from './service/user.service';
 import { EqualValidator } from './validators/retype_pass';
 import { CHITIETDATVE} from './Modules/m_chitietdatve/m_chitietdatve';
+import { M_SLIDER } from './Modules/m_slider/m_slider';
 import { from } from 'rxjs';
 //google API Maps
 import {AgmCoreModule} from '@agm/core';
 import { M_BANDO } from './Modules/m_bando/m_bando';
 import { XemBanDoService } from './service/xembando.service';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { XemBanDoService } from './service/xembando.service';
     MENUTOP,MENU,MENUBOTTOM,FOOTER,
     TRANGCHU,KHOIHANHTP,
     DATVE,GIOITHIEU,GIOITHIEUNEWS,EqualValidator,
-    CHITIETDATVE, M_BANDO
+    CHITIETDATVE, M_BANDO,
+    M_SLIDER
   ],
   imports: [
     BrowserModule,
