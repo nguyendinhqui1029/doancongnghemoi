@@ -94,7 +94,14 @@ export class DATVE implements OnInit{
     }
     ngOnInit(){ 
         let date=new Date();
-        this.ngayhientai=(date.getMonth()+1)+"/"+date.getDate()+"/"+date.getFullYear();
+        let ngay="";
+        if(date.getDate()<10)
+        {
+            ngay="0"+date.getDate();
+        }else{
+            ngay=date.getDate()+"";
+        }
+        this.ngayhientai=(date.getMonth()+1)+"/"+ngay+"/"+date.getFullYear();
         $( function() {
           $( "#ngay" ).datepicker({
             showOtherMonths: true,

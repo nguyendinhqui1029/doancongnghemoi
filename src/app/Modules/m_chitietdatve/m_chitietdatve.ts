@@ -72,15 +72,12 @@ export class CHITIETDATVE implements OnInit{
         {
             this.ds_ghe[i-1].trangthai=0;
             ds_chitietdatve.forEach(ctdv=>{
-                let dem=0;
-                if(ctdv.soghe.indexOf(ds_ghe[i-1].tenghe)>=0)
+                if(ctdv.soghe.indexOf(this.ds_ghe[i-1].tenghe)>=0)
                 {
-                    ds_ghe[i-1].trangthai=1;
-                }else{
-                    dem+=1;
+                    this.ds_ghe[i-1].trangthai=1;
                 }
             });
-            dstam.push(ds_ghe[i-1]);
+            dstam.push(this.ds_ghe[i-1]);
             if(i%6==0)
             {
               this.ds_khungghe.push(dstam);
@@ -253,7 +250,6 @@ export class CHITIETDATVE implements OnInit{
         this.soluongghe=this.chitietdatve.soluong;
         this.tongtien=this.chitietdatve.soluong*this.tuyenduong.giave;
         this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi);
-           
     }
        
     }
