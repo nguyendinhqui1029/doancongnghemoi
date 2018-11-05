@@ -26,11 +26,13 @@ export class DATVE implements OnInit{
     diemden:any;
   data: CHITIETDATVEXE;
     laythongtindatve() {
+        $("#thongbao").hide();
+        $(".btnghe").removeAttr("disabled");
         this.flag=true;
         this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","");
   
     }
- 
+    
     onChange(deviceValue) {
         this.flag=false;
         this.ds_diadiemden=this.LayDanhSachDenTheoDiaDiemDi(deviceValue);
@@ -87,9 +89,20 @@ export class DATVE implements OnInit{
 
        return ds;
     }
+    goi(){
+        this.flag=false;
+        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","");
+    }
     ngOnInit(){ 
         let date=new Date();
-        this.ngayhientai=(date.getMonth()+1)+"/"+date.getDate()+"/"+date.getFullYear();
+        let ngay="";
+        if(date.getDate()<10)
+        {
+            ngay="0"+date.getDate();
+        }else{
+            ngay=date.getDate()+"";
+        }
+        this.ngayhientai=(date.getMonth()+1)+"/"+ngay+"/"+date.getFullYear();
         $( function() {
           $( "#ngay" ).datepicker({
             showOtherMonths: true,
@@ -97,5 +110,5 @@ export class DATVE implements OnInit{
           });
         } );
     }
-
+ 
 }

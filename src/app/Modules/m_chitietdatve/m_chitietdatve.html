@@ -1,192 +1,220 @@
-<div class="modal fade in" id="DatveModal" role="dialog" >
+<div class="modal fade in" id="DatveModal" role="dialog">
     <div class="modal-dialog" style="width: 490px">
-        <div class="modal-content " >
-            <div class="modal-header" >
+        <div class="modal-content ">
+            <div class="modal-header">
                 <button class="close" data-dismiss="modal" type="button">×</button>
                 <h1 class="modal-title">Thông Tin Đặt Vé</h1>
             </div>
             <div class="khungchitietmuave">
-                    <div class="col-sm-4 col-xs-12 col-ms-12" style="width: 518px; margin-right: 10px; margin-left: -15px">
-                            <div class="panel">
-                                <p class="text-center text-primary text-uppercase">{{chitietdatve.diemdi}} - {{chitietdatve.diemden}} ngày <span ng-bind-html="step1Info.departureDate|svcDate">{{chitietdatve.ngaydi}}</span></p>
-                                <form id="form-steps" name="form" #form_dat_ve="ngForm" role="form">
-                                    <fieldset>
-        
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <label for="">Chọn tuyến xe</label>
-                                                       <div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'" ng-if="schedules.length > 0" style="">
-                                                            <i class="fa fa-bus text-primary"></i>
-                                                            <p class="form-control" ng-class="form.$dirty ? (form.selectRoute.$valid ? 'valid': 'invalid'): ''">
-                                                                <span class="f-left">{{chitietdatve.diemdi}} ⇒ {{chitietdatve.diemden}}</span>
-                                                                <span class="f-right">
-                                                                    <span ng-bind-html="info.price|svcMoney">100.000<sup>₫</sup></span>&nbsp;
-                                                                    <input type="radio" ng-model="info.selectRoute" name="selectRoute" ng-value="schedule" required="" class="ng-pristine ng-untouched ng-valid ng-valid-required" value="[object Object]">
-                                                                </span>
-                                                            </p>
-                                                           
-                                                        </div>
-                                                    </div>
-                                                </div>
+                <div class="col-sm-4 col-xs-12 col-ms-12" style="width:518px; margin-right: 10px; margin-left: -15px">
+                    <div class="panel">
+                        <p class="text-center text-primary text-uppercase">{{tuyenduong.bendi}} - {{tuyenduong.benden}}
+                            ngày <span ng-bind-html="step1Info.departureDate|svcDate">{{chitietdatve.ngaydi}}</span></p>
+                        <form id="form-steps" name="form" #form_dat_ve="ngForm" role="form">
+                            <fieldset>
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="">Chọn tuyến xe</label>
+                                            <div class="controls">
+                                                <i class="fa fa-bus text-primary"></i>
+                                                <p class="form-control">
+                                                    <span class="f-left">{{tuyenduong.bendi}} ⇒ {{tuyenduong.benden}}</span>
+                                                    <span class="f-right">
+                                                        <span>Giá vé: {{tuyenduong.giave|number}}<sup>₫</sup></span>&nbsp;
+                                                    </span>
+                                                </p>
+
                                             </div>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <label for="">Chọn giờ khởi hành</label>
-                                                        <!-- ngIf: timeTables.length > 0 --><div class="controls" ng-if="timeTables.length > 0" style="">
-                                                            <i class="fa fa-clock-o text-primary"></i>
-                                                            <select class="form-control ng-pristine ng-valid ng-valid-required ng-touched" ng-class="form.$dirty ? (form.departureTime.$valid ? 'valid': 'invalid'): ''" name="departureTime" ng-model="info.departureTime" ng-options="option.DisplayText for option in timeTables track by option.Id" required="" style="">
-                                                                <option value="2481256" label="05:00 (Ghế)" selected="selected">05:00 (Ghế)</option>
-                                                                <option value="2481271" label="06:30 (Ghế)">06:30 (Ghế)</option>
-                                                                <option value="2481286" label="08:00 (Ghế)">08:00 (Ghế)</option>
-                                                                <option value="2481301" label="10:00 (Ghế)">10:00 (Ghế)</option>
-                                                                <option value="2481316" label="11:30 (Ghế)">11:30 (Ghế)</option>
-                                                                <option value="2481331" label="13:00 (Ghế)">13:00 (Ghế)</option>
-                                                                <option value="2481346" label="14:30 (Ghế)">14:30 (Ghế)</option>
-                                                                <option value="2481361" label="15:30 (Ghế)">15:30 (Ghế)</option>
-                                                                <option value="2481376" label="17:00 (Ghế)">17:00 (Ghế)</option>
-                                                                <option value="2481391" label="19:00 (Ghế)">19:00 (Ghế)</option>
-                                                                <option value="2481222" label="06:30 (Giường)">06:30 (Giường)</option>
-                                                                <option value="2481223" label="08:00 (Giường)">08:00 (Giường)</option>
-                                                                <option value="2481325" label="10:00 (Giường)">10:00 (Giường)</option>
-                                                                <option value="2481327" label="11:30 (Giường)">11:30 (Giường)</option>
-                                                                <option value="2481320" label="13:00 (Giường)">13:00 (Giường)</option>
-                                                                <option value="2481389" label="14:30 (Giường)">14:30 (Giường)</option>
-                                                                <option value="2481344" label="15:30 (Giường)">15:30 (Giường)</option>
-                                                                <option value="2481387" label="17:00 (Giường)">17:00 (Giường)</option>
-                                                                <option value="2481313" label="19:00 (Giường)">19:00 (Giường)</option>
-                                                            </select>
-                                                           
-                                                        </div><!-- end ngIf: timeTables.length > 0 -->
-                                                        <!-- ngIf: timeTables.length == 0 && getTimeTableComplete === true -->
-                                                    </div>
-                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="">Chọn giờ khởi hành</label>
+                                            <div class="controls">
+                                                <i class="fa fa-clock-o text-primary"></i>
+                                                <select class="form-control" (change)="thaydoigio($event)" [(ngModel)]="chitietdatve.giodi"
+                                                    #giochay="ngModel" id="giochay" name="giochay">
+                                                    <option *ngFor="let giochay of ds_giokhoihanh" value="{{giochay}}">{{giochay}}</option>
+                                                </select>
+
                                             </div>
-                    
-                                           
-                                            <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="form-group">
-                                                            <label for=""  (click)="chonghe()">Nhấn để chọn số ghế 
-                                                                <i class="fa fa-angle-double-up" id="muoiten" style="font-size: 20px;"></i></label>
-                                                            <div class="controls" id="danhsachghe" style="display: none;">
-                                                              <table style="width:100%; " >
-                                                                <thead style="text-align: center; border: slateblue;">
-                                                                    <td><h3>Tầng Dưới</h3></td>
-                                                                    <td><h3>Tầng Trên</h3></td>
-                                                                    <td><h3>Tầng Dưới</h3></td>
-                                                                    <td><h3>Tầng Trên</h3></td>
-                                                                    <td><h3>Tầng Dưới</h3></td>
-                                                                    <td><h3>Tầng Trên</h3></td>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr style="margin: 3px; text-align: center;">
-                                                                        <td style="padding: 5px;"><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">A1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">A1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">B1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">B1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">C1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">C1</i></button></td>
-                                                                    </tr>
-                                                                    <tr style="margin: 3px; text-align: center;">
-                                                                        <td style="padding: 5px;"><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">A1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">A1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">B1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">B1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">C1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">C1</i></button></td>
-                                                                    </tr>
-                                                                    <tr style="margin: 3px; text-align: center;">
-                                                                        <td style="padding: 5px;"><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">A1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">A1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">B1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">B1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">C1</i></button></td>
-                                                                        <td ><button type="button"  name="A1" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)"><i class="fa fa-laptop" style="font-size: 20px">C1</i></button></td>
-                                                                    </tr>
-                                                                </tbody>
-                                                              </table>
-                                                            </div><!-- end ngIf: timeTables.length > 0 -->
-                                                            <!-- ngIf: timeTables.length == 0 && getTimeTableComplete === true -->
-                                                        </div>
-                                                    </div>
-                                            </div> 
-                                            
-                                            
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <label for="">Số điện thoại</label>
-                                                        <!-- ngRepeat: schedule in schedules --><!-- ngIf: schedules.length > 0 --><div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'" ng-if="schedules.length > 0" style="">
-                                                            <i class="fa fa-ticket text-primary"></i>
-                                                            <p class="form-control" ng-class="form.$dirty ? (form.selectRoute.$valid ? 'valid': 'invalid'): ''">
-                                                                <input  id="sodienthoai" name="sodienthoai" placeholder="Điền số di động" type="text" style="width: 100%; border-radius: 5px 5px" #sodienthoai="ngModel" value="" [(ngModel)]="objectDangKi.sodienthoai" minlength="9" maxlength="13" required="required" pattern="/^[+84]|[0-9]">
-                                                            </p>
-                                                            <!-- ngIf: info.price == 0 && getPriceComplete === true -->
-                                                        </div><!-- end ngIf: schedules.length > 0 --><!-- end ngRepeat: schedule in schedules -->
-                                                        <!-- ngIf: schedules.length == 0 && getScheduleComplete === true -->
-                                                        <div class="thong_bao_loi" *ngIf="sodienthoai.invalid && !sodienthoai.pristine"  >
-                                                            <div *ngIf="sodienthoai.errors.required" >
-                                                                Vui lòng nhập số điện thoại.
-                                                            </div>
-                                                            <div *ngIf="sodienthoai.errors.pattern" >
-                                                               Số điện thoại sai định dạng.
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group" style="position: relative;">
+                                            <div id="thongbao" role="dialog" style="display:none; z-index: 100000;border-radius: 5px 5px 5px 5px;
+                                                                left: 50px; top:120px; 
+                                                                width:350px;height: 250px; background: rgb(237, 240, 240);
+                                                                position: absolute;
+                                                                ">
+                                                <div style="border-radius: 4px 4px 4px 4px;padding: 5px;
+                                                     margin: 3px; color:aliceblue;  background: rgb(96, 99, 100);">Xem
+                                                    thông tin hoặc hủy vé
+                                                    <i class="fa fa-times-circle" style="margin-left:150px; " id="btndong"></i></div>
+                                                <div *ngIf="trangthaifrom==false; else nguoclai" style="text-align: center;" >
+                                                    <h3 class="thong_bao_loi">Thông tin chi tiết vé</h3>
+                                                    <table width=300 style="margin: auto;">
+                                                        <tr>
+                                                            <td style="text-align: left"><strong>Điểm đi:</strong></td>
+                                                            <td style="text-align: left"><i>{{noidunghienthithongtinchitiet.diemdi}}</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align: left"><strong>Điểm đến:</strong></td>
+                                                            <td style="text-align: left"><i>{{noidunghienthithongtinchitiet.diemden}}</i></td>   
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align: left"><strong>Giờ đi:</strong></td>
+                                                            <td style="text-align: left"><i>{{noidunghienthithongtinchitiet.giodi}}</i></td>   
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align: left"><strong >Ngày đi:</strong></td>
+                                                            <td style="text-align: left"><i>{{noidunghienthithongtinchitiet.ngaydi}}</i></td>   
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align: left"><strong>Số ghế:</strong></td>
+                                                            <td style="text-align: left"><i>{{noidunghienthithongtinchitiet.soghe}}</i></td>   
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                <button type="button" class="btn btn-primary mt-3" (click)="huyghe(ghedangchon,noidunghienthithongtinchitiet)">
+                                                                            Hủy ghế {{ghedangchon}}
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <ng-template #nguoclai>
+                                                        <div class="row" style="margin-bottom:15px;">
+                                                            <div class="col-ms-8" style="margin-left: 65px; margin-top: 60px;">
+                                                                <input type="text" id="sodienthoaixacnhan" class="form-control"
+                                                                    value="" placeholder="nhập số điện thoại" />
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
+                                                        <div class="row" style="margin-bottom:2px;">
+                                                            <div class="col-ms-12 text-center">
+                                                                <span class="thong_bao_loi" id="thongbaoloidangnhap"></span>
+                                                                <button type="button" class="btn btn-primary" (click)="nutxacnhan()">
+                                                                    Xác nhận
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                </ng-template>
                                             </div>
+                                            <label for="" (click)="chonghe()">Nhấn để chọn số ghế
+                                                <i class="fa fa-angle-double-up" id="muoiten" style="font-size: 20px;"></i>
+                                                <span class="thong_bao_loi">&nbsp;*</span>
+                                                <span class="thong_bao_loi" style="margin-left: 30px;" id="thongbaochonghe"></span>
+                                            </label>
+                                            <div class="controls" id="danhsachghe" style="display: none;">
+                                                <table style="width:100%; ">
+                                                    <thead style="text-align: center; border: slateblue;">
+                                                        <td>
+                                                            <h3>Tầng Dưới</h3>
+                                                        </td>
+                                                        <td>
+                                                            <h3>Tầng Trên</h3>
+                                                        </td>
+                                                        <td>
+                                                            <h3>Tầng Dưới</h3>
+                                                        </td>
+                                                        <td>
+                                                            <h3>Tầng Trên</h3>
+                                                        </td>
+                                                        <td>
+                                                            <h3>Tầng Dưới</h3>
+                                                        </td>
+                                                        <td>
+                                                            <h3>Tầng Trên</h3>
+                                                        </td>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr *ngFor="let ds_ghe of ds_khungghe" style="margin: 3px; text-align: center;">
+                                                            <td *ngFor="let ghe of ds_ghe" style="padding-bottom: 5px;">
+                                                                <button *ngIf="ghe.trangthai==0 else nguoclai" (click)="gheduocclick($event)"
+                                                                    type="button" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)">
+                                                                    <i class="fa fa-laptop" style="font-size: 20px">{{ghe.tenghe}}</i>
+                                                                    <input type="hidden" value="{{ghe.trangthai}}" />
+                                                                </button>
+                                                                <ng-template #nguoclai>
+                                                                    <button (click)="gheduocclick($event)" type="button"
+                                                                        style="width: 90%; height: 25px; background-image: linear-gradient(to right,rgb(231, 35, 35),rgb(238, 128, 128) ,rgb(231, 35, 35))">
+                                                                        <i class="fa fa-laptop" style="font-size: 20px">{{ghe.tenghe}}</i>
+                                                                        <input type="hidden" value="{{ghe.trangthai}}" />
+                                                                    </button>
+                                                                </ng-template>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="">Số điện thoại</label>
+                                            <!-- ngRepeat: schedule in schedules -->
+                                            <!-- ngIf: schedules.length > 0 -->
+                                            <div class="controls" ng-repeat="schedule in schedules" ng-animate="'animate'"
+                                                ng-if="schedules.length > 0" style="">
+                                                <i class="fa fa-ticket text-primary"></i>
+                                                <p class="form-control">
+                                                    <input id="sodienthoai" name="sodienthoai" placeholder="Điền số di động"
+                                                        type="text" style="width: 100%; border-radius: 5px 5px"
+                                                        #sodienthoai="ngModel" value="" [(ngModel)]="chitietdatve.sodienthoai"
+                                                        minlength="9" maxlength="13" required="required" pattern="/^[+84]|[0-9]">
+                                                </p>
 
-                                            <div class="form-section">
-                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12">
-                                                   <h2>Tổng số tiền:200000<sup>đ</sup></h2>
+                                            </div>
+                                            <div class="thong_bao_loi" *ngIf="sodienthoai.invalid && !sodienthoai.pristine">
+                                                <div *ngIf="sodienthoai.errors.required">
+                                                    Vui lòng nhập số điện thoại.
+                                                </div>
+                                                <div *ngIf="sodienthoai.errors.pattern">
+                                                    Số điện thoại sai định dạng.
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                            <div class="form-section">
-                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12">
-                                                    <button type="submit" class="btn btn-success btn-flat" [disabled]="form_dat_ve.form.invalid"><i class="fa fa-arrow-right icon-flat bg-success"></i>Đặt Vé</button>
-                                                </div>
-                                            </div>
-                                    </fieldset>
-                                    <p>
-                                        <strong>Miễn phí</strong>
-                                        <span>
-                                            <span class="water sprite" title="Nước uống"></span>
-                                            <span class="khan sprite" title="Khăn lạnh"></span>
-                                            <span class="wifi sprite" title="Wifi"></span>
-                                            <span class="tivi sprite" title="Tivi"></span>
-                                        </span>
-                                    </p>
-                                </form>
-                            </div>
-                            
+                                <div class="form-section">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12">
+                                        <h2>Tổng số tiền: {{tongtien|number}}<sup>đ</sup></h2>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12">
+                                        <button type="submit" (click)="guimuave()" class="btn btn-success btn-flat"
+                                            [disabled]="form_dat_ve.form.invalid">
+                                            <i class="fa fa-arrow-right icon-flat bg-success"></i>Mua vé
+                                        </button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <p>
+                                <strong>Miễn phí</strong>
+                                <span>
+                                    <span class="water sprite" title="Nước uống"></span>
+                                    <span class="khan sprite" title="Khăn lạnh"></span>
+                                    <span class="wifi sprite" title="Wifi"></span>
+                                    <span class="tivi sprite" title="Tivi"></span>
+                                </span>
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<!-- <i class="fa fa-clock-o text-primary"></i>
-                                                                <select class="form-control ng-pristine ng-valid ng-valid-required ng-touched" ng-class="form.$dirty ? (form.departureTime.$valid ? 'valid': 'invalid'): ''" name="departureTime" ng-model="info.departureTime" ng-options="option.DisplayText for option in timeTables track by option.Id" required="" style="">
-                                                                    <option value="2481256" label="A1" selected="selected">A1</option>
-                                                                    <option value="2481271" label="A2">A2</option>
-                                                                    <option value="2481286" label="A3">A3</option>
-                                                                    <option value="2481301" label="A4">A4</option>
-                                                                    <option value="2481316" label="A5">A5</option>
-                                                                    <option value="2481331" label="A6">A6</option>
-                                                                    <option value="2481346" label="A7">A7</option>
-                                                                    <option value="2481361" label="A8">A8</option>
-                                                                    <option value="2481376" label="A9">A9</option>
-                                                                    <option value="2481391" label="A10">A10</option>
-                                                                    <option value="2481271" label="A2">A11</option>
-                                                                    <option value="2481286" label="A3">A12</option>
-                                                                    <option value="2481301" label="A4">A13</option>
-                                                                    <option value="2481316" label="A5">A14</option>
-                                                                    <option value="2481331" label="A6">A15</option>
-                                                                    <option value="2481346" label="A7">A16</option>
-                                                                    <option value="2481361" label="A8">A17</option>
-                                                                    <option value="2481376" label="A9">A18</option>
-                                                                    <option value="2481391" label="A10">A19</option>
-                                                                    <option value="2481391" label="A10">A19</option>
-                                                                </select>-->
