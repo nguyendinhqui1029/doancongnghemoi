@@ -9,6 +9,7 @@ declare var $:any;
 export class CHITIETLICHTRINH implements OnInit {
     danhsachtuyen:any[] = ds_tuyenduong; 
     danhsachtheotuyen:any[]=[];
+    ngayhientai:any="";
     constructor() { 
         for(var i=0; i<this.danhsachtuyen.length;i++)
         { 
@@ -62,8 +63,20 @@ export class CHITIETLICHTRINH implements OnInit {
     }
    
     ngOnInit() { 
+       //lây ngày hiện tại
+       let date=new Date();
+       let ngay="";
+       if(date.getDate()<10)
+       {
+           ngay="0"+date.getDate();
+       }else{
+           ngay=date.getDate()+"";
+       }
+       this.ngayhientai=(date.getMonth()+1)+"/"+ngay+"/"+date.getFullYear();
        
        
     }
+
+    
 
 }
