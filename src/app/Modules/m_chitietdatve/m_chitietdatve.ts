@@ -42,7 +42,9 @@ export class CHITIETDATVE implements OnInit{
                     ghe.trangthai=0;
                 }
             });
-            console.log(chitietdatve.soghe);
+            $("#thongbao").hide();
+            $(".btnghe").removeAttr("disabled");
+           
     
         //xu li luu thông tin xuong database
 
@@ -114,11 +116,6 @@ export class CHITIETDATVE implements OnInit{
             this.flagchitiet=true;
             this.chitietdatve.soghe=this.ds_ghedangchon;
             this.chitietdatve.idchuyenxe=this.tuyenduong.id_tuyenduong;
-            alert("Thông tin vé:"+this.chitietdatve.idchuyenxe+"-"+
-            this.chitietdatve.diemdi+"-"+this.chitietdatve.diemden+"-"+
-            this.chitietdatve.giodi+"-"+this.chitietdatve.ngaydi+"-"+
-            this.chitietdatve.sodienthoai+"-"+this.chitietdatve.soghe+"-"+
-            this.chitietdatve.soluong);
         }else{
             $("#danhsachghe").slideDown() ;
             $("#muoiten").addClass("fas fa-angle-double-down");
