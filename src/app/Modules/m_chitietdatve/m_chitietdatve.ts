@@ -42,9 +42,7 @@ export class CHITIETDATVE implements OnInit{
                     ghe.trangthai=0;
                 }
             });
-            $("#thongbao").hide();
-            $(".btnghe").removeAttr("disabled");
-           
+            console.log(chitietdatve.soghe);
     
         //xu li luu thông tin xuong database
 
@@ -74,12 +72,15 @@ export class CHITIETDATVE implements OnInit{
         {
             this.ds_ghe[i-1].trangthai=0;
             ds_chitietdatve.forEach(ctdv=>{
-                if(ctdv.soghe.indexOf(this.ds_ghe[i-1].tenghe)>=0)
+                let dem=0;
+                if(ctdv.soghe.indexOf(ds_ghe[i-1].tenghe)>=0)
                 {
-                    this.ds_ghe[i-1].trangthai=1;
+                    ds_ghe[i-1].trangthai=1;
+                }else{
+                    dem+=1;
                 }
             });
-            dstam.push(this.ds_ghe[i-1]);
+            dstam.push(ds_ghe[i-1]);
             if(i%6==0)
             {
               this.ds_khungghe.push(dstam);
@@ -116,6 +117,11 @@ export class CHITIETDATVE implements OnInit{
             this.flagchitiet=true;
             this.chitietdatve.soghe=this.ds_ghedangchon;
             this.chitietdatve.idchuyenxe=this.tuyenduong.id_tuyenduong;
+            alert("Thông tin vé:"+this.chitietdatve.idchuyenxe+"-"+
+            this.chitietdatve.diemdi+"-"+this.chitietdatve.diemden+"-"+
+            this.chitietdatve.giodi+"-"+this.chitietdatve.ngaydi+"-"+
+            this.chitietdatve.sodienthoai+"-"+this.chitietdatve.soghe+"-"+
+            this.chitietdatve.soluong);
         }else{
             $("#danhsachghe").slideDown() ;
             $("#muoiten").addClass("fas fa-angle-double-down");
@@ -247,6 +253,7 @@ export class CHITIETDATVE implements OnInit{
         this.soluongghe=this.chitietdatve.soluong;
         this.tongtien=this.chitietdatve.soluong*this.tuyenduong.giave;
         this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi);
+           
     }
        
     }
