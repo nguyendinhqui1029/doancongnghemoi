@@ -137,15 +137,15 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr *ngFor="let ds_ghe of ds_khungghe" style="margin: 3px; text-align: center;">
-                                                            <td *ngFor="let ghe of ds_ghe" style="padding-bottom: 5px;">
+                                                            <td *ngFor="let ghe of ds_ghe" style="padding-bottom: 5px">
                                                                 <button *ngIf="ghe.trangthai==0 else nguoclai" (click)="gheduocclick($event)"
-                                                                    type="button" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD)">
+                                                                    type="button" style="width: 90%; height: 25px; background-image: linear-gradient(to right,#009ACD,#00BFFF ,#009ACD);">
                                                                     <i class="fa fa-laptop" style="font-size: 20px">{{ghe.tenghe}}</i>
                                                                     <input type="hidden" value="{{ghe.trangthai}}" />
                                                                 </button>
                                                                 <ng-template #nguoclai>
                                                                     <button (click)="gheduocclick($event)" type="button"
-                                                                        style="width: 90%; height: 25px; background-image: linear-gradient(to right,rgb(231, 35, 35),rgb(238, 128, 128) ,rgb(231, 35, 35))">
+                                                                        style="width: 90%; height: 25px; background-image: linear-gradient(to right,rgb(231, 35, 35),rgb(238, 128, 128) ,rgb(231, 35, 35));">
                                                                         <i class="fa fa-laptop" style="font-size: 20px">{{ghe.tenghe}}</i>
                                                                         <input type="hidden" value="{{ghe.trangthai}}" />
                                                                     </button>
