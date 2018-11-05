@@ -27,44 +27,7 @@ export class CHITIETDATVE implements OnInit{
     {
        
     }
-<<<<<<< HEAD
-    //Hủy đặt ghế
-    huyghe(ghedangchon,chitietdatve)
-    {
-        let vt=chitietdatve.soghe.indexOf(ghedangchon);
-        if(vt>=0)
-        {
-            chitietdatve.soghe.splice(vt,1);
-            this.ds_ghe.forEach(ghe=>{
-                if(ghe.tenghe==ghedangchon)
-                {
-                    ghe.trangthai=0;
-                }
-            });
-            console.log(chitietdatve.soghe);
-    
-        //xu li luu thông tin xuong database
-
-        }
-    }
-    
-    //Bắt sự kiện nút xác nhận số điện thoại
-    nutxacnhan()
-    {
-        for(let i=0;i< this.ds_chitietdatve.length;i++) {
-            if(this.ds_chitietdatve[i].sodienthoai==$("#sodienthoaixacnhan").val() && this.ds_chitietdatve[i].ngaydi==this.chitietdatve.ngaydi)
-            {
-                this.trangthaifrom=false;
-                this.noidunghienthithongtinchitiet=this.ds_chitietdatve[i];
-                i=i+this.ds_chitietdatve.length;
-            }else{
-                $("#thongbaoloidangnhap").html("Số điện thoại không đúng.<br>"); 
-            } 
-        }; 
-    }
-=======
    
->>>>>>> 100a65d76c72e98839693db2cb8be60d150134cf
     //Lấy danh sách ghế theo mã tuyến và ngày
     capnhattrangthaighe(matuyen,ngay){
         this.ds_khungghe=[];

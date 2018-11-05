@@ -13,6 +13,7 @@ export class TUYENDUONG implements OnInit {
        this.danhsachtuyenduong= this.layDSTuyenTheoTinh();
         
     }
+    /*
     layDSTuyenTheoName_TuyenDuong(name:string)
     {
         let danhsachtinh:any[]=[];
@@ -26,8 +27,29 @@ export class TUYENDUONG implements OnInit {
             
         }
         return danhsachtinh;
-  
     }
+    */
+   layDSTuyenTheoName_TuyenDuong(name:string)
+    {
+        let danhsachtinh:any[]=[];
+        let dstam:any[]=[];
+        for(var i =0 ;i < this.tuyenduongs.length; i++)
+        {
+             if(this.tuyenduongs[i].name_tuyenduong === name)
+             {
+                 danhsachtinh.push(this.tuyenduongs[i]);
+                 if(danhsachtinh.indexOf(this.tuyenduongs[i])===1)   
+                 {
+                     dstam.push(this.tuyenduongs[i]);
+                 }
+             }
+             
+        }
+        console.log(dstam);
+        return dstam;
+        
+    }
+    
 
     layDSTuyenTheoTinh()
     {
@@ -37,9 +59,12 @@ export class TUYENDUONG implements OnInit {
         {
             if(dstam.indexOf(this.tuyenduongs[i].name_tuyenduong)===-1)
             {
+                //danhsachtuyen.push({tentuyenduong:this.tuyenduongs[i].name_tuyenduong,thongtin:this.layDSTuyenTheoName_TuyenDuong(this.tuyenduongs[i].name_tuyenduong)});
                 danhsachtuyen.push({tentuyenduong:this.tuyenduongs[i].name_tuyenduong,thongtin:this.layDSTuyenTheoName_TuyenDuong(this.tuyenduongs[i].name_tuyenduong)});
                 dstam.push(this.tuyenduongs[i].name_tuyenduong);
             }
+            
+            
         }
     
         return danhsachtuyen;
