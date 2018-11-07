@@ -39,6 +39,7 @@ import { from } from 'rxjs';
 import {AgmCoreModule} from '@agm/core';
 import { M_BANDO } from './Modules/m_bando/m_bando';
 import { XemBanDoService } from './service/xembando.service';
+import { M_HUYVE } from './Modules/m_huyve/m_huyve.component';
 
 
 @NgModule({
@@ -55,7 +56,7 @@ import { XemBanDoService } from './service/xembando.service';
     TRANGCHU,KHOIHANHTP,
     DATVE,GIOITHIEU,GIOITHIEUNEWS,EqualValidator,
     CHITIETDATVE, M_BANDO,
-    M_SLIDER
+    M_SLIDER,M_HUYVE
   ],
   imports: [
     BrowserModule,

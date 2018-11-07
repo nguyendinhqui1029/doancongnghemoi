@@ -23,7 +23,7 @@ const routes: Routes=[
     {path: 'dangnhap', component:DANGNHAP},
     {path: 'dangky', component:DANGKY},
     {path: 'gioithieu', component:GIOITHIEU},
-    {path: 'chitietlichtrinh', component:CHITIETLICHTRINH},
+    {path: 'chitietlichtrinh/:g/:c', component:CHITIETLICHTRINH},
 
 ];
 export const routing = RouterModule.forRoot(routes);

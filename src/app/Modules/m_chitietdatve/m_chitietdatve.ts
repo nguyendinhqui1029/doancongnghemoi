@@ -22,49 +22,12 @@ export class CHITIETDATVE implements OnInit{
     ds_khungghe:any[]=[];
     ds_ghe:any[]=ds_ghe;
     ds_chitietdatve:any[]=ds_chitietdatve;
-    trangthaifrom:boolean=true;
-    noidunghienthithongtinchitiet:CHITIETDATVEXE=null;
     ghedangchon:any="";
     constructor()
     {
        
     }
-    //Hủy đặt ghế
-    huyghe(ghedangchon,chitietdatve)
-    {
-        let vt=chitietdatve.soghe.indexOf(ghedangchon);
-        if(vt>=0)
-        {
-            chitietdatve.soghe.splice(vt,1);
-            this.ds_ghe.forEach(ghe=>{
-                if(ghe.tenghe==ghedangchon)
-                {
-                    ghe.trangthai=0;
-                }
-            });
-            $("#thongbao").hide();
-            $(".btnghe").removeAttr("disabled");
-           
-    
-        //xu li luu thông tin xuong database
-
-        }
-    }
-    
-    //Bắt sự kiện nút xác nhận số điện thoại
-    nutxacnhan()
-    {
-        for(let i=0;i< this.ds_chitietdatve.length;i++) {
-            if(this.ds_chitietdatve[i].sodienthoai==$("#sodienthoaixacnhan").val() && this.ds_chitietdatve[i].ngaydi==this.chitietdatve.ngaydi)
-            {
-                this.trangthaifrom=false;
-                this.noidunghienthithongtinchitiet=this.ds_chitietdatve[i];
-                i=i+this.ds_chitietdatve.length;
-            }else{
-                $("#thongbaoloidangnhap").html("Số điện thoại không đúng.<br>"); 
-            } 
-        }; 
-    }
+   
     //Lấy danh sách ghế theo mã tuyến và ngày
     capnhattrangthaighe(matuyen,ngay){
         this.ds_khungghe=[];
@@ -74,12 +37,15 @@ export class CHITIETDATVE implements OnInit{
         {
             this.ds_ghe[i-1].trangthai=0;
             ds_chitietdatve.forEach(ctdv=>{
-                if(ctdv.soghe.indexOf(this.ds_ghe[i-1].tenghe)>=0)
+                let dem=0;
+                if(ctdv.soghe.indexOf(ds_ghe[i-1].tenghe)>=0)
                 {
-                    this.ds_ghe[i-1].trangthai=1;
+                    ds_ghe[i-1].trangthai=1;
+                }else{
+                    dem+=1;
                 }
             });
-            dstam.push(this.ds_ghe[i-1]);
+            dstam.push(ds_ghe[i-1]);
             if(i%6==0)
             {
               this.ds_khungghe.push(dstam);
@@ -116,6 +82,11 @@ export class CHITIETDATVE implements OnInit{
             this.flagchitiet=true;
             this.chitietdatve.soghe=this.ds_ghedangchon;
             this.chitietdatve.idchuyenxe=this.tuyenduong.id_tuyenduong;
+            alert("Thông tin vé:"+this.chitietdatve.idchuyenxe+"-"+
+            this.chitietdatve.diemdi+"-"+this.chitietdatve.diemden+"-"+
+            this.chitietdatve.giodi+"-"+this.chitietdatve.ngaydi+"-"+
+            this.chitietdatve.sodienthoai+"-"+this.chitietdatve.soghe+"-"+
+            this.chitietdatve.soluong);
         }else{
             $("#danhsachghe").slideDown() ;
             $("#muoiten").addClass("fas fa-angle-double-down");
@@ -178,7 +149,7 @@ export class CHITIETDATVE implements OnInit{
     }
 
     //bắt sự kiện thay đổi giờ chạy
-    thaydoigio(gio){
+    thaydoigio(){
        this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatvexe.diemdi,this.chitietdatvexe.diemden,this.chitietdatvexe.giodi);
        this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi);
       // console.log(this.ds_khungghe);
@@ -190,10 +161,10 @@ export class CHITIETDATVE implements OnInit{
     {
        if(data.target.nextSibling.value==1)
        {
-           this.ghedangchon=data.target.innerText;
-            this.trangthaifrom=true;
-            $("#thongbao").show();
-            $(".btnghe").attr("disabled", "disabled");;
+        $("#thongbaochonghe").text("Ghế đã được chọn vui lòng chọn ghế khác.");
+          // this.ghedangchon=data.target.innerText;
+           // $("#thongbao").show();
+           // $(".btnghe").attr("disabled", "disabled");;
        }else{
         if(this.soluongghe >this.ds_ghedangchon.length)
         {
@@ -201,12 +172,20 @@ export class CHITIETDATVE implements OnInit{
                 if(this.ds_ghedangchon.indexOf(tenghe)>=0)
                 {
                     //mau xanh
-                    data.path[1].style.backgroundImage="linear-gradient(to right, rgb(0, 154, 205), rgb(0, 191, 255), rgb(0, 154, 205))";
-                    this.ds_ghedangchon.splice(this.ds_ghedangchon.indexOf(tenghe),1);
+                    if(data.path[1].nodeName=="BUTTON")
+                    {
+                        data.path[1].style.backgroundImage="linear-gradient(to right, rgb(0, 154, 205), rgb(0, 191, 255), rgb(0, 154, 205))";
+                        this.ds_ghedangchon.splice(this.ds_ghedangchon.indexOf(tenghe),1);
+                    }
+                    
                 }else{
                     //mau do
-                   data.path[1].style.backgroundImage="linear-gradient(to right,rgb(231, 35, 35),rgb(238, 128, 128) ,rgb(231, 35, 35))";
-                   this.ds_ghedangchon.push(tenghe);
+                    if(data.path[1].nodeName=="BUTTON")
+                    {
+                       data.path[1].style.backgroundImage="linear-gradient(to right,rgb(231, 35, 35),rgb(238, 128, 128) ,rgb(231, 35, 35))";
+                       this.ds_ghedangchon.push(tenghe);
+                       $("#thongbaochonghe").text("");
+                    }
                 }
         }else{
            
@@ -214,9 +193,12 @@ export class CHITIETDATVE implements OnInit{
             if(this.ds_ghedangchon.indexOf(tenghe)>=0)
             {
                 //mau xanh
+                if(data.path[1].nodeName=="BUTTON")
+                {
                 $("#thongbaochonghe").text('');
                 data.path[1].style.backgroundImage="linear-gradient(to right, rgb(0, 154, 205), rgb(0, 191, 255), rgb(0, 154, 205))";
                 this.ds_ghedangchon.splice(this.ds_ghedangchon.indexOf(tenghe),1);
+                }
             }else{
                 $("#thongbaochonghe").text('Đã chọn đủ số lượng ghế');
             }
@@ -247,6 +229,7 @@ export class CHITIETDATVE implements OnInit{
         this.soluongghe=this.chitietdatve.soluong;
         this.tongtien=this.chitietdatve.soluong*this.tuyenduong.giave;
         this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi);
+           
     }
        
     }

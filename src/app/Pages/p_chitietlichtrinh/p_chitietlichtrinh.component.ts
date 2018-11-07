@@ -1,22 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { ds_tuyenduong } from '../../model/mock_tuyenduong';
-
+import {Route,ActivatedRoute, Router} from '@angular/router';
+import {Subscription} from 'rxjs';
+import { TuyenDuong } from 'src/app/model/tuyenduong';
 declare var $:any;
 @Component({
     selector: 'p_chitietlichtrinh',
     templateUrl: './p_chitietlichtrinh.component.html'
 })
-export class CHITIETLICHTRINH implements OnInit {
+export class CHITIETLICHTRINH implements OnInit,OnDestroy {
+    
     danhsachtuyen:any[] = ds_tuyenduong; 
     danhsachtheotuyen:any[]=[];
     ngayhientai:any="";
-    constructor() { 
+    diemdi:any="";
+    diemden:any="";
+    subscription:Subscription;
+    constructor(private route:Router,private activateRoute:ActivatedRoute) { 
+       
+    }
+    
+    laychitietlichtrinhtheodiemdidiemden(diemdi,diemden)
+    {
+        let ds:TuyenDuong[]=[];
         for(var i=0; i<this.danhsachtuyen.length;i++)
         { 
-            this.danhsachtheotuyen = this.layDSchitiettheoTuyenDuong(this.danhsachtuyen[i].name_tuyenduong);
+            if(this.danhsachtuyen[i].OriginCode==diemdi&&this.danhsachtuyen[i].DestCode==diemden)
+            {
+                ds.push(this.danhsachtuyen[i]);
+            }
         }
+        return ds;
     }
-
     batsukienclick(event:any)
     {
         let ID =event.target.attributes.id.value;
@@ -63,6 +78,12 @@ export class CHITIETLICHTRINH implements OnInit {
     }
    
     ngOnInit() { 
+        //lay diem di diem den tren url
+        this.subscription =this.activateRoute.params.subscribe(params=>{
+            this.diemdi=params["g"];
+            this.diemden=params["c"];
+        });
+        this.danhsachtuyen=this.laychitietlichtrinhtheodiemdidiemden(this.diemdi,this.diemden);
        //lây ngày hiện tại
        let date=new Date();
        let ngay="";
@@ -76,7 +97,10 @@ export class CHITIETLICHTRINH implements OnInit {
        
        
     }
-
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
+   
     
 
 }
