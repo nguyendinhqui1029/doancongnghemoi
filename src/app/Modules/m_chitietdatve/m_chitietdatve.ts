@@ -10,6 +10,7 @@ declare var $:any;
     selector:'m_chitietdatve',
     templateUrl:'./m_chitietdatve.html'
 })
+
 export class CHITIETDATVE implements OnInit{
     objectDangKi:OBJECTDANGKI=new OBJECTDANGKI('','','','','','');;
     @Input() chitietdatvexe: CHITIETDATVEXE;
@@ -176,8 +177,7 @@ export class CHITIETDATVE implements OnInit{
                     {
                         data.path[1].style.backgroundImage="linear-gradient(to right, rgb(0, 154, 205), rgb(0, 191, 255), rgb(0, 154, 205))";
                         this.ds_ghedangchon.splice(this.ds_ghedangchon.indexOf(tenghe),1);
-                    }
-                    
+                    }   
                 }else{
                     //mau do
                     if(data.path[1].nodeName=="BUTTON")
@@ -195,9 +195,9 @@ export class CHITIETDATVE implements OnInit{
                 //mau xanh
                 if(data.path[1].nodeName=="BUTTON")
                 {
-                $("#thongbaochonghe").text('');
-                data.path[1].style.backgroundImage="linear-gradient(to right, rgb(0, 154, 205), rgb(0, 191, 255), rgb(0, 154, 205))";
-                this.ds_ghedangchon.splice(this.ds_ghedangchon.indexOf(tenghe),1);
+                    $("#thongbaochonghe").text('');
+                    data.path[1].style.backgroundImage="linear-gradient(to right, rgb(0, 154, 205), rgb(0, 191, 255), rgb(0, 154, 205))";
+                    this.ds_ghedangchon.splice(this.ds_ghedangchon.indexOf(tenghe),1);
                 }
             }else{
                 $("#thongbaochonghe").text('Đã chọn đủ số lượng ghế');
@@ -207,29 +207,24 @@ export class CHITIETDATVE implements OnInit{
         
        
     }
-           
-        
     }
     //kết thúc bắt sự kiện click vào ghế
 
     ngOnInit(){
-        /*thong bao*/
-        $(document).ready(function() {
-            $("#btndong" ).on( "click",function() {
-            
-             $("#thongbao").hide();
-             $(".btnghe").removeAttr("disabled");
-            });
-           
-          } );
-          /*thong bao*/
+        
         this.chitietdatve=this.chitietdatvexe;
-        this. laygiokhoihanhtheodiemdidiemden(this.chitietdatvexe.diemdi,this.chitietdatvexe.diemden);
-        this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatvexe.diemdi,this.chitietdatvexe.diemden,this.chitietdatvexe.giodi);
+        if(this.chitietdatve.giodi!="")
+        {
+            this.chitietdatve.giodi=this.chitietdatvexe.giodi;
+        }else{
+            this. laygiokhoihanhtheodiemdidiemden(this.chitietdatve.diemdi,this.chitietdatve.diemden);
+        }
+        
+        this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatve.diemdi,this.chitietdatve.diemden,this.chitietdatve.giodi);
         this.soluongghe=this.chitietdatve.soluong;
         this.tongtien=this.chitietdatve.soluong*this.tuyenduong.giave;
         this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi);
-           
+        console.log(this.chitietdatve);   
     }
        
     }

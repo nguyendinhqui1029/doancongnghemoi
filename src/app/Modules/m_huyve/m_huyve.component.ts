@@ -49,5 +49,17 @@ export class M_HUYVE implements OnInit {
          } 
      }; 
  }
-    ngOnInit(): void { }
+    ngOnInit() {
+        
+        /*thong bao*/
+        $(document).ready(function() {
+            $("#btndong" ).on( "click",function() {
+            
+             $("#thongbao").hide();
+             $(".btnghe").removeAttr("disabled");
+            });
+           
+          } );
+          /*thong bao*/
+     }
 }
