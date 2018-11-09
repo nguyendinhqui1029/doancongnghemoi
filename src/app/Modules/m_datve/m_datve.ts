@@ -106,7 +106,8 @@ export class DATVE implements OnInit{
         $( function() {
           $( "#ngay" ).datepicker({
             showOtherMonths: true,
-            selectOtherMonths: true
+            selectOtherMonths: true,
+            minDate: 0, maxDate: "+1M"
           });
         } );
 

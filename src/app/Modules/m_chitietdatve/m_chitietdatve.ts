@@ -5,6 +5,8 @@ import {ds_tuyenduong} from'../../model/mock_tuyenduong';
 import { TuyenDuong } from "src/app/model/tuyenduong";
 import { ds_ghe } from "../../model/mock_dsghe";
 import { ds_chitietdatve } from "../../model/mock_chitietdatve";
+import { ChiTietDatVeService } from "src/app/service/chitietdatve.service";
+import { error } from "@angular/compiler/src/util";
 declare var $:any;
 @Component({
     selector:'m_chitietdatve',
@@ -23,11 +25,47 @@ export class CHITIETDATVE implements OnInit{
     ds_ghe:any[]=ds_ghe;
     ds_chitietdatve:any[]=ds_chitietdatve;
     ghedangchon:any="";
-    constructor()
+
+    thongbao:any="";
+    constructor(private chitietdatveservice:ChiTietDatVeService)
     {
        
     }
-   
+    //chitiet datve
+    laydanhsachchitietdatve()
+    {
+            this.chitietdatveservice.getListChiTietDatVe().subscribe((reponse:CHITIETDATVEXE[])=>{
+               
+               this.ds_chitietdatve=reponse;
+
+               this.ds_chitietdatve.forEach(element => {
+                   let mangghetam=[];
+                   if(element.soghe.L!=undefined)
+                   {
+                    element.soghe.L.forEach(ghe => {
+                        mangghetam.push(ghe.S);
+                        
+                    });
+                   }
+    
+                   element.soghe=mangghetam;
+                   element.diemden=element.diemden.S;
+                   element.idchuyenxe=element.idchuyenxe.N;
+                   element.diemdi=element.diemdi.S;
+                   element.giodi=element.giodi.S;
+                   element.ngaydi=element.ngaydi.S;
+                   element.sodienthoai=element.sodienthoai.S;
+                   element.soluong=element.soluong.S;
+
+               });
+              
+               this.soluongghe=this.chitietdatve.soluong;
+               this.tongtien=this.chitietdatve.soluong*this.tuyenduong.giave;
+               this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi); 
+               this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi);  
+            });
+            
+    }
     //Lấy danh sách ghế theo mã tuyến và ngày
     capnhattrangthaighe(matuyen,ngay){
         this.ds_khungghe=[];
@@ -82,6 +120,12 @@ export class CHITIETDATVE implements OnInit{
             this.flagchitiet=true;
             this.chitietdatve.soghe=this.ds_ghedangchon;
             this.chitietdatve.idchuyenxe=this.tuyenduong.id_tuyenduong;
+
+            this.chitietdatveservice.addThongTinChiTietDatVe(this.chitietdatve).subscribe(
+                data => {
+                    this.thongbao="Dat ve hanh cong";
+                });
+
             alert("Thông tin vé:"+this.chitietdatve.idchuyenxe+"-"+
             this.chitietdatve.diemdi+"-"+this.chitietdatve.diemden+"-"+
             this.chitietdatve.giodi+"-"+this.chitietdatve.ngaydi+"-"+
@@ -133,7 +177,7 @@ export class CHITIETDATVE implements OnInit{
         this.chitietdatve.giodi=this.ds_giokhoihanh[0];
         return td;
     }
-
+    
     //Lấy giờ khởi  hành theo điểm đi và điểm đến
     laygiokhoihanhtheodiemdidiemden(diemdi,diemden)
     {
