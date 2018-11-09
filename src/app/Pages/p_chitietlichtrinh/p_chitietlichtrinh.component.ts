@@ -17,17 +17,17 @@ export class CHITIETLICHTRINH implements OnInit,OnDestroy {
     diemdi:any="";
     diemden:any="";
     subscription:Subscription;
-    thongtindatve:CHITIETDATVEXE=new CHITIETDATVEXE("","","","","","","","");
-    flag:boolean=false;
+    thongtindatve:CHITIETDATVEXE;
     constructor(private route:Router,private activateRoute:ActivatedRoute) { 
        
     }
 
     muavechitiet(chitiet)
     {
-        this.thongtindatve=new CHITIETDATVEXE(chitiet.id_tuyenduong,chitiet.DestCode,chitiet.OriginCode,this.ngayhientai,1,chitiet.giochay,"","");
-        console.log(this.thongtindatve);
-        this.flag=true;
+        this.thongtindatve=new CHITIETDATVEXE(chitiet.id_tuyenduong,chitiet.OriginCode,chitiet.DestCode,this.ngayhientai,1,chitiet.giochay,"","","");
+            
+       // console.log(this.thongtindatve);
+       
     }
 
     laychitietlichtrinhtheodiemdidiemden(diemdi,diemden)

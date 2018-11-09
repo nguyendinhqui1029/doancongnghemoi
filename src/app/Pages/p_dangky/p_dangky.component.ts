@@ -23,6 +23,7 @@ export class DANGKY implements OnInit  {
           .subscribe( 
             data => {
               this.thongbao="Đăng kí thành công.";
+              localStorage.setItem("taikhoan",this.objectDangKi.email);
             },
             // Errors will call this callback instead:
             err => {

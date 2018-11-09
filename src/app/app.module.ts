@@ -38,8 +38,9 @@ import { from } from 'rxjs';
 //google API Maps
 import {AgmCoreModule} from '@agm/core';
 import { M_BANDO } from './Modules/m_bando/m_bando';
-import { XemBanDoService } from './service/xembando.service';
 import { M_HUYVE } from './Modules/m_huyve/m_huyve.component';
+import { TuyenDuongService } from './service/tuyenduong.service';
+import { ChiTietDatVeService } from './service/chitietdatve.service';
 
 
 @NgModule({
@@ -67,7 +68,7 @@ import { M_HUYVE } from './Modules/m_huyve/m_huyve.component';
       libraries:["places"]
     })
   ],
-  providers: [ChiNhanhService,USERService,XemBanDoService],
+  providers: [ChiNhanhService,USERService,TuyenDuongService,ChiTietDatVeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

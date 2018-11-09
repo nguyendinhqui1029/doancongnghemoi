@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ds_menu } from '../../../model/mock_menu';
 
 import { from } from "rxjs";
+declare var $:any;
 
 
 @Component({
@@ -11,11 +12,13 @@ import { from } from "rxjs";
 export class MENUTOP implements OnInit {
     loichao: string='';
     ds_menu: any[] = ds_menu;
+    hienform:boolean=true;
     ngOnInit() {
        
         
     
     }
+   
     constructor() {
         if(localStorage.getItem("hoten")!=null)
         {
