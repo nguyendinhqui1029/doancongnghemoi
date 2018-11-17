@@ -43,6 +43,7 @@ import { THONGTINDATVE } from './Pages/p_thongtindatve/p_thongtindatve_admin/p_t
 import { THONGTINDATVEKHACHHANG } from './Pages/p_thongtindatve/p_thongtindatve_KH/p_thongtindatve_KH.component';
 import { TuyenDuongService } from './service/tuyenduong.service';
 import { ChiTietDatVeService } from './service/chitietdatve.service';
+import { ThanhPhoLonService } from './service/thanhpholon.service';
 
 
 @NgModule({
@@ -70,7 +71,7 @@ import { ChiTietDatVeService } from './service/chitietdatve.service';
       libraries:["places"]
     })
   ],
-  providers: [ChiNhanhService,USERService,TuyenDuongService,ChiTietDatVeService],
+  providers: [ChiNhanhService,USERService,TuyenDuongService,ChiTietDatVeService,ThanhPhoLonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
