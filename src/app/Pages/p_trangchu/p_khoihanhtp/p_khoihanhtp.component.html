@@ -3,7 +3,7 @@
     
         <div  class="row" *ngFor="let diadiem of ds_cacphantu">
                 <div class="col-md-4 startpoint-block" *ngFor="let item of diadiem">
-                    <img src="assets/Content/img/private/{{item.hinh_diadiem}}" />
+                    <img src="{{item.hinh_diadiem}}" />
                     <div class="startpoint-text" >
                         <p>Khởi hành từ: <span>{{item.ten_diadiem}}</span>
                             <a href="#hienbando" data-toggle="modal"  

@@ -15,6 +15,7 @@ export class ThanhPhoLonService
 
  laydanhsachthanhpholon():Observable<Diadiemthanhpholon[]>
  {
-    return this.http.get(this.url).map((response:Response)=>response.json().Items)
+    return this.http.get(this.url)
+    .map((response:Response)=>response.json().Items);
  }
 }
