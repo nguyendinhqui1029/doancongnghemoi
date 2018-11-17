@@ -46,9 +46,6 @@ export class DANGNHAP implements OnInit  {
             }
            
           }
-         
-
-        });
-        
+        }); 
     }
 }

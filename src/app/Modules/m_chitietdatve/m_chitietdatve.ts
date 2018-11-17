@@ -24,7 +24,7 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
     ds_tuyenduong:any[]=[]//ds_tuyenduong;
     tuyenduong:TuyenDuong=new TuyenDuong("","","","","","","","","","","","","");
     ds_giokhoihanh:string[]=[];
-    tongtien:number;
+    tongtien:number=0;
     soluongghe:number=0;
     ds_khungghe:any[]=[];
     ds_ghe:any[]=ds_ghe;
@@ -131,7 +131,7 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
                }
                
                this.soluongghe=this.chitietdatve.soluong;
-               this.tongtien=this.chitietdatve.soluong*this.tuyenduong.giave;
+              // this.tongtien= (this.chitietdatve.soluong*1) * (this.tuyenduong.giave*1);
                this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi); 
                 
             });
@@ -158,6 +158,7 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
               dstam=[];
             }
         }
+        this.tongtien= (this.chitietdatve.soluong*1) * (this.tuyenduong.giave*1);
         
     }
 
@@ -247,7 +248,7 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
         this.chitietdatve.giodi=this.ds_giokhoihanh[0];
         return td;
     }
-
+    
     //Lấy giờ khởi  hành theo điểm đi và điểm đến
     laygiokhoihanhtheodiemdidiemden(diemdi,diemden)
     {
