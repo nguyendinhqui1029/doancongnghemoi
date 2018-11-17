@@ -41,6 +41,7 @@ import { M_BANDO } from './Modules/m_bando/m_bando';
 import { M_HUYVE } from './Modules/m_huyve/m_huyve.component';
 import { TuyenDuongService } from './service/tuyenduong.service';
 import { ChiTietDatVeService } from './service/chitietdatve.service';
+import { ThanhPhoLonService } from './service/thanhpholon.service';
 
 
 @NgModule({
@@ -68,7 +69,7 @@ import { ChiTietDatVeService } from './service/chitietdatve.service';
       libraries:["places"]
     })
   ],
-  providers: [ChiNhanhService,USERService,TuyenDuongService,ChiTietDatVeService],
+  providers: [ChiNhanhService,USERService,TuyenDuongService,ChiTietDatVeService,ThanhPhoLonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
