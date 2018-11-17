@@ -14,7 +14,7 @@ export class DANGNHAP implements OnInit  {
   loichao: string = '';
   constructor(private user_service:USERService,private route: ActivatedRoute,private router: Router)
   {
-    if(localStorage.getItem("taikhoan")!="")
+    if(sessionStorage.getItem("taikhoan")!="")
     {
       this.taikhoan=sessionStorage.getItem("taikhoan");
     }

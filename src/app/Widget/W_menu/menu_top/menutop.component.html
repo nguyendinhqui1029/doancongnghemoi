@@ -39,15 +39,15 @@
                 <ul >
                     <div *ngIf="role==1; else nguoclai">
                         <li style="color: aliceblue; text-transform: uppercase;">
-                            <a>Thông tin đặt vé</a>
+                            <a [routerLink] = "['/thongtindatve_admin']">Thông tin đặt vé</a>
                         </li>
                         <li style="color: aliceblue; text-transform: uppercase;">
                             <a [routerLink]="['/dangky']">Đăng kí</a>
                         </li>
                     </div> 
-                    <ng-template>
+                    <ng-template #nguoclai>
                             <li style="color: aliceblue; text-transform: uppercase;">
-                                <a>Thông tin đặt vé</a>
+                                <a [routerLink] = "['/thongtindatve_customer']">Thông tin đặt vé</a>
                             </li>
                     </ng-template>
                    <li style="color: aliceblue; text-transform: uppercase;" (click)="dangXuat()">Đăng xuất</li>

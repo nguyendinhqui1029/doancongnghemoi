@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ds_menu } from '../../../model/mock_menu';
 
 import { from } from "rxjs";
+import { Router, ActivatedRoute } from "@angular/router";
 declare var $:any;
 
 
@@ -20,7 +21,7 @@ export class MENUTOP implements OnInit {
     
     }
    
-    constructor() {
+    constructor(private route: ActivatedRoute,private router: Router) {
         if(sessionStorage.getItem("hoten")!=null)
         {
             this.loichao="Chào,"+sessionStorage.getItem("hoten");
@@ -32,6 +33,7 @@ export class MENUTOP implements OnInit {
         sessionStorage.removeItem("hoten");
         sessionStorage.removeItem("role");
         this.loichao='';
+        this.router.navigate(['/home']);
     }
     
 }
