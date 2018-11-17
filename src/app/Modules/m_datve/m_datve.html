@@ -34,11 +34,13 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">
                     <div class="form-group">
                         <label for="">Ngày khởi hành</label>
+                        
                         <div class="controls">
                             <i class="fa fa-clock-o text-primary"></i>
                             <input type="text" placeholder="dd/mm/yyyy" class="form-control dDate date-readonly" id="ngay" value="{{ngayhientai}}"/>
                             <small><em>Định dạng: dd-mm-yyyy</em></small>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">
@@ -53,8 +55,9 @@
             </div>
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 col-ms-12">
-                        <a href="#DatveModal" data-toggle="modal" id="modaldatve"> <button type="button"  (click)="laythongtindatve()"
-                        class="btn btn-primary btn-block btn-flat btn-booking">
+                        <a href="#DatveModal" data-toggle="modal" id="modaldatve"> 
+                            <button type="button"  (click)="laythongtindatve()"
+                                class="btn btn-primary btn-block btn-flat btn-booking">
                         <i class="fa fa-ticket icon-flat bg-btn-actived "></i>Mua vé</button>
                         </a>
                 </div>

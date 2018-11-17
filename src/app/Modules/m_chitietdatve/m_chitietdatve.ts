@@ -19,7 +19,7 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
     objectDangKi:OBJECTDANGKI=new OBJECTDANGKI('','','','','','');;
     @Input() chitietdatvexe: CHITIETDATVEXE;
     
-    chitietdatve:CHITIETDATVEXE= new CHITIETDATVEXE("","","","","","","","","");
+    chitietdatve:CHITIETDATVEXE= new CHITIETDATVEXE("","","","","","","","","","");
     //ds_tuyenduong,ds_chitietdatve,
     ds_tuyenduong:any[]=[]//ds_tuyenduong;
     tuyenduong:TuyenDuong=new TuyenDuong("","","","","","","","","","","","","");
@@ -33,8 +33,9 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
    
     constructor(private chitietdatveservice:ChiTietDatVeService,private tuyenduongService:TuyenDuongService)
     {
-        this.laydanhsachchitietdatve();
         this.laydanhsachtuyenduong();
+        this.laydanhsachchitietdatve();
+        
     }
     laydanhsachtuyenduong()
     {
@@ -92,7 +93,7 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
      
                 }
                 this.laygiokhoihanhtheodiemdidiemden(this.chitietdatve.diemdi,this.chitietdatve.diemden);
-                this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatve.diemdi,this.chitietdatve.diemden, this.chitietdatve.giodi);  
+                this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatve.diemdi,this.chitietdatve.diemden,this.chitietdatve.giodi);  
                 this.chitietdatve.idchuyenxe=this.tuyenduong.id_tuyenduong;
         })
        
@@ -125,9 +126,8 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
                         element.sodienthoai=element.sodienthoai.S;
                         element.soluong=element.soluong.S;
                         element.idchitietdatve=element.idchitietdatve.N;
-     
+                        element.trangthai=element.trangthai.N;
                     });
-    
                }
                
                this.soluongghe=this.chitietdatve.soluong;
@@ -240,8 +240,8 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
         this.ds_tuyenduong.forEach(tuyenduong => {
             if(tuyenduong.OriginCode==diemdi && tuyenduong.DestCode==diemden && tuyenduong.giochay==gio)
             {
-                
-                td=tuyenduong; 
+               this.chitietdatve.giodi=this.ds_giokhoihanh[0];  
+               return td=tuyenduong; 
             }
         });
 
@@ -326,7 +326,6 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
 
     ngOnInit(){
         this.chitietdatve =this.chitietdatvexe;
-       
     }
     ngOnDestroy(){
         

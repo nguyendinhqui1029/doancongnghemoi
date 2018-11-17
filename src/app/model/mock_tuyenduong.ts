@@ -82,7 +82,6 @@ export var ds_tuyenduong: TuyenDuong[] =
         "benden":"Sài Gòn", "loaixe":"Giường", "quangduong":"272 km", "thoigian":"06:00", 
         "sochuyen":"6 chuyến/ngày", "giave":"160000", "giochay":"18:00(Giường)",
         "OriginCode":"BACLIEU","DestCode":"TPHCM",
-      
         chitiet:[new ChiTietTuyenDuong(
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 

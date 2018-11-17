@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ds_menu } from '../../../model/mock_menu';
 
 import { from } from "rxjs";
+import { Router, ActivatedRoute } from "@angular/router";
 declare var $:any;
 
 
@@ -13,22 +14,27 @@ export class MENUTOP implements OnInit {
     loichao: string='';
     ds_menu: any[] = ds_menu;
     hienform:boolean=true;
+    role:Number;
     ngOnInit() {
        
         
     
     }
    
-    constructor() {
-        if(localStorage.getItem("hoten")!=null)
+    constructor(private route: ActivatedRoute,private router: Router) {
+        if(sessionStorage.getItem("hoten")!=null)
         {
-            this.loichao="Chào,"+localStorage.getItem("hoten");
+            this.loichao="Chào,"+sessionStorage.getItem("hoten");
+            this.role=Number.parseInt(sessionStorage.getItem("role"));
         }
     }
     dangXuat()
     {
-        localStorage.removeItem("hoten");
+        sessionStorage.removeItem("hoten");
+        sessionStorage.removeItem("role");
         this.loichao='';
+        this.router.navigate(['/home']);
     }
     
 }
+

@@ -34,7 +34,8 @@
                                 <tr class="text-white bg-light-green">
                                     <th>STT</th>
                                     <th>Giờ chạy</th>
-                                    <th data-toggle="true">Tuyến</th>
+                                    <th data-toggle="true">Bến đi</th>
+                                    <th data-toggle="true">Bến đến</th>
                                     <th data-hide="phone">Quãng đường</th>
                                     <th data-hide="phone">Thời gian</th>
                                     <th data-hide="phone">Giá vé</th>
@@ -45,19 +46,20 @@
 
                             <tbody>
                                 <tr>
-                                    <td>{{i+1}}</td>
-                                    <td><strong class="text-success">{{chitiet.giochay}}</strong></td>
-                                    <td>{{chitiet.bendi}} - {{chitiet.benden}}</td>
+                                    <td >{{i+1}}</td>
+                                    <td><strong class="text-success" >{{chitiet.giochay}}</strong></td>
+                                    <td >{{chitiet.bendi}} </td>
+                                    <td >{{chitiet.benden}}</td>
                                     <td>{{chitiet.quangduong}}</td>
                                     <td>{{chitiet.thoigian}}</td>
                                     <td>
                                         <p>
-                                            <strong class="text-primary">
+                                            <strong class="text-primary" >
                                                 {{chitiet.giave}}<sup>đ/vé</sup>
                                             </strong>
                                         </p>
                                     </td>
-                                    <td>
+                                    <td >
                                         {{ngayhientai}}
                                     </td>
                                     <td>
@@ -117,6 +119,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     

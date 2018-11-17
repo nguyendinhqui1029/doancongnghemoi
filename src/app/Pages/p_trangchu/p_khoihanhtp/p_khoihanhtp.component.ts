@@ -12,10 +12,6 @@ export class KHOIHANHTP implements OnInit{
 
    
 
-    ////
-    //toado: any="";
-
-    ///
 
 
     ds_diadiemthanhpholon : Diadiemthanhpholon[] =  ds_diadiemthanhpholon;

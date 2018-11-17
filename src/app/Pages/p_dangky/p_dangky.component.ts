@@ -19,17 +19,24 @@ export class DANGKY implements OnInit  {
 
       gui_form(form_dang_ky: any){
         if(form_dang_ky.form.valid){
-            this.service_user.addObjectDangKiWithObservable(this.objectDangKi)
-          .subscribe( 
-            data => {
-              this.thongbao="Đăng kí thành công.";
-              localStorage.setItem("taikhoan",this.objectDangKi.email);
-            },
-            // Errors will call this callback instead:
-            err => {
-              this.thongbao="Đăng kí không thành công.";
-            }					   
-           )
+          if(Number.parseInt(sessionStorage.getItem("role"))!=1)
+         {
+           this.objectDangKi.role=2;
+           
+         } else if(Number.parseInt(sessionStorage.getItem("role"))==1){
+          this.objectDangKi.role=1;
+         }
+         this.service_user.addObjectDangKiWithObservable(this.objectDangKi)
+         .subscribe( 
+           data => {
+             this.thongbao="Đăng kí thành công.";
+             sessionStorage.setItem("taikhoan",this.objectDangKi.email);
+           },
+           // Errors will call this callback instead:
+           err => {
+             this.thongbao="Đăng kí không thành công.";
+           }					   
+          )
         }
     }
        

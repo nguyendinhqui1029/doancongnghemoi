@@ -39,8 +39,11 @@ import { from } from 'rxjs';
 import {AgmCoreModule} from '@agm/core';
 import { M_BANDO } from './Modules/m_bando/m_bando';
 import { M_HUYVE } from './Modules/m_huyve/m_huyve.component';
+import { THONGTINDATVE } from './Pages/p_thongtindatve/p_thongtindatve_admin/p_thongtindatve.component';
+import { THONGTINDATVEKHACHHANG } from './Pages/p_thongtindatve/p_thongtindatve_KH/p_thongtindatve_KH.component';
 import { TuyenDuongService } from './service/tuyenduong.service';
 import { ChiTietDatVeService } from './service/chitietdatve.service';
+import { ThanhPhoLonService } from './service/thanhpholon.service';
 
 
 
@@ -57,7 +60,7 @@ import { ChiTietDatVeService } from './service/chitietdatve.service';
     MENUTOP,MENU,MENUBOTTOM,FOOTER,
     TRANGCHU,KHOIHANHTP,
     DATVE,GIOITHIEU,GIOITHIEUNEWS,EqualValidator,
-    CHITIETDATVE, M_BANDO,
+    CHITIETDATVE, M_BANDO,THONGTINDATVE,THONGTINDATVEKHACHHANG,
     M_SLIDER,M_HUYVE
   ],
   imports: [
@@ -69,7 +72,7 @@ import { ChiTietDatVeService } from './service/chitietdatve.service';
       libraries:["places"]
     })
   ],
-  providers: [ChiNhanhService,USERService,TuyenDuongService,ChiTietDatVeService],
+  providers: [ChiNhanhService,USERService,TuyenDuongService,ChiTietDatVeService,ThanhPhoLonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
