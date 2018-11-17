@@ -5,16 +5,13 @@ export class OBJECTDANGKI {
     matkhau: string;
     sodienthoai:string;
     chungminhnhandan:string;
-    constructor(hoten,
-        email,
-        matkhau,
-        matkhaunhaplai,sodienthoai,
-        chungminhnhandan) {
-this.email=email;
-this.matkhau=matkhau;
-this.hoten=hoten;
-this.sodienthoai=sodienthoai;
-this.chungminhnhandan=chungminhnhandan;
-
+    role:Number;
+    constructor(hoten,email,matkhau,sodienthoai,chungminhnhandan,role) {
+    this.email=email;
+    this.matkhau=matkhau;
+    this.hoten=hoten;
+    this.sodienthoai=sodienthoai;
+    this.chungminhnhandan=chungminhnhandan;
+    this.role=role;
     }
 }

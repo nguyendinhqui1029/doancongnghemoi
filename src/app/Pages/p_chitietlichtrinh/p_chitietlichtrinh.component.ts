@@ -24,7 +24,7 @@ export class CHITIETLICHTRINH implements OnInit,OnDestroy {
 
     muavechitiet(chitiet)
     {
-        this.thongtindatve=new CHITIETDATVEXE(chitiet.id_tuyenduong,chitiet.OriginCode,chitiet.DestCode,this.ngayhientai,1,chitiet.giochay,"","","");
+        this.thongtindatve=new CHITIETDATVEXE(chitiet.id_tuyenduong,chitiet.OriginCode,chitiet.DestCode,this.ngayhientai,1,chitiet.giochay,"","","",1);
             
        // console.log(this.thongtindatve);
        

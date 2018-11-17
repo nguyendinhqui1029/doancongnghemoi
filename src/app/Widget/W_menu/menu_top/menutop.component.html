@@ -35,9 +35,22 @@
            
             <li *ngIf="loichao!=''" id="loichao" style="color: aliceblue;text-transform: uppercase;">
                     {{loichao}}
+
                 <ul >
+                    <div *ngIf="role==1; else nguoclai">
+                        <li style="color: aliceblue; text-transform: uppercase;">
+                            <a>Thông tin đặt vé</a>
+                        </li>
+                        <li style="color: aliceblue; text-transform: uppercase;">
+                            <a [routerLink]="['/dangky']">Đăng kí</a>
+                        </li>
+                    </div> 
+                    <ng-template>
+                            <li style="color: aliceblue; text-transform: uppercase;">
+                                <a>Thông tin đặt vé</a>
+                            </li>
+                    </ng-template>
                    <li style="color: aliceblue; text-transform: uppercase;" (click)="dangXuat()">Đăng xuất</li>
-                   
                 </ul>
             </li>
         </ul>
@@ -50,6 +63,7 @@
             <li *ngFor="let menu of ds_menu" >
             <a [routerLink] = "menu.url_menu" id="{{menu.id_menu}}">
                {{menu.name_menu}}</a>
+            </li>
     </ul>
 
 </div>

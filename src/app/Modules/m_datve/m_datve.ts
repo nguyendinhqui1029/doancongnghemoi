@@ -15,7 +15,7 @@ export class DATVE implements OnInit{
     ds_khoihanh:any[]=[]//ds_tuyenduong;
     ds_diadiemkhoihanh:any[]=[];
     ds_diadiemden:any[]=[];
-    thongtindatve:CHITIETDATVEXE=new CHITIETDATVEXE("","","","","","","","","");
+    thongtindatve:CHITIETDATVEXE=new CHITIETDATVEXE("","","","","","","","","",0);
     ngayhientai:any="";
     flag:boolean=false;
     constructor(private tuyenduongService:TuyenDuongService)
@@ -93,7 +93,7 @@ export class DATVE implements OnInit{
         $("#thongbao").hide();
         $(".btnghe").removeAttr("disabled");
         this.flag=true;
-        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","","");
+        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","","",1);
      // console.log(this.data);
 
     }
@@ -157,7 +157,7 @@ export class DATVE implements OnInit{
     goi(){
         
         this.flag=false;
-        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","","");
+        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","","",1);
     }
     ngOnInit(){ 
         let date=new Date();

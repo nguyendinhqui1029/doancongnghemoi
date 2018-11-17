@@ -13,6 +13,7 @@ export class MENUTOP implements OnInit {
     loichao: string='';
     ds_menu: any[] = ds_menu;
     hienform:boolean=true;
+    role:Number;
     ngOnInit() {
        
         
@@ -20,15 +21,18 @@ export class MENUTOP implements OnInit {
     }
    
     constructor() {
-        if(localStorage.getItem("hoten")!=null)
+        if(sessionStorage.getItem("hoten")!=null)
         {
-            this.loichao="Chào,"+localStorage.getItem("hoten");
+            this.loichao="Chào,"+sessionStorage.getItem("hoten");
+            this.role=Number.parseInt(sessionStorage.getItem("role"));
         }
     }
     dangXuat()
     {
-        localStorage.removeItem("hoten");
+        sessionStorage.removeItem("hoten");
+        sessionStorage.removeItem("role");
         this.loichao='';
     }
     
 }
+
