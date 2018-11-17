@@ -1,8 +1,10 @@
 import { Component,OnInit } from "@angular/core";
 //import { ds_diadiemkhoihanh } from "../../model/mock_diadiemkhoihanh";
-import {ds_tuyenduong} from'../../model/mock_tuyenduong';
+//import {ds_tuyenduong} from'../../model/mock_tuyenduong';
 import { OBJECTDANGKI } from "src/app/model/dangki";
 import {CHITIETDATVEXE} from '../../model/chitietdatve';
+import { TuyenDuongService } from "src/app/service/tuyenduong.service";
+import { ChiTietTuyenDuong } from "src/app/model/chitiettuyenduong";
 declare var $:any;
 @Component({
     selector:'m_datve',
@@ -10,27 +12,90 @@ declare var $:any;
 })
 export class DATVE implements OnInit{
     objectDangKi:OBJECTDANGKI=new OBJECTDANGKI('','','','','','');;
-    ds_khoihanh:any[]=ds_tuyenduong//ds_diadiemkhoihanh;
+    ds_khoihanh:any[]=[]//ds_tuyenduong;
     ds_diadiemkhoihanh:any[]=[];
     ds_diadiemden:any[]=[];
-    thongtindatve:CHITIETDATVEXE=new CHITIETDATVEXE("","","","","","","","");
+    thongtindatve:CHITIETDATVEXE=new CHITIETDATVEXE("","","","","","","","","",0);
     ngayhientai:any="";
     flag:boolean=false;
-    constructor()
+    constructor(private tuyenduongService:TuyenDuongService)
     {
-       
-        this.ds_diadiemkhoihanh=this.LayDanhSachKhoiHanh();
-        this.ds_diadiemden=this.LayDanhSachDenTheoDiaDiemDi( this.ds_diadiemkhoihanh[0].v);
+        this.laydanhsachtuyenduong();
+        
    }
     
+   laydanhsachtuyenduong()
+   {
+    this.tuyenduongService.getListTuyenDuong()
+    .subscribe( 
+        reponse => {
+          if(reponse!=null)
+               {
+                    this.ds_khoihanh=reponse;
+                    this.ds_khoihanh.forEach(element => {
+                       
+                      let mangtam:ChiTietTuyenDuong[]=[];
+                        if(element.chitiet.L!=undefined)
+                        {
+                            for(let i =0;i<element.chitiet.L.length;i++){
+                               // console.log(element.chitiet.L[i]);
+                               if(element.chitiet.L[i].M!=undefined){
+                                
+                                let chitietM:ChiTietTuyenDuong = new ChiTietTuyenDuong(
+                                    element.chitiet.L[i].M.diemdi.S,
+                                    element.chitiet.L[i].M.diemden.S,
+                                    element.chitiet.L[i].M.thoigiandi.S,
+                                    element.chitiet.L[i].M.thoigianden.S,
+                                    element.chitiet.L[i].M.hotlinedi.S,
+                                    element.chitiet.L[i].M.hotlineden.S,
+                                    element.chitiet.L[i].M.diachidi.S,
+                                    element.chitiet.L[i].M.diachiden.S
+                    
+                                );
+
+                                    mangtam.push(chitietM);
+                                    //console.log(mangtam)
+                               }
+                                
+                            }
+                        
+                         
+                        }
+
+                       element.chitiet=mangtam;
+                       element.benden=element.benden.S;
+                       element.bendi=element.bendi.S;
+                       element.giave=element.giave.S;
+                       element.giochay=element.giochay.S;
+                       element.loaixe=element.loaixe.S;
+                       element.quangduong=element.quangduong.S;
+                       element.id_tuyenduong=element.id_tuyenduong.N;
+                       element.name_tuyenduong=element.name_tuyenduong.S;
+                       element.thoigian=element.thoigian.S;
+                       element.sochuyen=element.sochuyen.S;
+                       element.OriginCode=element.OriginCode.S;
+                       element.DestCode=element.DestCode.S;
+
+                     
+                    });
+    
+               }
+              this.ds_diadiemkhoihanh=this.LayDanhSachKhoiHanh();
+              this.ds_diadiemden=this.LayDanhSachDenTheoDiaDiemDi( this.ds_diadiemkhoihanh[0].v);
+             // console.log(this.ds_diadiemden);
+             // console.log( this.ds_diadiemkhoihanh);
+      }				   
+     )
+   }
     diemden:any;
   data: CHITIETDATVEXE;
     laythongtindatve() {
         $("#thongbao").hide();
         $(".btnghe").removeAttr("disabled");
         this.flag=true;
-        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","");
-  
+        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","","",1);
+     // console.log(this.data);
+
     }
     
     onChange(deviceValue) {
@@ -90,8 +155,9 @@ export class DATVE implements OnInit{
        return ds;
     }
     goi(){
+        
         this.flag=false;
-        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","");
+        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","","",1);
     }
     ngOnInit(){ 
         let date=new Date();

@@ -14,7 +14,10 @@ export class DANGNHAP implements OnInit  {
   loichao: string = '';
   constructor(private user_service:USERService,private route: ActivatedRoute,private router: Router)
   {
-
+    if(localStorage.getItem("taikhoan")!="")
+    {
+      this.taikhoan=sessionStorage.getItem("taikhoan");
+    }
     
   }
     ngOnInit() {
@@ -35,7 +38,8 @@ export class DANGNHAP implements OnInit  {
           }else{
             if (typeof(Storage) !== 'undefined') {
               //hỗ trợ
-              localStorage.setItem("hoten", reponse.Items[0].hoten.S);
+              sessionStorage.setItem("hoten", reponse.Items[0].hoten.S);
+              sessionStorage.setItem("role",reponse.Items[0].role.N);
               this.router.navigate(['/home']);
             } else {
               alert('Trình duyệt của bạn không hỗ trợ localStorage. Hãy nâng cấp trình duyệt để sử dụng!');

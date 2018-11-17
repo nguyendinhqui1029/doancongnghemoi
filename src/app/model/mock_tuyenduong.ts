@@ -12,13 +12,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                 ,
                 new ChiTietTuyenDuong(
                 "Bạc Liêu", "Sa Tra - Trạm Dừng", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"Trần Phú, P.7, TP.Bạc Liêu", 
-                "H.Cái Bè, Tiền Giang","", "")
+                "H.Cái Bè, Tiền Giang")
                  ]
     },
     {
@@ -30,13 +30,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                 ,
                 new ChiTietTuyenDuong(
                 "Bạc Liêu", "Sa Tra - Trạm Dừng", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"Trần Phú, P.7, TP.Bạc Liêu", 
-                "H.Cái Bè, Tiền Giang","", "")
+                "H.Cái Bè, Tiền Giang")
                  ]
     },
     {
@@ -49,13 +49,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                 ,
                 new ChiTietTuyenDuong(
                 "Bạc Liêu", "Sa Tra - Trạm Dừng", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"Trần Phú, P.7, TP.Bạc Liêu", 
-                "H.Cái Bè, Tiền Giang","", "")
+                "H.Cái Bè, Tiền Giang")
                  ]
     },
     {
@@ -68,13 +68,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                 ,
                 new ChiTietTuyenDuong(
                 "Bạc Liêu", "Sa Tra - Trạm Dừng", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"Trần Phú, P.7, TP.Bạc Liêu", 
-                "H.Cái Bè, Tiền Giang","", "")
+                "H.Cái Bè, Tiền Giang")
                  ]
     },
     {
@@ -86,13 +86,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                 ,
                 new ChiTietTuyenDuong(
                 "Bạc Liêu", "Sa Tra - Trạm Dừng", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"Trần Phú, P.7, TP.Bạc Liêu", 
-                "H.Cái Bè, Tiền Giang","", "")
+                "H.Cái Bè, Tiền Giang")
                  ]
     },
     {
@@ -105,13 +105,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Sóc Trăng", "Bạc Liêu", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                 ,
                 new ChiTietTuyenDuong(
                 "Bạc Liêu", "Sa Tra - Trạm Dừng", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"Trần Phú, P.7, TP.Bạc Liêu", 
-                "H.Cái Bè, Tiền Giang","", "")
+                "H.Cái Bè, Tiền Giang")
                  ]
     }, 
     {
@@ -124,13 +124,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                 ,
                 new ChiTietTuyenDuong(
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                  ]
     },
     {
@@ -143,13 +143,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                 ,
                 new ChiTietTuyenDuong(
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                  ]
     },
     {
@@ -162,13 +162,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                 ,
                 new ChiTietTuyenDuong(
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                  ]
     },
     {
@@ -181,13 +181,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                 ,
                 new ChiTietTuyenDuong(
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                  ]
     },
     {
@@ -200,13 +200,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                 ,
                 new ChiTietTuyenDuong(
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                  ]
     },
     {
@@ -219,13 +219,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                 ,
                 new ChiTietTuyenDuong(
                 "Bạc Liêu", "Trạm dừng chân Satra", "08:00",
                 "08:00", "015644458", 
                 "024979411" ,"38 Lê Duẩn, P.3, TP.Sóc Trăng", 
-                "Trần Phú, P.7, TP.Bạc Liêu","", "")
+                "Trần Phú, P.7, TP.Bạc Liêu")
                  ]
     },
     {
@@ -238,37 +238,37 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bảo Lộc", "Di Linh", "12:30",
                 "13:30", "023364481", 
                 "022212214" ,"280 Trần Phú,P.2,TP.Bảo Lộc", 
-                "735 Hùng Vương,TT.Di Linh,Lâm Đồng","", "")
+                "735 Hùng Vương,TT.Di Linh,Lâm Đồng")
                 ,
                 new ChiTietTuyenDuong(
                 "Di Linh", "Đức Trọng", "13:30",
                 "14:10", "022212214", 
                 "012312366" ,"735 Hùng Vương,TT.Di Linh,Lâm Đồng", 
-                "Liên Nghĩa, Đức Trọng, Lâm Đồng","", "")
+                "Liên Nghĩa, Đức Trọng, Lâm Đồng")
                 ,
                 new ChiTietTuyenDuong(
                     "Đức Trọng", "Cam Ranh", "14:10",
                     "17:30", "012312366", 
                     "012312311" ,"Liên Nghĩa, Đức Trọng, Lâm Đồng", 
-                    "Lê Duẩn, TP.Cam Ranh, T.Khánh Hòa","", "")
+                    "Lê Duẩn, TP.Cam Ranh, T.Khánh Hòa")
                 ,
                 new ChiTietTuyenDuong(
                     "Cam Ranh", "Qui Nhơn", "17:30",
                     "22:30", "012312311", 
                     "02.1221.111" ,"Lê Duẩn, TP.Cam Ranh, T.Khánh Hòa", 
-                    "187 Tây Sơn, TP.Qui Nhơn","", "")
+                    "187 Tây Sơn, TP.Qui Nhơn")
                 ,
                 new ChiTietTuyenDuong(
                     "Qui Nhơn", "Quãng Ngãi", "22:30",
                     "02:30", "02.1221.111", 
                     "02.3311.111" ,"187 Tây Sơn, TP.Qui Nhơn", 
-                    "26 Lê Thánh Tôn, Nghĩa Chánh, Quãng Ngãi","", "")
+                    "26 Lê Thánh Tôn, Nghĩa Chánh, Quãng Ngãi")
                 ,
                 new ChiTietTuyenDuong(
                     "Quãng Ngãi", "Đà Nẵng", "02:30",
                     "06:30", "02.3311.111", 
                     "02.3377.111" ,"26 Lê Thánh Tôn, Nghĩa Chánh, Quãng Ngãi", 
-                    "202 Tôn Đức Thắng, Liên Chiểu, TP.Đà Nẵng","", "")
+                    "202 Tôn Đức Thắng, Liên Chiểu, TP.Đà Nẵng")
                  ]
     },
     {
@@ -281,43 +281,43 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bảo Lộc", "Di Linh", "12:30",
                 "13:30", "023364481", 
                 "022212214" ,"280 Trần Phú,P.2,TP.Bảo Lộc", 
-                "735 Hùng Vương,TT.Di Linh,Lâm Đồng","", "")
+                "735 Hùng Vương,TT.Di Linh,Lâm Đồng")
                 ,
                 new ChiTietTuyenDuong(
                 "Di Linh", "Đức Trọng", "13:30",
                 "14:10", "022212214", 
                 "012312366" ,"735 Hùng Vương,TT.Di Linh,Lâm Đồng", 
-                "Liên Nghĩa, Đức Trọng, Lâm Đồng","", "")
+                "Liên Nghĩa, Đức Trọng, Lâm Đồng")
                 ,
                 new ChiTietTuyenDuong(
                     "Đức Trọng", "Cam Ranh", "14:10",
                     "17:30", "012312366", 
                     "012312311" ,"Liên Nghĩa, Đức Trọng, Lâm Đồng", 
-                    "Lê Duẩn, TP.Cam Ranh, T.Khánh Hòa","", "")
+                    "Lê Duẩn, TP.Cam Ranh, T.Khánh Hòa")
                 ,
                 new ChiTietTuyenDuong(
                     "Cam Ranh", "Qui Nhơn", "17:30",
                     "22:30", "012312311", 
                     "02.1221.111" ,"Lê Duẩn, TP.Cam Ranh, T.Khánh Hòa", 
-                    "187 Tây Sơn, TP.Qui Nhơn","", "")
+                    "187 Tây Sơn, TP.Qui Nhơn")
                 ,
                 new ChiTietTuyenDuong(
                     "Qui Nhơn", "Quãng Ngãi", "22:30",
                     "02:30", "02.1221.111", 
                     "02.3311.111" ,"187 Tây Sơn, TP.Qui Nhơn", 
-                    "26 Lê Thánh Tôn, Nghĩa Chánh, Quãng Ngãi","", "")
+                    "26 Lê Thánh Tôn, Nghĩa Chánh, Quãng Ngãi")
                 ,
                 new ChiTietTuyenDuong(
                     "Quãng Ngãi", "Đà Nẵng", "02:30",
                     "06:30", "02.3311.111", 
                     "02.3377.111" ,"26 Lê Thánh Tôn, Nghĩa Chánh, Quãng Ngãi", 
-                    "202 Tôn Đức Thắng, Liên Chiểu, TP.Đà Nẵng","", "")
+                    "202 Tôn Đức Thắng, Liên Chiểu, TP.Đà Nẵng")
                 ,
                 new ChiTietTuyenDuong(
                     "Đà Nẵng", "Huế", "06:30",
                     "07:00", "02.3377.111", 
                     "02.2255.111" ,"202 Tôn Đức Thắng, Liên Chiểu, TP.Đà Nẵng", 
-                    "97 An Dương Vương,TP.Huế,T.Thừa Thiên Huế","", "")
+                    "97 An Dương Vương,TP.Huế,T.Thừa Thiên Huế")
                  ]
     },
     {
@@ -330,13 +330,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bến Tre", "Mỹ Tho", "04:00",
                 "04:00", "023364481", 
                 "022212214" ,"Sơn Đông, TP.Bến Tre", 
-                "209 Ấp Bắc, P.5, TP.Bến Tre","", "")
+                "209 Ấp Bắc, P.5, TP.Bến Tre")
                 ,
                 new ChiTietTuyenDuong(
                     "Mỹ Tho", "Bến xe Miền Tây", "04:00",
                     "05:15", "022212214", 
                     "02.41141.11" ,"209 Ấp Bắc, P.5, TP.Bến Tre", 
-                    "309 Kinh Dương Vương,Q.Bình Tân,TP.Hồ Chí Minh","", "")
+                    "309 Kinh Dương Vương,Q.Bình Tân,TP.Hồ Chí Minh")
                  ]
     },
     {
@@ -349,13 +349,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bến Tre", "Mỹ Tho", "04:00",
                 "04:00", "023364481", 
                 "022212214" ,"Sơn Đông, TP.Bến Tre", 
-                "209 Ấp Bắc, P.5, TP.Bến Tre","", "")
+                "209 Ấp Bắc, P.5, TP.Bến Tre")
                 ,
                 new ChiTietTuyenDuong(
                     "Mỹ Tho", "Bến xe Miền Tây", "04:00",
                     "05:15", "022212214", 
                     "02.41141.11" ,"209 Ấp Bắc, P.5, TP.Bến Tre", 
-                    "309 Kinh Dương Vương,Q.Bình Tân,TP.Hồ Chí Minh","", "")
+                    "309 Kinh Dương Vương,Q.Bình Tân,TP.Hồ Chí Minh")
                  ]
     },
     {
@@ -368,13 +368,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bến Tre", "Mỹ Tho", "04:00",
                 "04:00", "023364481", 
                 "022212214" ,"Sơn Đông, TP.Bến Tre", 
-                "209 Ấp Bắc, P.5, TP.Bến Tre","", "")
+                "209 Ấp Bắc, P.5, TP.Bến Tre")
                 ,
                 new ChiTietTuyenDuong(
                     "Mỹ Tho", "Bến xe Miền Tây", "04:00",
                     "05:15", "022212214", 
                     "02.41141.11" ,"209 Ấp Bắc, P.5, TP.Bến Tre", 
-                    "309 Kinh Dương Vương,Q.Bình Tân,TP.Hồ Chí Minh","", "")
+                    "309 Kinh Dương Vương,Q.Bình Tân,TP.Hồ Chí Minh")
                  ]
     },
     {
@@ -387,13 +387,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bến Tre", "Mỹ Tho", "04:00",
                 "04:00", "023364481", 
                 "022212214" ,"Sơn Đông, TP.Bến Tre", 
-                "209 Ấp Bắc, P.5, TP.Bến Tre","", "")
+                "209 Ấp Bắc, P.5, TP.Bến Tre")
                 ,
                 new ChiTietTuyenDuong(
                     "Mỹ Tho", "Bến xe Miền Tây", "04:00",
                     "05:15", "022212214", 
                     "02.41141.11" ,"209 Ấp Bắc, P.5, TP.Bến Tre", 
-                    "309 Kinh Dương Vương,Q.Bình Tân,TP.Hồ Chí Minh","", "")
+                    "309 Kinh Dương Vương,Q.Bình Tân,TP.Hồ Chí Minh")
                  ]
     },
     {
@@ -406,13 +406,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bến Tre", "Mỹ Tho", "04:00",
                 "04:00", "023364481", 
                 "022212214" ,"Sơn Đông, TP.Bến Tre", 
-                "209 Ấp Bắc, P.5, TP.Bến Tre","", "")
+                "209 Ấp Bắc, P.5, TP.Bến Tre")
                 ,
                 new ChiTietTuyenDuong(
                     "Mỹ Tho", "Bến xe Miền Tây", "04:00",
                     "05:15", "022212214", 
                     "02.41141.11" ,"209 Ấp Bắc, P.5, TP.Bến Tre", 
-                    "309 Kinh Dương Vương,Q.Bình Tân,TP.Hồ Chí Minh","", "")
+                    "309 Kinh Dương Vương,Q.Bình Tân,TP.Hồ Chí Minh")
                  ]
     },
     {
@@ -425,13 +425,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bến xe Miền Đông", "Dak Lak", "12:15",
                 "12:15", "02.111.441", 
                 "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak","", "")
+                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak")
                 ,
                 new ChiTietTuyenDuong(
                     "Dak Lak", "Dak Nong", "12:15",
                     "15:15", "022212214", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak", 
-                    "Nghĩa Thành, Gia Nghĩa, Dak Nong","", "")
+                    "Nghĩa Thành, Gia Nghĩa, Dak Nong")
                  ]
     },
     {
@@ -444,13 +444,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bến xe Miền Đông", "Dak Lak", "12:15",
                 "12:15", "02.111.441", 
                 "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak","", "")
+                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak")
                 ,
                 new ChiTietTuyenDuong(
                     "Dak Lak", "Dak Nong", "12:15",
                     "15:15", "022212214", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak", 
-                    "Nghĩa Thành, Gia Nghĩa, Dak Nong","", "")
+                    "Nghĩa Thành, Gia Nghĩa, Dak Nong")
                  ]
     },
     {
@@ -463,13 +463,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bến xe Miền Đông", "Dak Lak", "12:15",
                 "12:15", "02.111.441", 
                 "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak","", "")
+                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak")
                 ,
                 new ChiTietTuyenDuong(
                     "Dak Lak", "Dak Nong", "12:15",
                     "15:15", "022212214", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak", 
-                    "Nghĩa Thành, Gia Nghĩa, Dak Nong","", "")
+                    "Nghĩa Thành, Gia Nghĩa, Dak Nong")
                  ]
     },
     {
@@ -482,13 +482,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bến xe Miền Đông", "Dak Lak", "12:15",
                 "12:15", "02.111.441", 
                 "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak","", "")
+                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak")
                 ,
                 new ChiTietTuyenDuong(
                     "Dak Lak", "Dak Nong", "12:15",
                     "15:15", "022212214", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak", 
-                    "Nghĩa Thành, Gia Nghĩa, Dak Nong","", "")
+                    "Nghĩa Thành, Gia Nghĩa, Dak Nong")
                  ]
     },
     {
@@ -501,13 +501,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bến xe Miền Đông", "Dak Lak", "12:15",
                 "12:15", "02.111.441", 
                 "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak","", "")
+                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak")
                 ,
                 new ChiTietTuyenDuong(
                     "Dak Lak", "Dak Nong", "12:15",
                     "15:15", "022212214", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak", 
-                    "Nghĩa Thành, Gia Nghĩa, Dak Nong","", "")
+                    "Nghĩa Thành, Gia Nghĩa, Dak Nong")
                  ]
     },
     {
@@ -520,13 +520,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Bến xe Miền Đông", "Dak Lak", "12:15",
                 "12:15", "02.111.441", 
                 "022212214" ,"P.26,Q.Bình Thạnh,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak","", "")
+                "127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak")
                 ,
                 new ChiTietTuyenDuong(
                     "Dak Lak", "Dak Nong", "12:15",
                     "15:15", "022212214", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Buôn Ma Thuột, Dak Lak", 
-                    "Nghĩa Thành, Gia Nghĩa, Dak Nong","", "")
+                    "Nghĩa Thành, Gia Nghĩa, Dak Nong")
                  ]
     },
     {
@@ -539,13 +539,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
                 "0.233122.12" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Nha Trang","", "")
+                "127 Lê Duẩn,TP.Nha Trang")
                 ,
                 new ChiTietTuyenDuong(
                     "Bến xe Nha Trang", "Bến xe An Sương", "10:00",
                     "10:00", "0.233122.12", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Nha Trang", 
-                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh","", "")
+                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh")
                  ]
     },
     {
@@ -558,13 +558,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
                 "0.233122.12" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Nha Trang","", "")
+                "127 Lê Duẩn,TP.Nha Trang")
                 ,
                 new ChiTietTuyenDuong(
                     "Bến xe Nha Trang", "Bến xe An Sương", "10:00",
                     "10:00", "0.233122.12", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Nha Trang", 
-                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh","", "")
+                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh")
                  ]
     },
     {
@@ -577,13 +577,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
                 "0.233122.12" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Nha Trang","", "")
+                "127 Lê Duẩn,TP.Nha Trang")
                 ,
                 new ChiTietTuyenDuong(
                     "Bến xe Nha Trang", "Bến xe An Sương", "10:00",
                     "10:00", "0.233122.12", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Nha Trang", 
-                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh","", "")
+                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh")
                  ]
     },
     {
@@ -596,13 +596,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
                 "0.233122.12" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Nha Trang","", "")
+                "127 Lê Duẩn,TP.Nha Trang")
                 ,
                 new ChiTietTuyenDuong(
                     "Bến xe Nha Trang", "Bến xe An Sương", "10:00",
                     "10:00", "0.233122.12", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Nha Trang", 
-                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh","", "")
+                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh")
                  ]
     },
     {
@@ -615,13 +615,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
                 "0.233122.12" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Nha Trang","", "")
+                "127 Lê Duẩn,TP.Nha Trang")
                 ,
                 new ChiTietTuyenDuong(
                     "Bến xe Nha Trang", "Bến xe An Sương", "10:00",
                     "10:00", "0.233122.12", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Nha Trang", 
-                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh","", "")
+                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh")
                  ]
     },
     {
@@ -634,13 +634,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
                 "0.233122.12" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Nha Trang","", "")
+                "127 Lê Duẩn,TP.Nha Trang")
                 ,
                 new ChiTietTuyenDuong(
                     "Bến xe Nha Trang", "Bến xe An Sương", "10:00",
                     "10:00", "0.233122.12", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Nha Trang", 
-                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh","", "")
+                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh")
                  ]
     },
     {
@@ -653,13 +653,13 @@ export var ds_tuyenduong: TuyenDuong[] =
                 "Xa lộ Hà Nội", "Bến xe Nha Trang", "10:00",
                 "10:00", "02.111.441", 
                 "0.233122.12" ,"P.Hiệp Phú,Q.9,TP.Hồ Chí Minh", 
-                "127 Lê Duẩn,TP.Nha Trang","", "")
+                "127 Lê Duẩn,TP.Nha Trang")
                 ,
                 new ChiTietTuyenDuong(
                     "Bến xe Nha Trang", "Bến xe An Sương", "10:00",
                     "10:00", "0.233122.12", 
                     "02.41141.11" ,"127 Lê Duẩn,TP.Nha Trang", 
-                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh","", "")
+                    "Bà Điểm, Hooc Môn, TP.Hồ Chí Minh")
                  ]
      }
 ]

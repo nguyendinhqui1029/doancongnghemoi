@@ -1,5 +1,6 @@
 export class CHITIETDATVEXE
 {
+    idchitietdatve:any;
     idchuyenxe:any;
     diemdi:any;
     diemden:any;
@@ -8,7 +9,8 @@ export class CHITIETDATVEXE
     giodi:any;
     soghe:any[];
     sodienthoai:any;
-    constructor(idchuyenxe,diemdi, diemden,ngaydi,soluong,giodi,soghe,sodienthoai)
+    trangthai:number;
+    constructor(idchuyenxe,diemdi, diemden,ngaydi,soluong,giodi,soghe,sodienthoai,idchitietdatve,trangthai)
     {
         this.idchuyenxe=idchuyenxe;
         this.diemdi=diemdi;
@@ -18,5 +20,7 @@ export class CHITIETDATVEXE
         this.soghe=soghe;
         this.giodi=giodi;
         this.sodienthoai=sodienthoai;
+        this.idchitietdatve=idchitietdatve;
+        this.trangthai=trangthai;
     }
 }

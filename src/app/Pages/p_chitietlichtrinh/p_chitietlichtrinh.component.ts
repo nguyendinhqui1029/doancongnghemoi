@@ -1,6 +1,6 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
 import { ds_tuyenduong } from '../../model/mock_tuyenduong';
-import {Route,ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import { TuyenDuong } from 'src/app/model/tuyenduong';
 import { CHITIETDATVEXE } from 'src/app/model/chitietdatve';
@@ -16,22 +16,18 @@ export class CHITIETLICHTRINH implements OnInit,OnDestroy {
     diemdi:any="";
     diemden:any="";
     subscription:Subscription;
-    flag:boolean=false;
-    data1: CHITIETDATVEXE;
-    laythongtindatve1(id_tuyenduong:any,bendi:any, benden:any,giochay:any,giave:any) {
-        $("#thongbao").hide();
-        $(".btnghe").removeAttr("disabled");
-        console.log(""+id_tuyenduong);
-        console.log(""+bendi);
-        console.log(""+benden);
-        console.log(""+giochay);
-        console.log(""+giave);
-        this.data1= new CHITIETDATVEXE(id_tuyenduong,bendi,benden,"20:00",1,giochay,giave,"");
-        this.flag=true;
-    }
+    thongtindatve:CHITIETDATVEXE;
     constructor(private route:Router,private activateRoute:ActivatedRoute) { 
     }
-    
+
+    muavechitiet(chitiet)
+    {
+        this.thongtindatve=new CHITIETDATVEXE(chitiet.id_tuyenduong,chitiet.OriginCode,chitiet.DestCode,this.ngayhientai,1,chitiet.giochay,"","","",1);
+            
+       // console.log(this.thongtindatve);
+       
+    }
+
     laychitietlichtrinhtheodiemdidiemden(diemdi,diemden)
     {
         let ds:TuyenDuong[]=[];
@@ -65,17 +61,14 @@ export class CHITIETLICHTRINH implements OnInit,OnDestroy {
        
        if($(cl).hasClass("hidden"))
        {
-        event.target.innerText="Đóng >>";
-        $(cl).removeClass('hidden');
+            event.target.innerText="Đóng >>";
+            $(cl).removeClass('hidden');
        }else{
-        event.target.innerText="Xem chi tiết >>";
-        $(cl).addClass('hidden');
-       
+            event.target.innerText="Xem chi tiết >>";
+            $(cl).addClass('hidden');
        }
-        
-
-   
     }
+
     layDSchitiettheoTuyenDuong(name: string)
     {
         let dschitiet:any[]=[];
@@ -95,8 +88,10 @@ export class CHITIETLICHTRINH implements OnInit,OnDestroy {
             this.diemdi=params["g"];
             this.diemden=params["c"];
         });
+
         this.danhsachtuyen=this.laychitietlichtrinhtheodiemdidiemden(this.diemdi,this.diemden);
-       //lây ngày hiện tại
+       
+        //lây ngày hiện tại
        let date=new Date();
        let ngay="";
        if(date.getDate()<10)
@@ -105,15 +100,9 @@ export class CHITIETLICHTRINH implements OnInit,OnDestroy {
        }else{
            ngay=date.getDate()+"";
        }
-       this.ngayhientai=(date.getMonth()+1)+"/"+ngay+"/"+date.getFullYear();
-       
-       
+       this.ngayhientai=(date.getMonth()+1)+"/"+ngay+"/"+date.getFullYear();   
     }
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
-    
-    
-    
-
 }

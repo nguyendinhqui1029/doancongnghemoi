@@ -7,9 +7,8 @@ export class ChiTietTuyenDuong{
     hotlineden:any;
     diachidi:any;
     diachiden:any;
-    toadodi:any;
-    toadoden:any;
-    constructor(diemdi,diemden,thoigiandi,thoigianden,hotlinedi,hotlineden,diachidi,diachiden,toadodi,toadoden)
+  
+    constructor(diemdi,diemden,thoigiandi,thoigianden,hotlinedi,hotlineden,diachidi,diachiden)
     {
         this.diemdi = diemdi;
         this.diemden = diemden;
@@ -19,7 +18,5 @@ export class ChiTietTuyenDuong{
         this.hotlineden = hotlineden;
         this.diachidi = diachidi;
         this.diachiden = diachiden;
-        this.toadodi = toadodi;
-        this.toadoden = toadoden;
     }
 }

@@ -1,5 +1,4 @@
 import { ChiTietTuyenDuong } from "./chitiettuyenduong";
-
 export class TuyenDuong{
     id_tuyenduong:any;
     name_tuyenduong:any;

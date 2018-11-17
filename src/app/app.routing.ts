@@ -1,5 +1,4 @@
 import {Routes, RouterModule} from '@angular/router';
-import {NgModule} from '@angular/core';
 
 import {DIEUKHOAN} from './Pages/p_dieu_khoan/p_dieukhoan.component';
 import {KHUYENMAI} from './Pages/p_khuyenmai/p_khuyenmai.component';

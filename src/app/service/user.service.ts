@@ -9,8 +9,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class USERService {
     //url:string="http://localhost:7000/user";
-    url:string="https://lqeges09x8.execute-api.us-west-2.amazonaws.com/chay1/chay1";
-    //url:string="https://cq9wojicy3.execute-api.us-west-2.amazonaws.com/dev/dangky";
+    url:string="https://3hql5e2asj.execute-api.us-west-2.amazonaws.com/dev/chay7";    //url:string="https://cq9wojicy3.execute-api.us-west-2.amazonaws.com/dev/dangky";
     constructor(private http : Http){
 
     }
