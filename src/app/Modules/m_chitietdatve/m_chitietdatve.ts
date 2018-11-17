@@ -1,68 +1,139 @@
-import { Component,OnInit, Input } from "@angular/core";
+import { Component,OnInit, Input, OnDestroy } from "@angular/core";
 import { OBJECTDANGKI } from "src/app/model/dangki";
 import { CHITIETDATVEXE } from "src/app/model/chitietdatve";
-import {ds_tuyenduong} from'../../model/mock_tuyenduong';
+//import {ds_tuyenduong} from'../../model/mock_tuyenduong';
 import { TuyenDuong } from "src/app/model/tuyenduong";
 import { ds_ghe } from "../../model/mock_dsghe";
-import { ds_chitietdatve } from "../../model/mock_chitietdatve";
+//import { ds_chitietdatve } from "../../model/mock_chitietdatve";
 import { ChiTietDatVeService } from "src/app/service/chitietdatve.service";
-import { error } from "@angular/compiler/src/util";
+import { TuyenDuongService } from "../../service/tuyenduong.service";
+import { ChiTietTuyenDuong } from "src/app/model/chitiettuyenduong";
 declare var $:any;
 @Component({
     selector:'m_chitietdatve',
     templateUrl:'./m_chitietdatve.html'
 })
-export class CHITIETDATVE implements OnInit{
+
+export class CHITIETDATVE implements OnInit,OnDestroy{
+   
     objectDangKi:OBJECTDANGKI=new OBJECTDANGKI('','','','','','');;
     @Input() chitietdatvexe: CHITIETDATVEXE;
-    chitietdatve:CHITIETDATVEXE= new CHITIETDATVEXE("","","","","","","","");
-    ds_tuyenduong:any[]=ds_tuyenduong;
-    tuyenduong:TuyenDuong=null;
+    
+    chitietdatve:CHITIETDATVEXE= new CHITIETDATVEXE("","","","","","","","","");
+    //ds_tuyenduong,ds_chitietdatve,
+    ds_tuyenduong:any[]=[]//ds_tuyenduong;
+    tuyenduong:TuyenDuong=new TuyenDuong("","","","","","","","","","","","","");
     ds_giokhoihanh:string[]=[];
-    tongtien:number;
+    tongtien:number=0;
     soluongghe:number=0;
     ds_khungghe:any[]=[];
     ds_ghe:any[]=ds_ghe;
-    ds_chitietdatve:any[]=ds_chitietdatve;
+    ds_chitietdatve:any[]=[];//ds_chitietdatve;
     ghedangchon:any="";
-
-    thongbao:any="";
-    constructor(private chitietdatveservice:ChiTietDatVeService)
+   
+    constructor(private chitietdatveservice:ChiTietDatVeService,private tuyenduongService:TuyenDuongService)
     {
+        this.laydanhsachchitietdatve();
+        this.laydanhsachtuyenduong();
+    }
+    laydanhsachtuyenduong()
+    {
+     this.tuyenduongService.getListTuyenDuong()
+     .subscribe( 
+         reponse => {
+           if(reponse!=null)
+                {
+                     this.ds_tuyenduong=reponse;
+                     this.ds_tuyenduong.forEach(element => {
+                        
+                       let mangtam:ChiTietTuyenDuong[]=[];
+                         if(element.chitiet.L!=undefined)
+                         {
+                             for(let i =0;i<element.chitiet.L.length;i++){
+                                if(element.chitiet.L[i].M!=undefined){
+                                 
+                                 let chitietM:ChiTietTuyenDuong = new ChiTietTuyenDuong(
+                                     element.chitiet.L[i].M.diemdi.S,
+                                     element.chitiet.L[i].M.diemden.S,
+                                     element.chitiet.L[i].M.thoigiandi.S,
+                                     element.chitiet.L[i].M.thoigianden.S,
+                                     element.chitiet.L[i].M.hotlinedi.S,
+                                     element.chitiet.L[i].M.hotlineden.S,
+                                     element.chitiet.L[i].M.diachidi.S,
+                                     element.chitiet.L[i].M.diachiden.S
+                     
+                                 );
+ 
+                                     mangtam.push(chitietM);
+                                     //console.log(mangtam)
+                                }
+                                 
+                             }
+                         
+                          
+                         }
+ 
+                        element.chitiet=mangtam;
+                        element.benden=element.benden.S;
+                        element.bendi=element.bendi.S;
+                        element.giave=element.giave.S;
+                        element.giochay=element.giochay.S;
+                        element.loaixe=element.loaixe.S;
+                        element.quangduong=element.quangduong.S;
+                        element.id_tuyenduong=element.id_tuyenduong.N;
+                        element.name_tuyenduong=element.name_tuyenduong.S;
+                        element.thoigian=element.thoigian.S;
+                        element.sochuyen=element.sochuyen.S;
+                        element.OriginCode=element.OriginCode.S;
+                        element.DestCode=element.DestCode.S;
+ 
+                      
+                     });
+     
+                }
+                this.laygiokhoihanhtheodiemdidiemden(this.chitietdatve.diemdi,this.chitietdatve.diemden);
+                this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatve.diemdi,this.chitietdatve.diemden, this.chitietdatve.giodi);  
+                this.chitietdatve.idchuyenxe=this.tuyenduong.id_tuyenduong;
+        })
        
     }
-    //chitiet datve
+   //Lay danh sach tuyen duong
+  
+    //Lấy danh sách chi tiết đặt vé
     laydanhsachchitietdatve()
     {
             this.chitietdatveservice.getListChiTietDatVe().subscribe((reponse:CHITIETDATVEXE[])=>{
-               
-               this.ds_chitietdatve=reponse;
-
-               this.ds_chitietdatve.forEach(element => {
-                   let mangghetam=[];
-                   if(element.soghe.L!=undefined)
-                   {
-                    element.soghe.L.forEach(ghe => {
-                        mangghetam.push(ghe.S);
-                        
+               if(reponse!=null)
+               {
+                    this.ds_chitietdatve=reponse;
+                    this.ds_chitietdatve.forEach(element => {
+                        let mangghetam=[];
+                        if(element.soghe.L!=undefined)
+                        {
+                         element.soghe.L.forEach(ghe => {
+                         mangghetam.push(ghe.S);
+                             
+                         });
+                        }
+         
+                        element.soghe=mangghetam;
+                        element.diemden=element.diemden.S;
+                        element.idchuyenxe=element.idchuyenxe.N;
+                        element.diemdi=element.diemdi.S;
+                        element.giodi=element.giodi.S;
+                        element.ngaydi=element.ngaydi.S;
+                        element.sodienthoai=element.sodienthoai.S;
+                        element.soluong=element.soluong.S;
+                        element.idchitietdatve=element.idchitietdatve.N;
+     
                     });
-                   }
     
-                   element.soghe=mangghetam;
-                   element.diemden=element.diemden.S;
-                   element.idchuyenxe=element.idchuyenxe.N;
-                   element.diemdi=element.diemdi.S;
-                   element.giodi=element.giodi.S;
-                   element.ngaydi=element.ngaydi.S;
-                   element.sodienthoai=element.sodienthoai.S;
-                   element.soluong=element.soluong.S;
-
-               });
-              
+               }
+               
                this.soluongghe=this.chitietdatve.soluong;
-               this.tongtien=this.chitietdatve.soluong*this.tuyenduong.giave;
+              // this.tongtien= (this.chitietdatve.soluong*1) * (this.tuyenduong.giave*1);
                this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi); 
-               this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi);  
+                
             });
             
     }
@@ -75,12 +146,9 @@ export class CHITIETDATVE implements OnInit{
         {
             this.ds_ghe[i-1].trangthai=0;
             ds_chitietdatve.forEach(ctdv=>{
-                let dem=0;
                 if(ctdv.soghe.indexOf(ds_ghe[i-1].tenghe)>=0)
                 {
                     ds_ghe[i-1].trangthai=1;
-                }else{
-                    dem+=1;
                 }
             });
             dstam.push(ds_ghe[i-1]);
@@ -90,6 +158,7 @@ export class CHITIETDATVE implements OnInit{
               dstam=[];
             }
         }
+        this.tongtien= (this.chitietdatve.soluong*1) * (this.tuyenduong.giave*1);
         
     }
 
@@ -97,7 +166,7 @@ export class CHITIETDATVE implements OnInit{
     laydanhsachchitietdatvetheomatuyen(matuyen,ngay)
     {
         let ds_chituyetdatvetheomatuyen:any[]=[];
-        ds_chitietdatve.forEach(ct=>{
+        this.ds_chitietdatve.forEach(ct=>{
             if(ct.idchuyenxe==matuyen && ct.ngaydi===ngay)
             {
                ds_chituyetdatvetheomatuyen.push(ct);
@@ -120,17 +189,20 @@ export class CHITIETDATVE implements OnInit{
             this.flagchitiet=true;
             this.chitietdatve.soghe=this.ds_ghedangchon;
             this.chitietdatve.idchuyenxe=this.tuyenduong.id_tuyenduong;
-
-            this.chitietdatveservice.addThongTinChiTietDatVe(this.chitietdatve).subscribe(
+            this.chitietdatve.idchitietdatve=this.ds_chitietdatve.length;
+            this.chitietdatveservice.addThongTinChiTietDatVe(this.chitietdatve).subscribe( 
                 data => {
-                    this.thongbao="Dat ve hanh cong";
+                    this.ds_chitietdatve.push(this.chitietdatve);
+                    this.capnhattrangthaighe(this.chitietdatve.idchuyenxe,this.chitietdatve.ngaydi);
+                    $("#thongbaodatve").text("Đặt vé thành công.");
+                    $("#sodienthoai").val("");
+                    this.ds_ghedangchon=[];
+                    
+                },
+                // Errors will call this callback instead:
+                err => {
+                    $("#thongbaodatve").text("Đặt vé không thành công.");
                 });
-
-            alert("Thông tin vé:"+this.chitietdatve.idchuyenxe+"-"+
-            this.chitietdatve.diemdi+"-"+this.chitietdatve.diemden+"-"+
-            this.chitietdatve.giodi+"-"+this.chitietdatve.ngaydi+"-"+
-            this.chitietdatve.sodienthoai+"-"+this.chitietdatve.soghe+"-"+
-            this.chitietdatve.soluong);
         }else{
             $("#danhsachghe").slideDown() ;
             $("#muoiten").addClass("fas fa-angle-double-down");
@@ -141,7 +213,6 @@ export class CHITIETDATVE implements OnInit{
         }
         
     }
-
     //Bắt sự kiện click menu xổ xuống
     chonghe()
     {
@@ -165,11 +236,11 @@ export class CHITIETDATVE implements OnInit{
     //Lấy tuyến đường theo điểm đi điểm đến
     laytuyenduongtheodiemdidiemden(diemdi,diemden,gio):TuyenDuong
     {
-       
         let td:TuyenDuong=null;
-        ds_tuyenduong.forEach(tuyenduong => {
+        this.ds_tuyenduong.forEach(tuyenduong => {
             if(tuyenduong.OriginCode==diemdi && tuyenduong.DestCode==diemden && tuyenduong.giochay==gio)
             {
+                
                 td=tuyenduong; 
             }
         });
@@ -182,7 +253,7 @@ export class CHITIETDATVE implements OnInit{
     laygiokhoihanhtheodiemdidiemden(diemdi,diemden)
     {
        
-        ds_tuyenduong.forEach(tuyenduong => {
+        this.ds_tuyenduong.forEach(tuyenduong => {
             if(tuyenduong.OriginCode==diemdi && tuyenduong.DestCode==diemden )
             {
                this.ds_giokhoihanh.push(tuyenduong.giochay);
@@ -194,7 +265,7 @@ export class CHITIETDATVE implements OnInit{
 
     //bắt sự kiện thay đổi giờ chạy
     thaydoigio(){
-       this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatvexe.diemdi,this.chitietdatvexe.diemden,this.chitietdatvexe.giodi);
+       this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatve.diemdi,this.chitietdatve.diemden,this.chitietdatve.giodi);
        this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi);
       // console.log(this.ds_khungghe);
       // console.log(this.tuyenduong.id_tuyenduong); 
@@ -220,8 +291,7 @@ export class CHITIETDATVE implements OnInit{
                     {
                         data.path[1].style.backgroundImage="linear-gradient(to right, rgb(0, 154, 205), rgb(0, 191, 255), rgb(0, 154, 205))";
                         this.ds_ghedangchon.splice(this.ds_ghedangchon.indexOf(tenghe),1);
-                    }
-                    
+                    }   
                 }else{
                     //mau do
                     if(data.path[1].nodeName=="BUTTON")
@@ -239,9 +309,9 @@ export class CHITIETDATVE implements OnInit{
                 //mau xanh
                 if(data.path[1].nodeName=="BUTTON")
                 {
-                $("#thongbaochonghe").text('');
-                data.path[1].style.backgroundImage="linear-gradient(to right, rgb(0, 154, 205), rgb(0, 191, 255), rgb(0, 154, 205))";
-                this.ds_ghedangchon.splice(this.ds_ghedangchon.indexOf(tenghe),1);
+                    $("#thongbaochonghe").text('');
+                    data.path[1].style.backgroundImage="linear-gradient(to right, rgb(0, 154, 205), rgb(0, 191, 255), rgb(0, 154, 205))";
+                    this.ds_ghedangchon.splice(this.ds_ghedangchon.indexOf(tenghe),1);
                 }
             }else{
                 $("#thongbaochonghe").text('Đã chọn đủ số lượng ghế');
@@ -251,30 +321,15 @@ export class CHITIETDATVE implements OnInit{
         
        
     }
-           
-        
     }
     //kết thúc bắt sự kiện click vào ghế
 
     ngOnInit(){
-        /*thong bao*/
-        $(document).ready(function() {
-            $("#btndong" ).on( "click",function() {
-            
-             $("#thongbao").hide();
-             $(".btnghe").removeAttr("disabled");
-            });
-           
-          } );
-          /*thong bao*/
-        this.chitietdatve=this.chitietdatvexe;
-        this. laygiokhoihanhtheodiemdidiemden(this.chitietdatvexe.diemdi,this.chitietdatvexe.diemden);
-        this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatvexe.diemdi,this.chitietdatvexe.diemden,this.chitietdatvexe.giodi);
-        this.soluongghe=this.chitietdatve.soluong;
-        this.tongtien=this.chitietdatve.soluong*this.tuyenduong.giave;
-        this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi);
-           
-    }
+        this.chitietdatve =this.chitietdatvexe;
        
+    }
+    ngOnDestroy(){
+        
+     }
     }
 

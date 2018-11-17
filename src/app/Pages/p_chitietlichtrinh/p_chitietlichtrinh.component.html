@@ -2,12 +2,10 @@
 <section id="body-content">
     <div class="container" id="login-page">
         <div id="top-login" class="clearfix hidden-sm">
-
             <div id="login-top-bar-left" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
                 <div class="row">
                     <div class="text-center col-lg-4 col-md-4 col-sm-4 col-xs-12 col-ms-12">
                         <div class="text-uppercase"><span class="relative"><span class="sprite safe"></span>An toàn</span></div>
-
                     </div>
                     <div class="text-center col-lg-4 col-md-4 col-sm-4 col-xs-12 col-ms-12">
                         <div class="text-uppercase"><span class="relative"><span class="sprite bus"></span>Luôn có tuyến</span></div>
@@ -24,7 +22,6 @@
             <div id="login-top-bar-right" class="text-center col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
                 <p class="text-uppercase">Luôn phục vụ quý khách tốt nhất có thể
                     </p>
-
             </div>
         </div>
 
@@ -52,9 +49,7 @@
                                     <td><strong class="text-success">{{chitiet.giochay}}</strong></td>
                                     <td>{{chitiet.bendi}} - {{chitiet.benden}}</td>
                                     <td>{{chitiet.quangduong}}</td>
-                                    <td>
-                                        {{chitiet.thoigian}}
-                                    </td>
+                                    <td>{{chitiet.thoigian}}</td>
                                     <td>
                                         <p>
                                             <strong class="text-primary">
@@ -66,20 +61,16 @@
                                         {{ngayhientai}}
                                     </td>
                                     <td>
-
-                                        <a href="#DatveModal" data-toggle="modal" data-obj="{&quot;id&quot;:&quot;30-08-2018-24:00-Bac Lieu ⇒ Sai Gon&quot;,&quot;name&quot;:&quot;24:00-Bac Lieu ⇒ Sai Gon&quot;,&quot;brand&quot;:&quot;Phương Trang&quot;,&quot;category&quot;:&quot;Bac Lieu ⇒ Sai Gon&quot;,&quot;position&quot;:7,&quot;price&quot;:160000}"
-                                            class="btn br-btn-default btn-flat futa-book-ticket">
+                                        <a href="#DatveModal" data-toggle="modal"
+                                            class="btn br-btn-default btn-flat futa-book-ticket" (click)="muavechitiet(chitiet)">
                                             <i class="fa fa-ticket icon-flat text-primary icon-bg-default"></i>Mua vé
-                                        
-                                        </a>
-                                        
+                                        </a>         
                                         <br><br>
-                                        <a href="javascript:;" class="viewmorerouteinfo-btn" (click)="batsukienclick($event)" id="ct{{i}}">Xem
+                                        <a href="javascript:void();" class="viewmorerouteinfo-btn" (click)="batsukienclick($event)" id="ct{{i}}">Xem
                                             chi tiết &gt;&gt;</a>
                                     </td>
                                 </tr>
-
-
+            
                                 <tr class="viewmorerouteinfo hidden ct{{i}}" >
                                     <td colspan="10" >
                                         <table border="0" align="center" >
@@ -128,7 +119,7 @@
             </div>
         </div>
     </div>
-
+    
 </section>
-<!-- Form Đặt Vé (Cần truyền dữ liệu để chi tiết tuyến đường nhận được)
-<m_chitietdatve></m_chitietdatve> -->
+<!-- Form Đặt Vé (Cần truyền dữ liệu để chi tiết tuyến đường nhận được)-->
+<m_chitietdatve [chitietdatvexe]="thongtindatve" *ngIf="thongtindatve"></m_chitietdatve>

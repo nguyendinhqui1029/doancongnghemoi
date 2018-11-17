@@ -1,8 +1,9 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
 import { ds_tuyenduong } from '../../model/mock_tuyenduong';
-import {Route,ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import { TuyenDuong } from 'src/app/model/tuyenduong';
+import { CHITIETDATVEXE } from 'src/app/model/chitietdatve';
 declare var $:any;
 @Component({
     selector: 'p_chitietlichtrinh',
@@ -16,10 +17,19 @@ export class CHITIETLICHTRINH implements OnInit,OnDestroy {
     diemdi:any="";
     diemden:any="";
     subscription:Subscription;
+    thongtindatve:CHITIETDATVEXE;
     constructor(private route:Router,private activateRoute:ActivatedRoute) { 
        
     }
-    
+
+    muavechitiet(chitiet)
+    {
+        this.thongtindatve=new CHITIETDATVEXE(chitiet.id_tuyenduong,chitiet.OriginCode,chitiet.DestCode,this.ngayhientai,1,chitiet.giochay,"","","");
+            
+       // console.log(this.thongtindatve);
+       
+    }
+
     laychitietlichtrinhtheodiemdidiemden(diemdi,diemden)
     {
         let ds:TuyenDuong[]=[];
@@ -53,17 +63,14 @@ export class CHITIETLICHTRINH implements OnInit,OnDestroy {
        
        if($(cl).hasClass("hidden"))
        {
-        event.target.innerText="Đóng >>";
-        $(cl).removeClass('hidden');
+            event.target.innerText="Đóng >>";
+            $(cl).removeClass('hidden');
        }else{
-        event.target.innerText="Xem chi tiết >>";
-        $(cl).addClass('hidden');
-       
+            event.target.innerText="Xem chi tiết >>";
+            $(cl).addClass('hidden');
        }
-        
-
-   
     }
+
     layDSchitiettheoTuyenDuong(name: string)
     {
         let dschitiet:any[]=[];
@@ -83,8 +90,10 @@ export class CHITIETLICHTRINH implements OnInit,OnDestroy {
             this.diemdi=params["g"];
             this.diemden=params["c"];
         });
+
         this.danhsachtuyen=this.laychitietlichtrinhtheodiemdidiemden(this.diemdi,this.diemden);
-       //lây ngày hiện tại
+       
+        //lây ngày hiện tại
        let date=new Date();
        let ngay="";
        if(date.getDate()<10)
@@ -93,14 +102,9 @@ export class CHITIETLICHTRINH implements OnInit,OnDestroy {
        }else{
            ngay=date.getDate()+"";
        }
-       this.ngayhientai=(date.getMonth()+1)+"/"+ngay+"/"+date.getFullYear();
-       
-       
+       this.ngayhientai=(date.getMonth()+1)+"/"+ngay+"/"+date.getFullYear();   
     }
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
-   
-    
-
 }

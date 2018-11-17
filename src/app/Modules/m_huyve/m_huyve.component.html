@@ -1,65 +1,65 @@
 <div id="thongbao" role="dialog" style="display:none; z-index: 100000;border-radius: 5px 5px 5px 5px;
-left: 50px; top:120px; 
-width:350px;height: 250px; background: rgb(237, 240, 240);
+left: 25%; top:120px; 
+width:50%;height: 300px; background: rgb(237, 240, 240);
 position: absolute;
 ">
-<div style="border-radius: 4px 4px 4px 4px;padding: 5px;
-margin: 3px; color:aliceblue;  background: rgb(96, 99, 100);">Xem
-thông tin hoặc hủy vé
-<i class="fa fa-times-circle" style="margin-left:150px; " id="btndong"></i></div>
-<div *ngIf="trangthaifrom==false; else nguoclai" style="text-align: center;" >
-<h3 class="thong_bao_loi">Thông tin chi tiết vé</h3>
-<table width=300 style="margin: auto;">
-<tr>
-<td style="text-align: left"><strong>Điểm đi:</strong></td>
-<td style="text-align: left"><i>{{noidunghienthithongtinchitiet.diemdi}}</i></td>
-</tr>
-<tr>
-<td style="text-align: left"><strong>Điểm đến:</strong></td>
-<td style="text-align: left"><i>{{noidunghienthithongtinchitiet.diemden}}</i></td>   
-</tr>
-<tr>
-<td style="text-align: left"><strong>Giờ đi:</strong></td>
-<td style="text-align: left"><i>{{noidunghienthithongtinchitiet.giodi}}</i></td>   
-</tr>
-<tr>
-<td style="text-align: left"><strong >Ngày đi:</strong></td>
-<td style="text-align: left"><i>{{noidunghienthithongtinchitiet.ngaydi}}</i></td>   
-</tr>
-<tr>
-<td style="text-align: left"><strong>Số ghế:</strong></td>
-<td style="text-align: left"><i>{{noidunghienthithongtinchitiet.soghe}}</i></td>   
-</tr>
-<tr>
-<td colspan="2">
-<button type="button" class="btn btn-primary mt-3" (click)="huyghe(ghedangchon,noidunghienthithongtinchitiet)">
-            Hủy ghế {{ghedangchon}}
-</button>
-</td>
-</tr>
-</table>
-</div>
-<ng-template #nguoclai>
-<div class="row" style="margin-bottom:15px;">
-<div class="col-ms-8" style="margin-left: 65px; margin-top: 60px;">
-<input type="date" id="ngaycanxem" class="form-control"
-    value="" placeholder="nhập số điện thoại" />
-</div>
-</div>
+    <div style="border-radius: 4px 4px 4px 4px;padding: 5px;
+margin: 3px; color:aliceblue;  background: rgb(96, 99, 100); position: relative;">Xem
+        thông tin hoặc hủy vé
+        <i class="fa fa-times-circle" style="right: 5px; top:5px; position: absolute; " id="btndong"></i></div>
+        <!--*ngIf="trangthaifrom==false; else nguoclai"-->
+    <div  style="text-align: center;">
+        <h3 class="thong_bao_loi">Thông tin chi tiết vé</h3>
+        <table width=500 style="margin: auto;">
+            <tr>
+                <td style="text-align: left"><strong>Điểm đi:</strong></td>
+                <td style="text-align: left"><i>{{noidunghienthithongtinchitiet.diemdi}}</i></td>
+            </tr>
+            <tr>
+                <td style="text-align: left"><strong>Điểm đến:</strong></td>
+                <td style="text-align: left"><i>{{noidunghienthithongtinchitiet.diemden}}</i></td>
+            </tr>
+            <tr>
+                <td style="text-align: left"><strong>Giờ đi:</strong></td>
+                <td style="text-align: left"><i>{{noidunghienthithongtinchitiet.giodi}}</i></td>
+            </tr>
+            <tr>
+                <td style="text-align: left"><strong>Ngày đi:</strong></td>
+                <td style="text-align: left"><i>{{noidunghienthithongtinchitiet.ngaydi}}</i></td>
+            </tr>
+            <tr>
+                <td style="text-align: left"><strong>Số ghế:</strong></td>
+                <td style="text-align: left"><i>{{noidunghienthithongtinchitiet.soghe}}</i></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="text" id="soghehuy" style="width: 50%; margin: auto;" class="form-control" value="" placeholder="Nhập ghế cần hủy" />
+                    <button type="button" class="btn btn-primary" (click)="huyghe(ghedangchon,noidunghienthithongtinchitiet)">
+                        Hủy ghế {{ghedangchon}}
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+   <!-- <ng-template #nguoclai>
+        <div class="row" style="margin-bottom:15px;">
+            <div class="col-ms-8" style="margin-left: 65px; margin-top: 60px;">
+                <input type="date" id="ngaycanxem" class="form-control" value="" placeholder="nhập số điện thoại" />
+            </div>
+        </div>
 
-<div class="row" style="margin-bottom:15px;">
-<div class="col-ms-8" style="margin-left: 65px; margin-top: 60px;">
-<input type="text" id="sodienthoaixacnhan" class="form-control"
-    value="" placeholder="nhập số điện thoại" />
-</div>
-</div>
-<div class="row" style="margin-bottom:2px;">
-<div class="col-ms-12 text-center">
-<span class="thong_bao_loi" id="thongbaoloidangnhap"></span>
-<button type="button" class="btn btn-primary" (click)="nutxacnhan()">
-    Xác nhận
-</button>
-</div>
-</div>
-</ng-template>
+        <div class="row" style="margin-bottom:15px;">
+            <div class="col-ms-8" style="margin-left: 65px; margin-top: 60px;">
+                <input type="text" id="sodienthoaixacnhan" class="form-control" value="" placeholder="nhập số điện thoại" />
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:2px;">
+            <div class="col-ms-12 text-center">
+                <span class="thong_bao_loi" id="thongbaoloidangnhap"></span>
+                <button type="button" class="btn btn-primary" (click)="nutxacnhan()">
+                    Xác nhận
+                </button>
+            </div>
+        </div>
+    </ng-template>-->
 </div>
