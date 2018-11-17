@@ -19,8 +19,8 @@
                     <i class="fa fa-map-marker"></i>{{cn.diachi_chinhanh}}
                 </p>
                 <p class="text-danger"><i class="fa fa-phone"></i>{{cn.sdt_chinhanh}} </p>
-                <a href="#MapModal" data-name="Ch&#226;u Đốc|89 Phan Văn V&#224;ng , P.Ch&#226;u Ph&#250; B, TP.Ch&#226;u Đốc, An Giang|02963 565 888   "
-                    data-locale=" cn.toado_chinhanh" data-toggle="modal"><i class="fa fa-street-view" aria-hidden="true"></i>&ensp;Xem bản đồ</a>
+                <a href="#hienbando" data-toggle="modal"  
+                (click)="xembando(cn)"><i class="fa fa-street-view" aria-hidden="true"></i>&ensp;Xem bản đồ</a>
             </li>
         </ul>
     </div>
@@ -38,8 +38,8 @@
                     <i class="fa fa-map-marker"></i>{{cn.diachi_chinhanh}}
                 </p>
                 <p class="text-danger"><i class="fa fa-phone"></i>{{cn.sdt_chinhanh}} </p>
-                <a href="#MapModal" data-name="BX Đ&#224; Nẵng|37 Nam Tr&#226;n, P.H&#242;a Minh, Q.Li&#234;n Chiểu, TP.Đ&#224; Nẵng (BX Đ&#224; Nẵng)|02363 786 786  "
-                    data-locale=" cn.toado_chinhanh" data-toggle="modal"><i class="fa fa-street-view" aria-hidden="true"></i>&ensp;Xem bản đồ</a>
+                <a href="#hienbando" data-toggle="modal"  
+                (click)="xembando(cn)"><i class="fa fa-street-view" aria-hidden="true"></i>&ensp;Xem bản đồ</a>
             </li>
         </ul>
     </div>
@@ -57,11 +57,13 @@
                     <i class="fa fa-map-marker"></i>{{cn.diachi_chinhanh}}
                 </p>
                 <p class="text-danger"><i class="fa fa-phone"></i>{{cn.sdt_chinhanh}} </p>
-                <a href="#MapModal" data-name="BX Gi&#225;p B&#225;t|Km số 6, đường Giải Ph&#243;ng, P.Ho&#224;ng Liệt, Q.Ho&#224;ng Mai, H&#224; Nội (BX Gi&#225;p B&#225;t)|0243 864 19 19  "
-                    data-locale=" cn.toado_chinhanh" data-toggle="modal">
+                <a href="#hienbando" data-toggle="modal"  (click)="xembando(cn)">
                     <i class="fa fa-street-view" aria-hidden="true"></i>&ensp;Xem bản đồ
                 </a>
             </li>
         </ul>
+    </div>
+    <div *ngFor="let cn of chinhanhs" >
+        <m_bando [toadochinhanh] = "selectedItem" *ngIf="selectedItem === cn"  ></m_bando>    
     </div>
 </div>

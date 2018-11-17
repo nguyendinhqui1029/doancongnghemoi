@@ -8,7 +8,7 @@
                 <tr class="text-white bg-light-green">
                     <th>STT</th>
                     <th data-toggle="true">Bến đi</th>
-                    <th>Bến đến</th>
+                    <th data-hide="phone">Bến đến</th>
                     <th data-hide="phone">Loại xe</th>
                     <th data-hide="phone">Quãng đường</th>
                     <th data-hide="phone">Thời gian</th>
@@ -21,8 +21,8 @@
             <tbody>
                 <tr class="route-row1240"  *ngFor="let dstd of td.thongtin;let i=index;">
                     <td>{{i+1}}</td>
-                    <td>{{dstd.bendi}}</td>
-                    <td>{{dstd.benden}}</td>
+                    <td >{{dstd.bendi}}</td>
+                    <td >{{dstd.benden}}</td>
                     <td>{{dstd.loaixe}}</td>
                     <td>{{dstd.quangduong}}</td>
                     <td>

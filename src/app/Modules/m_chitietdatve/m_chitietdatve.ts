@@ -14,6 +14,7 @@ export class CHITIETDATVE implements OnInit{
     objectDangKi:OBJECTDANGKI=new OBJECTDANGKI('','','','','','');;
     @Input() chitietdatvexe: CHITIETDATVEXE;
     chitietdatve:CHITIETDATVEXE= new CHITIETDATVEXE("","","","","","","","");
+
     ds_tuyenduong:any[]=ds_tuyenduong;
     tuyenduong:TuyenDuong=null;
     ds_giokhoihanh:string[]=[];

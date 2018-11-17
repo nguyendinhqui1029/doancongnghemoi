@@ -37,7 +37,8 @@
                                 <tr class="text-white bg-light-green">
                                     <th>STT</th>
                                     <th>Giờ chạy</th>
-                                    <th data-toggle="true">Tuyến</th>
+                                    <th data-toggle="true">Bến đi</th>
+                                    <th data-toggle="true">Bến đến</th>
                                     <th data-hide="phone">Quãng đường</th>
                                     <th data-hide="phone">Thời gian</th>
                                     <th data-hide="phone">Giá vé</th>
@@ -48,29 +49,31 @@
 
                             <tbody>
                                 <tr>
-                                    <td>{{i+1}}</td>
-                                    <td><strong class="text-success">{{chitiet.giochay}}</strong></td>
-                                    <td>{{chitiet.bendi}} - {{chitiet.benden}}</td>
+                                    <td >{{i+1}}</td>
+                                    <td><strong class="text-success" >{{chitiet.giochay}}</strong></td>
+                                    <td >{{chitiet.bendi}} </td>
+                                    <td >{{chitiet.benden}}</td>
                                     <td>{{chitiet.quangduong}}</td>
                                     <td>
                                         {{chitiet.thoigian}}
                                     </td>
                                     <td>
                                         <p>
-                                            <strong class="text-primary">
+                                            <strong class="text-primary" >
                                                 {{chitiet.giave}}<sup>đ/vé</sup>
                                             </strong>
                                         </p>
                                     </td>
-                                    <td>
+                                    <td >
                                         {{ngayhientai}}
                                     </td>
                                     <td>
 
-                                        <a href="#DatveModal" data-toggle="modal" data-obj="{&quot;id&quot;:&quot;30-08-2018-24:00-Bac Lieu ⇒ Sai Gon&quot;,&quot;name&quot;:&quot;24:00-Bac Lieu ⇒ Sai Gon&quot;,&quot;brand&quot;:&quot;Phương Trang&quot;,&quot;category&quot;:&quot;Bac Lieu ⇒ Sai Gon&quot;,&quot;position&quot;:7,&quot;price&quot;:160000}"
-                                            class="btn br-btn-default btn-flat futa-book-ticket">
+                                        <a href="#DatveModal" data-toggle="modal" id="modaldatve">
+                                            <button type="button"  (click)="laythongtindatve1(chitiet.id_tuyenduong,chitiet.bendi,chitiet.benden,chitiet.giochay,chitiet.giave)"
+                                            class="btn btn-primary btn-block btn-flat btn-booking" >
                                             <i class="fa fa-ticket icon-flat text-primary icon-bg-default"></i>Mua vé
-                                        
+                                            </button>   
                                         </a>
                                         
                                         <br><br>
@@ -126,9 +129,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
+        </div>
+
+    </div>
 </section>
-<!-- Form Đặt Vé (Cần truyền dữ liệu để chi tiết tuyến đường nhận được)
-<m_chitietdatve></m_chitietdatve> -->
+<m_chitietdatve [chitietdatvexe]="data1" *ngIf="flag==true"></m_chitietdatve> 
+
+<!-- Form Đặt Vé (Cần truyền dữ liệu để chi tiết tuyến đường nhận được)-->

@@ -3,21 +3,33 @@ import { ds_tuyenduong } from '../../model/mock_tuyenduong';
 import {Route,ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import { TuyenDuong } from 'src/app/model/tuyenduong';
+import { CHITIETDATVEXE } from 'src/app/model/chitietdatve';
 declare var $:any;
 @Component({
     selector: 'p_chitietlichtrinh',
     templateUrl: './p_chitietlichtrinh.component.html'
 })
 export class CHITIETLICHTRINH implements OnInit,OnDestroy {
-    
     danhsachtuyen:any[] = ds_tuyenduong; 
     danhsachtheotuyen:any[]=[];
     ngayhientai:any="";
     diemdi:any="";
     diemden:any="";
     subscription:Subscription;
+    flag:boolean=false;
+    data1: CHITIETDATVEXE;
+    laythongtindatve1(id_tuyenduong:any,bendi:any, benden:any,giochay:any,giave:any) {
+        $("#thongbao").hide();
+        $(".btnghe").removeAttr("disabled");
+        console.log(""+id_tuyenduong);
+        console.log(""+bendi);
+        console.log(""+benden);
+        console.log(""+giochay);
+        console.log(""+giave);
+        this.data1= new CHITIETDATVEXE(id_tuyenduong,bendi,benden,"20:00",1,giochay,giave,"");
+        this.flag=true;
+    }
     constructor(private route:Router,private activateRoute:ActivatedRoute) { 
-       
     }
     
     laychitietlichtrinhtheodiemdidiemden(diemdi,diemden)
@@ -100,7 +112,8 @@ export class CHITIETLICHTRINH implements OnInit,OnDestroy {
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
-   
+    
+    
     
 
 }

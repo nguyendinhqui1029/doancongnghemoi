@@ -103,16 +103,15 @@ export class DATVE implements OnInit{
             ngay=date.getDate()+"";
         }
         this.ngayhientai=(date.getMonth()+1)+"/"+ngay+"/"+date.getFullYear();
+        
         $( function() {
           $( "#ngay" ).datepicker({
             showOtherMonths: true,
-            selectOtherMonths: true
-          });
+            selectOtherMonths: true,
+            ///
+			minDate:0,
+            maxDate:"+1M"
         } );
-
-
-
-        
-    }
- 
+    })
+}
 }

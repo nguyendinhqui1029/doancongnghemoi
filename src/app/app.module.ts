@@ -40,6 +40,8 @@ import {AgmCoreModule} from '@agm/core';
 import { M_BANDO } from './Modules/m_bando/m_bando';
 import { XemBanDoService } from './service/xembando.service';
 import { M_HUYVE } from './Modules/m_huyve/m_huyve.component';
+import { THONGTINDATVE } from './Pages/p_thongtindatve/p_thongtindatve_admin/p_thongtindatve.component';
+import { THONGTINDATVEKHACHHANG } from './Pages/p_thongtindatve/p_thongtindatve_KH/p_thongtindatve_KH.component';
 
 
 @NgModule({
@@ -55,7 +57,7 @@ import { M_HUYVE } from './Modules/m_huyve/m_huyve.component';
     MENUTOP,MENU,MENUBOTTOM,FOOTER,
     TRANGCHU,KHOIHANHTP,
     DATVE,GIOITHIEU,GIOITHIEUNEWS,EqualValidator,
-    CHITIETDATVE, M_BANDO,
+    CHITIETDATVE, M_BANDO,THONGTINDATVE,THONGTINDATVEKHACHHANG,
     M_SLIDER,M_HUYVE
   ],
   imports: [
