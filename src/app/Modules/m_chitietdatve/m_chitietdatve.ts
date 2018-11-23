@@ -34,7 +34,7 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
     constructor(private chitietdatveservice:ChiTietDatVeService,private tuyenduongService:TuyenDuongService)
     {
         this.laydanhsachtuyenduong();
-        this.laydanhsachchitietdatve();
+       
         
     }
     laydanhsachtuyenduong()
@@ -94,6 +94,7 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
                 }
                 this.laygiokhoihanhtheodiemdidiemden(this.chitietdatve.diemdi,this.chitietdatve.diemden);
                 this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatve.diemdi,this.chitietdatve.diemden,this.chitietdatve.giodi);  
+                this.laydanhsachchitietdatve();
                 this.chitietdatve.idchuyenxe=this.tuyenduong.id_tuyenduong;
         })
        

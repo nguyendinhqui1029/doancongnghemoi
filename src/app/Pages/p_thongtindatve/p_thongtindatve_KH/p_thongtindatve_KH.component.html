@@ -4,7 +4,7 @@
         <h1 style="box-shadow: 20pt">Thông Tin Các Vé Đã Đặt</h1>
         <div id="khungtim">
             <input type="text" id="thongtintim" name="thongtintim" style="width: 300px;" placeholder="Nhập số điện thoại..."/>
-            <button type="button" id="btntim"  (click)="thongtintim" ><i class="fa fa-search"></i></button> 
+            <button type="button" id="btntim"  (click)="thongtintim()" ><i class="fa fa-search"></i></button> 
         </div>
         <table id="bangthongtin" class="table table-striped table-dark" style="width: 80%; margin: auto;background: rgb(129, 182, 218); text-align: center">
             <tr >
@@ -17,22 +17,26 @@
                 <th>Giờ đi</th>
                 <th>Số điện thoại</th>
                 <th>Trạng thái</th>
+                <th>Tác vụ</th>
             </tr>
-            <tr>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
+            <tr *ngFor="let item of danhsach_datvetheosdt;let i=index" >
+                <td>{{i}}</td>
+                <td>{{item.diemdi}}</td>
+                <td>{{item.diemden}}</td>
+                <td>{{item.ngaydi}}</td>
+                <td>{{item.soluong}}</td>
+                <td>{{item.soghe}}</td>
+                <td>{{item.giodi}}</td>
+                <td>{{item.sodienthoai}}</td>
+                <td>{{item.trangthai}}</td>
                 <td>
-                        <button type="button" id="btnhuy"  (click)="thongtinhuy" ><i class="fa fa-trash"></i>Hủy</button>
+                        <button type="button" id="btnhuy"  (click)="thongtinhuy()" ><i class="fa fa-trash"></i>Hủy</button>
                 </td>
             </tr>
             <tr>
-    
+                <td colspan="10">
+                        <h3 style="color: red; text-align: center" id="thongbao"></h3>
+                </td>
             </tr>
         </table>
     </div>
