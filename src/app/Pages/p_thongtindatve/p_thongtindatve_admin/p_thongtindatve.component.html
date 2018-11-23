@@ -2,8 +2,8 @@
 <div class="bangthongtindatve">
     <h1 style="box-shadow: 20pt">Thông Tin Các Vé Đã Đặt</h1>
     <div id="khungtim">
-        <input type="text" id="thongtintim" name="thongtintim" style="width: 300px;" placeholder="Nhập số điện thoại..."/>
-        <button type="button" id="btntim"  (click)="thongtintim" ><i class="fa fa-search"></i></button> 
+        <input type="text" id="thongtintim" name="thongtintim" (change)="layLaiDanhSach()" style="width: 300px;" placeholder="Nhập số điện thoại..."/>
+        <button type="button" id="btntim"  (click)="thongtintim()" ><i class="fa fa-search"></i></button> 
     </div>
     <table id="bangthongtin" class="table table-striped table-dark"  style="width: 80%;background: rgb(129, 182, 218); margin: auto; text-align: center;">
         <tr >
@@ -18,37 +18,27 @@
             <th>Số điện thoại</th>
             <th>Trạng thái</th>
         </tr>
-        <tr >
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
+        <tr *ngFor="let item of danhsach_datvetheosdt;let i=index" >
+                
+                <td>{{i+1}}</td>
+                <td>{{item.idchuyenxe}}</td>
+                <td>{{item.diemdi}}</td>
+                <td>{{item.diemden}}</td>
+                <td>{{item.ngaydi}}</td>
+                <td>{{item.soluong}}</td>
+                <td>{{item.soghe}}</td>
+                <td>{{item.giodi}}</td>
+                <td>{{item.sodienthoai}}</td>
             <td>
-                    <button type="button" id="btnnhanve"  (click)="thongtinnhanve" ><i class="fa fa-check"></i>Nhận</button>
+                    <button type="button" id="btnnhanve"  (click)="xacNhanDatVe(item)" ><i class="fa fa-check"></i>{{item.trangthai}}</button>
             </td>
         </tr>
-        <tr >
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>a</td>
-            <td>
-                    <button type="button" id="btnnhanve"  (click)="thongtinnhanve" ><i class="fa fa-check"></i>Nhận</button>
-            </td>
-        </tr>
+       
         <tr>
-
-        </tr>
+                <td colspan="10">
+                        <h3 style="color: red; text-align: center" id="thongbao"></h3>
+                </td>
+            </tr>
     </table>
 </div>
 <Footer></Footer>

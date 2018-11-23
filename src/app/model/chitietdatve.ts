@@ -9,7 +9,7 @@ export class CHITIETDATVEXE
     giodi:any;
     soghe:any[];
     sodienthoai:any;
-    trangthai:number;
+    trangthai:any;
     constructor(idchuyenxe,diemdi, diemden,ngaydi,soluong,giodi,soghe,sodienthoai,idchitietdatve,trangthai)
     {
         this.idchuyenxe=idchuyenxe;

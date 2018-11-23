@@ -35,7 +35,6 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
     {
         this.laydanhsachtuyenduong();
        
-        
     }
     laydanhsachtuyenduong()
     {
@@ -327,7 +326,12 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
 
     ngOnInit(){
         this.chitietdatve =this.chitietdatvexe;
+        if(typeof(sessionStorage.getItem("sodienthoai"))!=undefined){
+            this.chitietdatve.sodienthoai=sessionStorage.getItem("sodienthoai");
+            
+            $("#sodienthoai").prop("readonly",false);
     }
+}
     ngOnDestroy(){
         
      }

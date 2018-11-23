@@ -40,6 +40,7 @@ export class DANGNHAP implements OnInit  {
               //hỗ trợ
               sessionStorage.setItem("hoten", reponse.Items[0].hoten.S);
               sessionStorage.setItem("role",reponse.Items[0].role.N);
+              sessionStorage.setItem("sodienthoai",reponse.Items[0].sodienthoai.S);
               this.router.navigate(['/home']);
             } else {
               alert('Trình duyệt của bạn không hỗ trợ localStorage. Hãy nâng cấp trình duyệt để sử dụng!');

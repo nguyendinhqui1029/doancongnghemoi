@@ -16,18 +16,11 @@ export class ChiTietDatVeService
     }
     addThongTinChiTietDatVe(chitietdatve:CHITIETDATVEXE) 
     {
-        // let soghetam:any="";
-        // chitietdatve.soghe.forEach(soghe=>{
-            
-        //     if(chitietdatve.soghe.lastIndexOf(soghe))
-        //     {
-        //         soghetam+=soghe;
-        //     }else{
-        //         soghetam+=soghe+",";
-        //     }
-            
-        // });
-        // chitietdatve.soghe=soghetam;
+        if(chitietdatve.trangthai=="Đã nhận vé"){
+            chitietdatve.trangthai=2;
+        } else{
+            chitietdatve.trangthai=1;
+        }
         
         let headers = new Headers({ 'Content-Type': 'application/json' });
             let options = new RequestOptions({ headers: headers });
@@ -42,4 +35,6 @@ export class ChiTietDatVeService
      private handleErrorObservable (error: Response | any) {
          return Observable.throw(error.message || error);
        }
+
+    
 }

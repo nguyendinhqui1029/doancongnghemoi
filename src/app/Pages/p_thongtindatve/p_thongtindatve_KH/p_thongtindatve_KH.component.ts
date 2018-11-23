@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CHITIETDATVEXE } from 'src/app/model/chitietdatve';
 import { ChiTietDatVeService } from 'src/app/service/chitietdatve.service';
+import { element } from '@angular/core/src/render3/instructions';
 
 
 declare var $:any;
@@ -48,14 +49,21 @@ export class THONGTINDATVEKHACHHANG  implements OnInit  {
                     element.trangthai =  element.trangthai.N;
                     if(element.trangthai == 1)
                     {
-                        this.trangthai = "Đang Đặt";
+                        element.trangthai = "Đang Đặt";
                     }
                     else if(element.trangthai == 2)
                     {
-                        this.trangthai = "Đã nhận vé";
+                        element.trangthai = "Đã nhận vé";
                     }
                 });
             }
+            this.ds_chitietdatve.forEach(element => {
+                if(element.sodienthoai == sessionStorage.getItem("sodienthoai") && element.trangthai =="Đang Đặt"){
+                    this.danhsach_datvetheosdt.push(element);
+                    alert(sessionStorage.getItem("sodienthoai"));
+                }
+            });
+ 
         });
     }
 

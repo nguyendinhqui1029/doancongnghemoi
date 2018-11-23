@@ -61,7 +61,7 @@ export class M_HUYVE implements OnInit {
          this.ds_ghe.forEach(ghe=>{
              if(ghe.tenghe==ghedangchon)
              {
-                 ghe.trangthai=0;
+                ghe.trangthai=0;
              }
          });
          $("#thongbao").hide();

@@ -30,8 +30,10 @@ export class MENUTOP implements OnInit {
     }
     dangXuat()
     {
+        
         sessionStorage.removeItem("hoten");
         sessionStorage.removeItem("role");
+        sessionStorage.removeItem("sodienthoai");
         this.loichao='';
         this.router.navigate(['/home']);
     }
