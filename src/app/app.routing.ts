@@ -12,8 +12,10 @@ import { GIOITHIEU } from './Pages/p_gioithieu/p_gioithieu.component';
 import { CHITIETLICHTRINH } from './Pages/p_chitietlichtrinh/p_chitietlichtrinh.component';
 import { THONGTINDATVE } from './Pages/p_thongtindatve/p_thongtindatve_admin/p_thongtindatve.component';
 import { THONGTINDATVEKHACHHANG } from './Pages/p_thongtindatve/p_thongtindatve_KH/p_thongtindatve_KH.component';
+import { LOIPHANQUYEN } from './Pages/p_error/p_error_phanquyen/p_error_phanquyen.component';
+import { LOIDANGNHAP } from './Pages/p_error/p_error_dangnhap/p_error_dangnhap.component';
 
-const routesadmin: Routes=[
+const routes: Routes=[
     {path: '', component:TRANGCHU},
     {path: 'home', component:TRANGCHU},
     {path: 'khuyenmai', component:KHUYENMAI},
@@ -26,34 +28,8 @@ const routesadmin: Routes=[
     {path: 'gioithieu', component:GIOITHIEU},
     {path: 'chitietlichtrinh/:g/:c', component:CHITIETLICHTRINH},
     {path: 'thongtindatve_admin', component:THONGTINDATVE},
-    {path: 'thongtindatve_customer', component:TRANGCHU},
-
-];
-const routescustomer: Routes=[
-    {path: '', component:TRANGCHU},
-    {path: 'home', component:TRANGCHU},
-    {path: 'khuyenmai', component:KHUYENMAI},
-    {path: 'dieukhoan', component:DIEUKHOAN},
-    {path: 'huongdan', component:HUONGDAN},
-    {path: 'lienhe', component:LIENHE},
-    {path: 'lichtrinh', component:LICHTRINH},
-    {path: 'dangnhap', component:DANGNHAP},
-    {path: 'dangky', component:DANGKY},
-    {path: 'gioithieu', component:GIOITHIEU},
-    {path: 'chitietlichtrinh/:g/:c', component:CHITIETLICHTRINH},
-    {path: 'thongtindatve_admin', component:TRANGCHU},
     {path: 'thongtindatve_customer', component:THONGTINDATVEKHACHHANG},
 
 ];
-function layduongdan():any
-{
-    var routing;
-    if(Number.parseInt(sessionStorage.getItem("role"))==1)
-    {
-        routing = RouterModule.forRoot(routesadmin);
-    }else{
-         routing = RouterModule.forRoot(routescustomer);
-    }
-    return routing;
-}
-export const routing=layduongdan();
+
+export const routing=RouterModule.forRoot(routes);;

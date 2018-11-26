@@ -29,9 +29,14 @@
                 <td>{{item.soghe}}</td>
                 <td>{{item.giodi}}</td>
                 <td>{{item.sodienthoai}}</td>
-            <td>
-                    <button type="button" id="btnnhanve"  (click)="xacNhanDatVe(item)" ><i class="fa fa-check"></i>{{item.trangthai}}</button>
+            <td *ngIf="item.trangthai == 'Đã nhận vé'; else nguoclaibtn" >
+                    <button type="button" id="btnnhanve" disabled (click)="xacNhanDatVe(item)" ><i class="fa fa-check"></i>{{item.trangthai}}</button>
             </td>
+            <ng-template #nguoclaibtn>
+                <td >
+                    <button type="button" id="btnnhanve" (click)="xacNhanDatVe(item)" ><i class="fa fa-check"></i>{{item.trangthai}}</button>
+                </td>
+            </ng-template>
         </tr>
        
         <tr>

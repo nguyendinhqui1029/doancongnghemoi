@@ -34,8 +34,13 @@ export class MENUTOP implements OnInit {
         sessionStorage.removeItem("hoten");
         sessionStorage.removeItem("role");
         sessionStorage.removeItem("sodienthoai");
+        console.log(sessionStorage.getItem("role"));
+        
+        
         this.loichao='';
+        $("#soluong").click();
         this.router.navigate(['/home']);
+        
     }
     
 }

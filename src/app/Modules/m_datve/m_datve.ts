@@ -94,10 +94,14 @@ export class DATVE implements OnInit{
         $(".btnghe").removeAttr("disabled");
         this.flag=true;
         this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","","",1);
-     // console.log(this.data);
-
+    // console.log(this.data);
+        
     }
-    
+    soluongclick()
+    {
+        this.flag=false;
+        this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","","",1); 
+    }
     onChange(deviceValue) {
         this.flag=false;
         this.ds_diadiemden=this.LayDanhSachDenTheoDiaDiemDi(deviceValue);
@@ -155,7 +159,6 @@ export class DATVE implements OnInit{
        return ds;
     }
     goi(){
-        
         this.flag=false;
         this.data= new CHITIETDATVEXE("",$("#diemdi")[0].value,$("#diemden")[0].value,$("#ngay")[0].value,$("#soluong")[0].value,"","","","",1);
     }

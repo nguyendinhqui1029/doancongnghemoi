@@ -44,6 +44,8 @@ import { THONGTINDATVEKHACHHANG } from './Pages/p_thongtindatve/p_thongtindatve_
 import { TuyenDuongService } from './service/tuyenduong.service';
 import { ChiTietDatVeService } from './service/chitietdatve.service';
 import { ThanhPhoLonService } from './service/thanhpholon.service';
+import { LOIPHANQUYEN } from './Pages/p_error/p_error_phanquyen/p_error_phanquyen.component';
+import { LOIDANGNHAP } from './Pages/p_error/p_error_dangnhap/p_error_dangnhap.component';
 
 
 
@@ -61,7 +63,7 @@ import { ThanhPhoLonService } from './service/thanhpholon.service';
     TRANGCHU,KHOIHANHTP,
     DATVE,GIOITHIEU,GIOITHIEUNEWS,EqualValidator,
     CHITIETDATVE, M_BANDO,THONGTINDATVE,THONGTINDATVEKHACHHANG,
-    M_SLIDER,M_HUYVE
+    M_SLIDER,M_HUYVE,LOIPHANQUYEN,LOIDANGNHAP
   ],
   imports: [
     BrowserModule,

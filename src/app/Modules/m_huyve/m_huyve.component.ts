@@ -72,22 +72,7 @@ export class M_HUYVE implements OnInit {
 
      }
  }
- 
- 
- //Bắt sự kiện nút xác nhận số điện thoại
-//  nutxacnhan()
-//  {
-//      for(let i=0;i< this.ds_chitietdatve.length;i++) {
-//          if(this.ds_chitietdatve[i].sodienthoai==$("#sodienthoaixacnhan").val() && this.ds_chitietdatve[i].ngaydi==$("#ngaycanxem").val())
-//          {
-//              this.trangthaifrom=false;
-//              this.noidunghienthithongtinchitiet=this.ds_chitietdatve[i];
-//              i=i+this.ds_chitietdatve.length;
-//          }else{
-//              $("#thongbaoloidangnhap").html("Số điện thoại không đúng.<br>"); 
-//          } 
-//      }; 
-//  }
+
     ngOnInit() {
         
         /*thong bao*/

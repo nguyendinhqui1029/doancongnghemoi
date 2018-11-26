@@ -30,11 +30,10 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
     ds_ghe:any[]=ds_ghe;
     ds_chitietdatve:any[]=[];//ds_chitietdatve;
     ghedangchon:any="";
-   
+    
     constructor(private chitietdatveservice:ChiTietDatVeService,private tuyenduongService:TuyenDuongService)
     {
         this.laydanhsachtuyenduong();
-       
     }
     laydanhsachtuyenduong()
     {
@@ -95,7 +94,8 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
                 this.tuyenduong=this.laytuyenduongtheodiemdidiemden(this.chitietdatve.diemdi,this.chitietdatve.diemden,this.chitietdatve.giodi);  
                 this.laydanhsachchitietdatve();
                 this.chitietdatve.idchuyenxe=this.tuyenduong.id_tuyenduong;
-        })
+               
+            })
        
     }
    //Lay danh sach tuyen duong
@@ -133,7 +133,14 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
                this.soluongghe=this.chitietdatve.soluong;
               // this.tongtien= (this.chitietdatve.soluong*1) * (this.tuyenduong.giave*1);
                this.capnhattrangthaighe( this.tuyenduong.id_tuyenduong,this.chitietdatve.ngaydi); 
-                
+               if(typeof sessionStorage.getItem("sodienthoai")!="object"){
+                this.chitietdatve.sodienthoai= sessionStorage.getItem("sodienthoai");
+                $("#sodienthoai").attr("readonly",true) ;     
+                }else 
+                {
+                    $("#sodienthoai").val("");
+                    $("#sodienthoai").attr("readonly",false) ;  
+                }
             });
             
     }
@@ -194,10 +201,15 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
                 data => {
                     this.ds_chitietdatve.push(this.chitietdatve);
                     this.capnhattrangthaighe(this.chitietdatve.idchuyenxe,this.chitietdatve.ngaydi);
-                    $("#thongbaodatve").text("Đặt vé thành công.");
+                    $("#thongbaodatve").text("ĐẶT VÉ THÀNH CÔNG!");
                     $("#sodienthoai").val("");
                     this.ds_ghedangchon=[];
                     
+                    setTimeout(function(){
+                        $(".close").click() ;
+                        $("#soluong").click();
+                        $("#thongbaodatve").text("");
+                    }, 2000);
                 },
                 // Errors will call this callback instead:
                 err => {
@@ -326,12 +338,10 @@ export class CHITIETDATVE implements OnInit,OnDestroy{
 
     ngOnInit(){
         this.chitietdatve =this.chitietdatvexe;
-        if(typeof(sessionStorage.getItem("sodienthoai"))!=undefined){
-            this.chitietdatve.sodienthoai=sessionStorage.getItem("sodienthoai");
-            
-            $("#sodienthoai").prop("readonly",false);
-    }
+        
+       
 }
+    
     ngOnDestroy(){
         
      }

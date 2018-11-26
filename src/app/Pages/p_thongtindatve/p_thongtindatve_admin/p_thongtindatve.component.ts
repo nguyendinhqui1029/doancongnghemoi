@@ -56,25 +56,24 @@ export class THONGTINDATVE  implements OnInit{
                 });
             }
             this.ds_chitietdatve.forEach(element => {
-                if(element.trangthai=="Đã nhận vé"){
-                    this.ds_chitietdatve.splice(this.ds_chitietdatve.indexOf(element),1);
+                if(element.trangthai!="Đã nhận vé"){
+                    this.danhsach_datvetheosdt.push(element);
                 }
             });
-            this.danhsach_datvetheosdt=this.ds_chitietdatve;
         });
     }
 
     xacNhanDatVe(tt){
         this.danhsach_datvetheosdt.forEach(element => {
             if(element.sodienthoai==tt.sodienthoai){
-                this.danhsach_datvetheosdt.splice(this.ds_chitietdatve.indexOf(tt),1);
+                this.danhsach_datvetheosdt.splice(this.danhsach_datvetheosdt.indexOf(tt),1);
             }
         });
         tt.trangthai="Đã nhận vé";
         this.servivce_chitietdatve.addThongTinChiTietDatVe(tt).subscribe(
             data => {
                 alert("Cập nhật thành công.")
-
+                
               },
               // Errors will call this callback instead:
               err => {
@@ -99,16 +98,30 @@ export class THONGTINDATVE  implements OnInit{
             {
                 $('#thongbao').text("Không tìm thấy thông tin vé!");
             } 
-        } else {
-            this.danhsach_datvetheosdt= this.ds_chitietdatve;
+        } 
+        else 
+        {
+            this.getListChiTietDatVeXE();   
+             this.ds_chitietdatve.forEach(element => {
+                if(element.trangthai!="Đã nhận vé"){
+                    this.danhsach_datvetheosdt.push(element);
+                }
+            });
         }
         
     }
     layLaiDanhSach(){
         let sdttim;
+        $('#thongbao').text("");
         sdttim=$('#thongtintim').val();
         if(sdttim==""){
-            this.danhsach_datvetheosdt= this.ds_chitietdatve;
+            // this.danhsach_datvetheosdt= this.danhsach_datvetheosdt;
+             this.getListChiTietDatVeXE();   
+             this.ds_chitietdatve.forEach(element => {
+                if(element.trangthai!="Đã nhận vé"){
+                    this.danhsach_datvetheosdt.push(element);
+                }
+            });
         }
     }
 }

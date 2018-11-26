@@ -27,10 +27,10 @@ input.ng-pristine{
 .bangthongtindatve
 {
     width: 100%;
-    height: 700px;
+    height: auto;
     text-align: center;
     margin: auto;
-
+    min-height: 500px;
 }
 #bangthongtin tr th
 {

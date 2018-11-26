@@ -18,7 +18,8 @@ export class ChiTietDatVeService
     {
         if(chitietdatve.trangthai=="Đã nhận vé"){
             chitietdatve.trangthai=2;
-        } else{
+        } else if(chitietdatve.trangthai=="Đang Đặt")
+        {
             chitietdatve.trangthai=1;
         }
         
