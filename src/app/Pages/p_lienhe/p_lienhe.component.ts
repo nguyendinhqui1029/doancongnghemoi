@@ -26,9 +26,7 @@ export class LIENHE implements OnInit {
                     if (reponse.length > 0) {
                         reponse.forEach(element => {
                             this.ds_timChiNhanh.push(element.fields);
-
                         });
-
                     } else {
                         $('#thongbaochinhanh').text('Không có chi nhánh bạn muốn tìm.');
                     }
