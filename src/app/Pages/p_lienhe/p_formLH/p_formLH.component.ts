@@ -27,8 +27,8 @@ export class FORMLH implements OnInit {
     var thoigian = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear() + "," + date.getHours() + ":" + date.getMinutes();
     html += "<p>Thời gian:" + thoigian + "</p></body></html>";
     AWS.config.update({
-      accessKeyId: "AKIAJCOCYBPLASCQERWA",
-      secretAccessKey: "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",
+      accessKeyId: "AKIAJZDTY3LJMHH4QC4A",
+      secretAccessKey: "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",
       region: "us-west-2"
     });
 
@@ -55,7 +55,7 @@ export class FORMLH implements OnInit {
           Data: this.lienhe.tieude
         }
       },
-      Source: "knkinhu@gmail.com" // mail gửi
+      Source: "nguyendinhqui1029@gmail.com" // mail gửi
     };
 
     const sendEmail = ses.sendEmail(params).promise();
