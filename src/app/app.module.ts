@@ -70,7 +70,7 @@ import { LOIDANGNHAP } from './Pages/p_error/p_error_dangnhap/p_error_dangnhap.c
     RouterModule, routing, HttpModule, FormsModule,
     AgmCoreModule.forRoot({
       //apiKey: "AIzaSyDNAWxkm-ZX2WzwospTVDmeXXhRw08qWSk",
-      apiKey: "AIzaSyBC70bsnXhTjG5W3bGXYYCKsIH2OryHGX4",
+      apiKey: "AIzaSyDNAWxkm-ZX2WzwospTVDmeXXhRw08qWSk",
       libraries: ["places"]
     })
   ],
