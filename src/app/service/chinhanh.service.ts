@@ -6,7 +6,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ChiNhanhService {
     url :string ="https://2joawegjk5.execute-api.us-west-2.amazonaws.com/chinhanh/chinhanh";
-    url1:string="https://imn5nvcqz5.execute-api.us-west-2.amazonaws.com/search2/search2/";
+    //url1:string="https://imn5nvcqz5.execute-api.us-west-2.amazonaws.com/search2/search2/";
+    url2:string="https://pmugj5i1ni.execute-api.us-west-2.amazonaws.com/tim/chinhanh/";
     constructor(private http : Http){
 
     }
@@ -18,7 +19,7 @@ export class ChiNhanhService {
     }
 
     getTimChiNhanhLienHe(chuoi:any):Observable<ChiNhanh[]>{
-        return this.http.get(this.url1+chuoi)
+        return this.http.get(this.url2+chuoi)
         .map((response: any) => response.json().hits.hit);
     }
         
