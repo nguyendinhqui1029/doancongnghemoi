@@ -27,8 +27,8 @@ export class FORMLH implements OnInit {
     var thoigian = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear() + "," + date.getHours() + ":" + date.getMinutes();
     html += "<p>Thời gian:" + thoigian + "</p></body></html>";
     AWS.config.update({
-      accessKeyId: "AKIAJZDTY3LJMHH4QC4A",
-      secretAccessKey: "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",
+      accessKeyId: "AKIAI3E6MVVSZLHB7QTA",
+      secretAccessKey: "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",
       region: "us-west-2"
     });
 
